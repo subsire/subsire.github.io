@@ -1,5 +1,5 @@
 # build output
-# dist/ – we need dist folder for static site hosting
+# docs/ – we need dist folder for static site hosting
 # generated types
 .astro/
 
