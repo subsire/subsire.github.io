@@ -1,5 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
+
+import bugSrc from "../images/bugg.png";
+import morelessSrc from "../images/moreless.png";
+import clevelSrc from "../images/clevel.png";
 
 const { link } = Astro.props;
 ---
@@ -12,10 +17,10 @@ const { link } = Astro.props;
       <article class="bg-white backdrop-blur rounded-xl p-6 flex flex-col shadow-md">
         <div class="flex items-center gap-3">
           <div
-            class="size-10 rounded-xl bg-gradient-to-br from-zinc-100 to-white grid place-items-center border border-black/10"
+            class="size-16 rounded-xl bg-gradient-to-br from-zinc-100 to-white grid place-items-center border border-black/10"
             aria-hidden="true"
           >
-            🪲
+            <Image src={bugSrc} alt="Early Bugmaker" width={256} height={256} class="rounded-sm" />
           </div>
           <div>
             <p class="text-xs uppercase tracking-widest font-semibold text-black/80">—</p>
@@ -34,10 +39,10 @@ const { link } = Astro.props;
       >
         <div class="flex items-center gap-3">
           <div
-            class="size-10 rounded-xl bg-gradient-to-br from-zinc-100 to-white grid place-items-center border border-black/10 text-black"
+            class="size-16 rounded-xl bg-gradient-to-br from-zinc-100 to-white grid place-items-center border border-black/10 text-black"
             aria-hidden="true"
           >
-            ±
+            <Image src={morelessSrc} alt="More or Less Lead" width={256} height={256} class="rounded-sm" />
           </div>
           <div>
             <p class="text-xs uppercase tracking-widest font-semibold text-black/80">Consigliato</p>
@@ -56,10 +61,10 @@ const { link } = Astro.props;
       <article class="bg-white backdrop-blur border border-black/10 rounded-2xl p-6 flex flex-col shadow-md">
         <div class="flex items-center gap-3">
           <div
-            class="size-10 rounded-xl bg-gradient-to-br from-zinc-100 to-white grid place-items-center border border-black/10"
+            class="size-16 rounded-xl bg-gradient-to-br from-zinc-100 to-white grid place-items-center border border-black/10"
             aria-hidden="true"
           >
-            👑
+            <Image src={clevelSrc} alt="Enterprise C-Level" width={256} height={256} class="rounded-sm" />
           </div>
           <div>
             <p class="text-xs uppercase tracking-widest font-semibold text-black/80">—</p>
