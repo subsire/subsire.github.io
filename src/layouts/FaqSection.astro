@@ -9,10 +9,22 @@ import faqs from "../data/faq.json";
     </div>
     <div class="mt-6 grid gap-4 md:grid-cols-2">
       {
-        faqs.map((faq) => (
+        faqs.map(({ answer, link, question }) => (
           <div class="bg-white/80 backdrop-blur border border-black/10 rounded-xl p-5">
-            <p class="text-black font-semibold">{faq.question}</p>
-            <p class="text-black/90 mt-1 text-sm">{faq.answer}</p>
+            <p class="text-black font-semibold">{question}</p>
+            <p class="text-black/90 mt-1 text-sm">
+              {answer}
+              {link && (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary hover:text-black font-semibold no-underline"
+                >
+                  *
+                </a>
+              )}
+            </p>
           </div>
         ))
       }
