@@ -2,7 +2,7 @@
 import { getButtonSize } from "../utils/size.js";
 
 const { fw, primary, size, ...props } = Astro.props;
-const bgClass = primary ? "bg-primary bg-secondary-hover" : "bg-white bg-secondary-hover";
+const bgClass = primary ? "bg-primary bg-secondary-hover" : "bg-white/80 bg-secondary-hover";
 const sizeClass = getButtonSize(size, primary as boolean);
 const fontWeightClass = fw ? `font-${fw}` : "";
 ---

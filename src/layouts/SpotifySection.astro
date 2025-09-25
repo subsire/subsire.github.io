@@ -1,0 +1,44 @@
+---
+import playlist from "../data/playlist.json";
+import { shuffle } from "../utils/array";
+
+const songs = shuffle(playlist.songs);
+---
+
+<section id="spotify" class="py-12 md:py-16 bg-white/80 font-mono">
+  <div class="mx-auto max-w-6xl px-4 text-black">
+    <header class="text-center mb-10 flex flex-col gap-6">
+      <h1 class="text-primary text-3xl md:text-4xl uppercase font-extrabold tracking-wider">La playlist</h1>
+      <p class="text-lg text-black/80 whitespace-pre-wrap">{playlist.intro}</p>
+      <hr class="w-[240px] mx-auto border-b-4 border-primary" />
+    </header>
+    <div class="flex flex-col divide-y-1 gap-6">
+      {
+        songs.map(({ description, embed, tags, title }, index) => (
+          <article class="flex flex-col gap-2 pb-6">
+            <h2 class="text-xl md:text-2xl font-extrabold uppercase tracking-wider ">
+              <span class="tracking-normal text-primary font-semibold">{index + 1}. </span>
+              {title}
+            </h2>
+            <div class="flex gap-2 text-xs text-black/60">
+              {tags.map((tag) => (
+                <span class="bg-black text-white px-2 py-1 rounded-sm">#{tag}</span>
+              ))}
+            </div>
+            <p class="text-black/80 whitespace-pre-wrap">{description}</p>
+            <iframe
+              data-testid="embed-iframe"
+              style="border-radius:12px"
+              src={embed}
+              width="100%"
+              height="152"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            />
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

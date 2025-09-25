@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import src from "../images/gattaa.png";
+
+const { href, title, description } = Astro.props;
+---
+
+<div>
+  <a href={href} class="flex items-center gap-3">
+    <div class="size-9 rounded-xl border border-primary grid place-items-center" aria-hidden="true">
+      <Image src={src} alt="" width={256} height={256} class="rounded-xl" />
+    </div>
+    <div class="leading-tight">
+      <p class="text-sm font-bold uppercase tracking-widest">{title}</p>
+      {description && <p class="text-[11px] text-white/80 -mt-0.5">{description}</p>}
+    </div>
+  </a>
+  <slot />
+</div>

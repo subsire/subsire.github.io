@@ -1,14 +1,10 @@
 ---
-import { Image } from "astro:assets";
-
-import logo from "../images/logo.svg";
+import Logo from "./Logo.astro";
 ---
 
 <header class="sticky top-2 z-30 backdrop-blur">
   <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-    <a href="/">
-      <Image src={logo} alt="Mangrovia" width={150} height={40} class="w-[120px] md:w-[150px] h-[40px]" />
-    </a>
+    <Logo href="/" title="Luca Farewell" />
     <div class="flex items-center gap-2">
       <slot />
     </div>

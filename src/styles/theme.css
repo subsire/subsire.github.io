@@ -3,6 +3,10 @@
 
 @theme {
   --font-display: "Open Sans", sans-serif;
+  --color-primary: #daff0a;
+  --color-secondary: #87e7ef;
+  --color-mang: #00161c;
+  --color-footer: #001115;
 }
 
 /* Globals */
@@ -12,42 +16,50 @@ html {
 
 /* Background colors */
 .bg-mang {
-  background-color: #00161c;
+  background-color: var(--color-mang);
 }
 .bg-primary {
-  background-color: #daff0a;
+  background-color: var(--color-primary);
 }
 .bg-primary-hover:hover {
-  background-color: #daff0a;
+  background-color: var(--color-primary);
 }
 .bg-secondary {
-  background-color: #87e7ef;
+  background-color: var(--color-secondary);
 }
 .bg-secondary-hover:hover {
-  background-color: #87e7ef;
+  background-color: var(--color-secondary);
 }
 .bg-footer {
-  background-color: #001115;
+  background-color: var(--color-mang);
 }
 
 /* Text colors */
 .text-primary {
-  color: #daff0a;
+  color: var(--color-primary);
 }
 .text-primary-hover:hover {
-  color: #daff0a;
+  color: var(--color-primary);
 }
 .text-secondary {
-  color: #87e7ef;
+  color: var(--color-secondary);
 }
 .text-secondary-hover:hover {
-  color: #87e7ef;
+  color: var(--color-secondary);
 }
 
 /* Ring colors */
 .ring-mang {
-  --tw-ring-color: #00161c;
+  --tw-ring-color: var(--color-footer);
 }
 .ring-primary {
-  --tw-ring-color: #daff0a;
+  --tw-ring-color: var(--color-primary);
+}
+
+/* Border colors */
+.border-primary {
+  border-color: var(--color-primary);
+}
+.border-secondary {
+  border-color: var(--color-secondary);
 }

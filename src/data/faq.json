@@ -1,7 +1,7 @@
 [
   {
     "question": "Posso donare in cripto?",
-    "answer": "No. Fiorenzo ha messo un linter sul wallet."
+    "answer": "No. Fiorenzo ha messo una regex sul wallet."
   },
   {
     "question": "Dove vanno i fondi?",
