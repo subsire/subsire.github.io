@@ -7,7 +7,10 @@ const { href, title, description } = Astro.props;
 
 <div>
   <a href={href} class="flex items-center gap-3">
-    <div class="size-9 rounded-xl border border-primary grid place-items-center" aria-hidden="true">
+    <div
+      class="size-9 rounded-xl border border-primary grid place-items-center hover:rotate-12 transition-transform duration-150 ease-in-out"
+      aria-hidden="true"
+    >
       <Image src={src} alt="" width={256} height={256} class="rounded-xl" />
     </div>
     <div class="leading-tight">
