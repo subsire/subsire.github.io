@@ -97,7 +97,7 @@ import Currency from "../components/Currency.astro";
     happyDonorsEl!.textContent = `${donors}`;
   }
 
-  // Simulated animation (every ~8s increases by a random tier)
+  // Simulated animation (every ~30s increases by a random tier)
   const timer = setInterval(() => {
     if (raised < goal) {
       raised += tiers[Math.floor(Math.random() * tiers.length)];
@@ -106,7 +106,7 @@ import Currency from "../components/Currency.astro";
     } else {
       clearInterval(timer);
     }
-  }, 8000);
+  }, 30000);
 
   updateProgress();
 </script>
