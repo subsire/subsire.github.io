@@ -1,5 +1,6 @@
 ---
 import "../styles/theme.css";
+import { name, version } from "../../package.json";
 import Nav from "../components/Nav.astro";
 import Logo from "../components/Logo.astro";
 
@@ -51,8 +52,9 @@ const { description, link, title } = Astro.props;
           }
         </Logo>
         <div class="flex md:justify-end items-end gap-4 text-xs">
-          <span>
-            © 2025 <a
+          <span title=`${name} v${version}`>
+            © 2025
+            <a
               href="https://github.com/subsire/subsire.github.io/tree/mangrovia-crowdfunding"
               target="_blank"
               rel="noopener noreferrer"
