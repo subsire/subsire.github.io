@@ -1,0 +1,129 @@
+---
+import { Image } from "astro:assets";
+import CloseSvg from "../components/CloseSvg.astro";
+import SubmitSvg from "../components/SubmitSvg.astro";
+
+import frontendSrc from "../images/frontendisti-calabresi.png";
+---
+
+<div class="sticky bottom-8 z-30">
+  <div class="mx-auto max-w-xl px-4 py-3 flex flex-col gap-2 items-center justify-center">
+    <p id="query" class="hidden bg-secondary rounded-xl text-black/80 px-2 pt-1 pb-2 w-fit ml-auto"></p>
+    <div id="response-ko" class="hidden w-full overflow-hidden">
+      <p class="bg-neutral-200 rounded-xl text-black/90 px-2 py-1">
+        Non ho informazioni nel sistema per rispondere alla tua domanda.
+      </p>
+    </div>
+    <div id="response-ok" class="hidden">
+      <div class="flex flex-col gap-2">
+        <p class="bg-neutral-200 rounded-xl text-black/90 px-2 py-1">
+          Ecco <span class="font-mono text-black/70 text-sm bg-black/5">frontendisti-calabresi.png</span>
+        </p>
+        <div class="rounded-xl w-10/12 overflow-hidden">
+          <Image
+            src={frontendSrc}
+            alt="Frontendisti calabresi"
+            title="Frontendisti calabresi"
+            width={1536}
+            height={1024}
+            class="h-auto w-full hover:scale-110 transition-transform duration-150 ease-in-out"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mx-auto max-w-xl px-4 py-3 flex items-center justify-center">
+    <div class="bg-white relative rounded-3xl w-full overflow-hidden">
+      <input
+        id="magentia"
+        class="shadow appearance-none w-full py-3 px-4 text-black/90 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Cerca nell'archivio delle immagini..."
+        type="text"
+        tabindex="1"
+        autofocus
+        autocomplete="off"
+      />
+      <div class="absolute right-2 top-2 z-10">
+        <button
+          id="close-button"
+          class="hidden bg-white/80 bg-secondary-hover rounded-full p-1 text-black transition-colors cursor-pointer"
+          ><CloseSvg /></button
+        >
+        <button
+          id="submit"
+          class="bg-primary bg-secondary-hover rounded-full p-1 text-black transition-colors cursor-pointer"
+          ><SubmitSvg /></button
+        >
+      </div>
+      <div id="loader" class="hidden absolute top-0 left-0 right-0 bottom-0 z-20">
+        <div class="absolute bg-white top-0 left-0 right-0 bottom-0 animate-pulse"></div>
+        <div class="absolute bg-white top-0 left-0 right-11 bottom-0"></div>
+        <p class="py-3 px-4 text-black/90 leading-tight relative">Sto pensando...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const input = document.getElementById("magentia") as HTMLInputElement;
+  const button = document.getElementById("submit") as HTMLButtonElement;
+  const loader = document.getElementById("loader") as HTMLDivElement;
+  const queryBox = document.getElementById("query") as HTMLDivElement;
+  const responseOk = document.getElementById("response-ok") as HTMLDivElement;
+  const responseKo = document.getElementById("response-ko") as HTMLDivElement;
+  const closeButton = document.getElementById("close-button") as HTMLButtonElement;
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      submitQuery(input.value);
+    }
+    if (event.key === "Escape") {
+      closeChat();
+    }
+  });
+  button.addEventListener("click", () => {
+    submitQuery(input.value);
+  });
+  closeButton.addEventListener("click", () => {
+    closeChat();
+  });
+
+  function submitQuery(query: string) {
+    console.log("Submit query:", query);
+
+    if (query.trim().length > 0) {
+      queryBox.textContent = query;
+      loader.classList.remove("hidden");
+      responseKo.classList.add("hidden");
+      responseOk.classList.add("hidden");
+      queryBox.classList.remove("hidden");
+      input.value = "";
+
+      setTimeout(
+        () => {
+          loader.classList.add("hidden");
+          closeButton.classList.remove("hidden");
+          if (
+            query.toLocaleLowerCase().includes("calabr") ||
+            query.toLocaleLowerCase().includes("frontendist") ||
+            query.toLocaleLowerCase().includes("fiore")
+          ) {
+            responseOk.classList.remove("hidden");
+          } else {
+            responseKo.classList.remove("hidden");
+          }
+        },
+        500 + Math.random() * 1000
+      );
+    }
+  }
+
+  function closeChat() {
+    responseOk.classList.add("hidden");
+    responseKo.classList.add("hidden");
+    queryBox.classList.add("hidden");
+    closeButton.classList.add("hidden");
+  }
+</script>

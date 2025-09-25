@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+
+const { src, width, height, title } = Astro.props;
+---
+
+<div class="border-2 border-mang overflow-hidden">
+  <Image
+    src={src}
+    alt={title}
+    title={title}
+    width={width}
+    height={height}
+    class="h-auto w-full hover:scale-110 transition-transform duration-150 ease-in-out"
+    loading="lazy"
+    decoding="async"
+  />
+</div>

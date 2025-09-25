@@ -1,0 +1,55 @@
+---
+import GridImage from "../components/GridImage.astro";
+
+import multiversoSrc from "../images/multiverso.png";
+import faxSrc from "../images/nutria-fax.png";
+import tabSrc from "../images/tab-tab-tab.png";
+import bestemmieSrc from "../images/bestemmie-comasche.png";
+import superSrc from "../images/super-fiorenzo.png";
+import meteoriteSrc from "../images/adriano-meteorite.png";
+import criminiSrc from "../images/crimini-frontend.png";
+import sindacoSrc from "../images/sindaco-sala.png";
+import cleanSrc from "../images/clean-code.png";
+import monacheSrc from "../images/le-monache.png";
+import adrianiSrc from "../images/gli-adriani.png";
+import economicoSrc from "../images/economico-programmatore.png";
+import rabbiaSrc from "../images/rabbia.png";
+import nuovoSrc from "../images/nuovo-team.png";
+import quitsSrc from "../images/luca-quits.png";
+import lunchSrc from "../images/lunch-break.png";
+import whatSrc from "../images/what.png";
+import backendSrc from "../images/backend.png";
+---
+
+<div class="pt-3 overflow-hidden relative border-collapse">
+  <div class="grid grid-gap-4">
+    <GridImage src={multiversoSrc} title="Multiverso Mangrovia" width={1536} height={1024} />
+  </div>
+  <div class="grid grid-cols-3 gap-0">
+    <GridImage src={tabSrc} title="TAB TAB TAB TAB!!!" width={1024} height={1024} />
+    <GridImage src={faxSrc} title="Commit via Fax" width={1024} height={1024} />
+    <GridImage src={bestemmieSrc} title="Bestemmie in comasco" width={1024} height={1024} />
+  </div>
+  <div class="grid grid-cols-4 gap-0">
+    <GridImage src={superSrc} title="Super Fiorenzo" width={1024} height={1536} />
+    <GridImage src={quitsSrc} title="Adriano faints, Luca quits" width={1024} height={1536} />
+    <GridImage src={whatSrc} title="Che cosa sta succedendo?" width={1024} height={1536} />
+    <GridImage src={meteoriteSrc} title="Adriano abbattuto da un meteorite" width={1024} height={1536} />
+  </div>
+  <div class="grid grid-cols-3 gap-0">
+    <GridImage src={sindacoSrc} title="Prendi il sindaco" width={1536} height={1024} />
+    <GridImage src={cleanSrc} title="Clean Code e bestemmie" width={1536} height={1024} />
+    <GridImage src={monacheSrc} title="Fare schifo dalle Monache" width={1536} height={1024} />
+  </div>
+  <div class="grid grid-cols-4 gap-0">
+    <GridImage src={adrianiSrc} title="Adriano, la serie" width={1024} height={1024} />
+    <GridImage src={economicoSrc} title="Economico Programmatore" width={1024} height={1024} />
+    <GridImage src={rabbiaSrc} title="RABBIA!!" width={1024} height={1024} />
+    <GridImage src={nuovoSrc} title="Il nuovo team di Frontend" width={1024} height={1024} />
+  </div>
+  <div class="grid grid-cols-3 gap-0">
+    <GridImage src={criminiSrc} title="Tribunale dei Crimini Frontend" width={1536} height={1024} />
+    <GridImage src={lunchSrc} title="Lunch Break Deluxe" width={1536} height={1024} />
+    <GridImage src={backendSrc} title="È un bug del backend" width={1536} height={1024} />
+  </div>
+</div>
