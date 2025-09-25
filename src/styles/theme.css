@@ -35,6 +35,9 @@ html {
 }
 
 /* Text colors */
+.text-mang {
+  color: var(--color-mang);
+}
 .text-primary {
   color: var(--color-primary);
 }
@@ -57,6 +60,9 @@ html {
 }
 
 /* Border colors */
+.border-mang {
+  border-color: var(--color-mang);
+}
 .border-primary {
   border-color: var(--color-primary);
 }
