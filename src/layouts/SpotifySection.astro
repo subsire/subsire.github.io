@@ -19,9 +19,9 @@ const songs = playlist.songs;
               <span class="tracking-normal text-primary font-semibold">{index + 1}. </span>
               {title}
             </h2>
-            <div class="flex gap-2 text-xs text-black/60 flex-wrap">
+            <div class="flex gap-2 text-xs uppercase text-black/60 flex-wrap">
               {tags.map((tag) => (
-                <span class="bg-black text-white px-2 py-1 rounded-sm text-nowrap">#{tag}</span>
+                <span class="bg-black text-white px-2 py-1 rounded-sm text-nowrap">{tag}</span>
               ))}
             </div>
             <p class="text-black/80 whitespace-pre-wrap">{description}</p>
