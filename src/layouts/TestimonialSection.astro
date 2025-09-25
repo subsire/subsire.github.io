@@ -1,0 +1,21 @@
+---
+import testimonials from "../data/testimonials.json";
+---
+
+<section class="py-12 md:py-16">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="flex items-center gap-2">
+      <h2 class="text-2xl md:text-3xl font-bold">Testimonianze estremamente affidabili</h2>
+    </div>
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      {
+        testimonials.map((testimonial) => (
+          <figure class="bg-white backdrop-blur border rounded-xl p-6">
+            <blockquote class="font-serif text-black/80">“{testimonial.quote}”</blockquote>
+            <figcaption class="mt-3 text-sm text-black/40">— {testimonial.author}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

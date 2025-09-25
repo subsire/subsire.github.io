@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Globals */
+html {
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+
+/* Background colors */
+.bg-mang {
+  background-color: #00161c;
+}
+.bg-primary {
+  background-color: #daff0a;
+}
+.bg-primary-hover:hover {
+  background-color: #daff0a;
+}
+.bg-secondary {
+  background-color: #87e7ef;
+}
+.bg-secondary-hover:hover {
+  background-color: #87e7ef;
+}
+.bg-footer {
+  background-color: #001115;
+}
+
+/* Text colors */
+.text-primary {
+  color: #daff0a;
+}
+.text-primary-hover:hover {
+  color: #daff0a;
+}
+.text-secondary {
+  color: #87e7ef;
+}
+.text-secondary-hover:hover {
+  color: #87e7ef;
+}
+
+/* Ring colors */
+.ring-mang {
+  --tw-ring-color: #00161c;
+}
+.ring-primary {
+  --tw-ring-color: #daff0a;
+}

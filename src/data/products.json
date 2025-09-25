@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Patch polemica",
+    "subtitle": "Edizione Limitata",
+    "description": "Bordo dorato, conflitti inclusi: si attiva alla prima review passivo-aggressiva.",
+    "image": "/images/patch-polemica.webp",
+    "price": 13
+  },
+  {
+    "title": "Medaglia bestemmia",
+    "subtitle": "In vero metallo",
+    "description": "Premio supremo per esplosioni verbali controllate: coniata durante deploy venerdì pomeriggio.",
+    "image": "/images/medaglia-bestemmia.webp",
+    "price": 29
+  },
+  {
+    "title": "Maglietta bestemmie",
+    "subtitle": "Cucita a mano",
+    "description": "Per cerimonie informali e retrospettive lunghe: tessuta a rosario, lavabile responsabilmente.",
+    "image": "/images/maglietta-bestemmie.webp",
+    "price": 24
+  },
+  {
+    "title": "Poster motivazionale",
+    "subtitle": "Leggere il foglietto illustrativo",
+    "description": "Ispirazione garantita per cinque minuti, effetti collaterali: procrastinazione e tachicardia.",
+    "image": "/images/poster-motivazionale.webp",
+    "price": 1200
+  },
+  {
+    "title": "Maglietta polemiche",
+    "subtitle": "Solo polemiche originali",
+    "description": "Taglio classico, discussioni incluse. Garantisce frizioni costruttive e feedback non richiesti.",
+    "image": "/images/maglietta-polemiche.webp",
+    "price": 24
+  },
+  {
+    "title": "Patch polemica",
+    "subtitle": "Edizione esercito",
+    "description": "Mimetica per stand-up di trincea: autorizza fuoco amico a ritmo settimanale.",
+    "image": "/images/patch-polemica-army-edition.webp",
+    "price": 11
+  },
+  {
+    "title": "Poster ludopatia",
+    "subtitle": "Tratto da una storia vera",
+    "description": "Studio antropologico sull'erede e i gratta-e-vinci: statisticamente plausibile.",
+    "image": "/images/poster-ludopatia.webp",
+    "price": 13.37
+  },
+  {
+    "title": "Medaglia polemica",
+    "subtitle": "Assegnata d'ufficio",
+    "description": "Riconoscimento automatico ai campioni del dibattito non richiesto.",
+    "image": "/images/medaglia-polemica.webp",
+    "price": 24
+  },
+  {
+    "title": "Manuale PDD",
+    "subtitle": "Polemica Driven Development",
+    "description": "Trattato tascabile di conflittologia agile: alimenta innovazione litigando bene quotidianamente.",
+    "image": "/images/manuale-pdd.webp",
+    "price": 22
+  },
+  {
+    "title": "Patch Mangrovia",
+    "subtitle": "Così è la vita",
+    "description": "Da cucire su zaino e coscienza: ricorda che il main piange sempre.",
+    "image": "/images/patch-bestemmie.webp",
+    "price": 9
+  },
+  {
+    "title": "Cappello Mangrovia",
+    "subtitle": "Make Mangrovia Blockchain Again",
+    "description": "Per veri veterani Web3: visiera rigida, promesse flessibili, meme garantiti.",
+    "image": "/images/cappello-mmba.webp",
+    "price": 12
+  },
+  {
+    "title": "Spilla gatta",
+    "subtitle": "ЗА АКТИВНУЮ ПОЛЕМИКУ",
+    "description": "Per compagni di reparto QA: approvazione felina, dibattito acceso, propaganda elegante.",
+    "image": "/images/spilla-gatta.webp",
+    "price": 250
+  }
+]

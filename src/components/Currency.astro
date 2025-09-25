@@ -1,0 +1,16 @@
+---
+import { formatCurrencyToParts, formatNumber } from "../utils/formatter";
+import { getFractionSize } from "../utils/size";
+
+const { currency, id, size, value } = Astro.props;
+const { integer, decimal, fraction, symbol } = formatCurrencyToParts(value, currency || "EUR");
+const textSize = size ?? "md";
+const fractionSize = getFractionSize(size);
+const hasFraction = fraction !== undefined && fraction !== null && Number(fraction) > 0;
+---
+
+<span>
+  <span id={id} class=`text-${textSize}`>{formatNumber(Number(integer))}</span><span class=`text-${fractionSize}`
+    >{hasFraction ? `${decimal}${fraction}` : ""}{symbol}
+  </span>
+</span>

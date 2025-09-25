@@ -1,0 +1,119 @@
+---
+import Currency from "../components/Currency.astro";
+---
+
+<section class="relative">
+  <div class="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h1 class="mt-5 text-4xl md:text-5xl font-extrabold leading-[1.1]">
+        Campagna straordinaria per il <span class="text-primary">Futuro di Luca</span>
+      </h1>
+      <p class="mt-4 text-lg text-white/90">
+        Sostieni la fuga del nostro compagno (✊) verso Losanna: con il tuo contributo potrai garantire una birra, una
+        patch commemorativa e – se gli astri allineano i cron job – anche un biglietto del treno.
+      </p>
+      <div class="mt-6 flex flex-wrap items-center gap-3">
+        <a
+          href="#merch"
+          class="text-md font-semibold px-4 py-3 rounded-xl bg-white bg-secondary-hover transition-colors text-black"
+          >Compra il merch</a
+        >
+        <a
+          href="#donate"
+          class="text-md font-semibold px-5 py-3 rounded-xl bg-primary bg-secondary-hover text-black shadow transition-colors"
+          >Dona ora</a
+        >
+        <div class="flex items-center gap-2 text-sm">
+          <span class="text-base">🍉</span>
+          <span><span id="happy-donors">42</span> donatori soddisfatti</span>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white backdrop-blur rounded-xl p-6 md:p-8 shadow text-black" id="progressCard">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm text-zinc-600">Fondi raccolti</p>
+          <p class="font-extrabold">
+            <Currency id="raised" value={1337} currency="EUR" size="3xl" />
+          </p>
+        </div>
+        <div class="text-right">
+          <p class="text-sm text-zinc-600">Obiettivo</p>
+          <p class="font-extrabold">
+            <Currency id="goal" value={4096} currency="CHF" size="3xl" />
+          </p>
+        </div>
+      </div>
+      <div class="mt-4">
+        <div class="h-4 w-full rounded-full bg-zinc-200 overflow-hidden" aria-hidden="true">
+          <div
+            id="bar"
+            class="h-full rounded-full bg-gradient-to-r to-rose-500 via-white-600 from-emerald-700"
+            style="width: 33%"
+          >
+          </div>
+        </div>
+        <div class="mt-2 flex items-center justify-between text-xs text-zinc-600">
+          <span id="percent">33%</span>
+          <span id="donors">42 donatori</span>
+        </div>
+      </div>
+      <ul class="mt-5 space-y-2 text-sm">
+        <li class="flex items-center gap-2">
+          <span class="inline-grid place-items-center size-5 rounded-full bg-primary text-black">✔</span> Stand-up da seduti:
+          raggiunta
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-grid place-items-center size-5 rounded-full bg-primary text-black">✔</span> Documentazione
+          aggiornata: in lavorazione (da 5 anni)
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-grid place-items-center size-5 rounded-full bg-primary text-black">✔</span> Festa d'addio:
+          work in progress
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Initial config
+  const goal = 4096;
+  let raised = 1337;
+  let donors = 42;
+
+  const raisedEl = document.getElementById("raised");
+  const goalEl = document.getElementById("goal");
+  const barEl = document.getElementById("bar");
+  const percentEl = document.getElementById("percent");
+  const donorsEl = document.getElementById("donors");
+  const happyDonorsEl = document.getElementById("happy-donors");
+  const tiers = [5, 15, 49];
+
+  function formatEUR(n: number) {
+    return n.toLocaleString("it-IT");
+  }
+
+  function updateProgress() {
+    const pct = Math.min(100, Math.round((raised / goal) * 100));
+    raisedEl!.textContent = formatEUR(raised);
+    goalEl!.textContent = formatEUR(goal);
+    barEl!.style.width = pct + "%";
+    percentEl!.textContent = pct + "%";
+    donorsEl!.textContent = `${donors}`;
+    happyDonorsEl!.textContent = `${donors}`;
+  }
+
+  // Simulated animation (every ~8s increases by a random tier)
+  const timer = setInterval(() => {
+    if (raised < goal) {
+      raised += tiers[Math.floor(Math.random() * tiers.length)];
+      donors++;
+      updateProgress();
+    } else {
+      clearInterval(timer);
+    }
+  }, 8000);
+
+  updateProgress();
+</script>
