@@ -11,5 +11,13 @@ import Button from "../components/Button.astro";
     >
     <Button href="/" fw="bold" size="sm" primary>Dona<span class="hidden sm:inline"> ora</span></Button>
   </Fragment>
-  <Image src={src} alt="Mangrovia Multiverse" width={1536} height={1024} class="w-full" />
+  <Image
+    src={src}
+    alt="Mangrovia Multiverse"
+    width={1536}
+    height={1024}
+    class="w-full"
+    loading="lazy"
+    decoding="async"
+  />
 </Layout>

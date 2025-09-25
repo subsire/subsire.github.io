@@ -12,6 +12,21 @@ const { description, link, title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="93x93" />
+    <meta
+      name="description"
+      content="Birre, patch e biglietto per Losanna. Parodia charity, link reale alla Global Sumud Flotilla."
+    />
+    <meta property="og:title" content="Luca Farewell Fund" />
+    <meta property="og:description" content="Sostieni la fuga verso Losanna: birre, patch, polemiche." />
+    <meta property="og:image" content="https://subsire.github.io/images/og-image.webp" />
+    <meta property="og:url" content="https://subsire.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content="Birre, patch e biglietto per Losanna." />
+    <meta name="twitter:image" content="https://subsire.github.io/images/og-image.webp" />
+    <meta name="twitter:image:alt" content="Mangrovia multiverse" />
+    <meta name="twitter:site" content="@subsire" />
+    <meta name="twitter:creator" content="@subsire" />
   </head>
   <body class="min-h-screen bg-mang text-white font-display selection:bg-secondary selection:text-black">
     <Nav>
@@ -40,6 +55,7 @@ const { description, link, title } = Astro.props;
             © 2025 <a
               href="https://github.com/subsire/subsire.github.io/tree/mangrovia-crowdfunding"
               target="_blank"
+              rel="noopener noreferrer"
               class="no-underline decoration-dotted hover:underline">Luca Iacobini & ChatGPT</a
             >. All rights reserved.</span
           >

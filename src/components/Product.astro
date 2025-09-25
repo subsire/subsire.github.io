@@ -13,7 +13,7 @@ const { title, subtitle, image, price, description } = Astro.props;
       <p class="text-xs text-white/80">{subtitle}</p>
     </div>
   </div>
-  <Image src={image} alt={title} class="w-full rounded-lg" width={1080} height={1080} />
+  <Image src={image} alt={title} class="w-full rounded-lg" width={1080} height={1080} loading="lazy" decoding="async" />
   <p class="mt-3 text-sm text-white/90 flex-1">{description}</p>
   <div class="flex items-center justify-between">
     <span class="text-lg font-bold"><Currency value={price} currency="EUR" /></span>
