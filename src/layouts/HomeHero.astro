@@ -1,11 +1,12 @@
 ---
+import Button from "../components/Button.astro";
 import Currency from "../components/Currency.astro";
 ---
 
 <section class="relative">
   <div class="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
     <div>
-      <h1 class="mt-5 text-4xl md:text-5xl font-extrabold leading-[1.1]">
+      <h1 class="mt-5 text-4xl md:text-5xl leading-[1.1] tracking-wider">
         Campagna straordinaria per il <span class="text-primary">Futuro di Luca</span>
       </h1>
       <p class="mt-4 text-lg text-white/90">
@@ -13,16 +14,8 @@ import Currency from "../components/Currency.astro";
         patch commemorativa e – se gli astri allineano i cron job – anche un biglietto del treno.
       </p>
       <div class="mt-6 flex flex-wrap items-center gap-3">
-        <a
-          href="#merch"
-          class="text-md font-semibold px-4 py-3 rounded-xl bg-white bg-secondary-hover transition-colors text-black"
-          >Compra il merch</a
-        >
-        <a
-          href="#donate"
-          class="text-md font-semibold px-5 py-3 rounded-xl bg-primary bg-secondary-hover text-black shadow transition-colors"
-          >Dona ora</a
-        >
+        <Button href="#merch" fw="semibold">Compra il merch</Button>
+        <Button href="#donate" fw="semibold" primary>Dona ora</Button>
         <div class="flex items-center gap-2 text-sm">
           <span class="text-base">🍉</span>
           <span><span id="happy-donors">42</span> donatori soddisfatti</span>

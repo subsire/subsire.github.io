@@ -2,7 +2,7 @@
 import "../styles/theme.css";
 import Nav from "../components/Nav.astro";
 
-const { link, title } = Astro.props;
+const { description, link, title } = Astro.props;
 ---
 
 <html lang="it">
@@ -12,21 +12,9 @@ const { link, title } = Astro.props;
     <title>{title}</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="93x93" />
   </head>
-  <body class="min-h-screen bg-mang text-white">
+  <body class="min-h-screen bg-mang text-white font-display">
     <Nav>
-      <a
-        href="/spotify/"
-        class="text-sm font-bold px-3 py-2 rounded-xl bg-white bg-secondary-hover transition-colors text-black shadow"
-        title="La playlist promessa"
-      >
-        🎹<span class="hidden sm:inline">&nbsp;&nbsp;La playlist promessa</span>
-      </a>
-      <a
-        href="#donate"
-        class="text-sm font-bold px-4 py-2 rounded-xl bg-primary bg-secondary-hover text-black shadow transition-colors"
-      >
-        Dona<span class="hidden sm:inline"> ora</span>
-      </a>
+      <slot name="nav" />
     </Nav>
 
     <slot />
@@ -37,8 +25,8 @@ const { link, title } = Astro.props;
           <div class="flex items-center gap-3">
             <div class="size-9 rounded-xl bg-white/90 grid place-items-center" aria-hidden="true">🍉</div>
             <div class="leading-tight">
-              <p class="text-sm font-bold uppercase tracking-widest">Luca Farewell Fund</p>
-              <p class="text-[11px] text-white/80 -mt-0.5">Sostieni la Migrazione Assistita</p>
+              <p class="text-sm font-bold uppercase tracking-widest">{title}</p>
+              {description && <p class="text-[11px] text-white/80 -mt-0.5">{description}</p>}
             </div>
           </div>
           {
@@ -54,7 +42,13 @@ const { link, title } = Astro.props;
           }
         </div>
         <div class="flex md:justify-end items-end gap-4 text-xs">
-          © 2025 Luca Iacobini & ChatGPT. All rights reserved.
+          <span>
+            © 2025 <a
+              href="https://github.com/subsire/subsire.github.io/tree/mangrovia-crowdfunding"
+              target="_blank"
+              class="no-underline decoration-dotted hover:underline">Luca Iacobini & ChatGPT</a
+            >. All rights reserved.</span
+          >
         </div>
       </div>
     </footer>

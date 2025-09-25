@@ -1,4 +1,6 @@
 ---
+import Button from "../components/Button.astro";
+
 const { link } = Astro.props;
 ---
 
@@ -7,7 +9,7 @@ const { link } = Astro.props;
     <h2 class="text-2xl md:text-3xl font-bold">Sostieni la missione</h2>
     <p class="mt-1 text-black/80">Scegli il tuo livello di impegno morale e logistico.</p>
     <div class="mt-8 grid gap-6 md:grid-cols-3">
-      <article class="bg-white backdrop-blur border rounded-xl p-6 flex flex-col shadow-md">
+      <article class="bg-white backdrop-blur rounded-xl p-6 flex flex-col shadow-md">
         <div class="flex items-center gap-3">
           <div
             class="size-10 rounded-xl bg-gradient-to-br from-zinc-100 to-white grid place-items-center border border-black/10"
@@ -21,17 +23,12 @@ const { link } = Astro.props;
           </div>
         </div>
         <p class="mt-4 text-3xl font-extrabold">€5</p>
-        <ul class="mt-3 space-y-2 text-sm text-black/90 flex-1">
+        <ul class="mt-3 space-y-2 text-sm text-black/90 flex-1 mb-4">
           <li class="flex gap-2"><span>✔</span><span>Maglietta Prosume</span></li>
           <li class="flex gap-2"><span>✔</span><span>Ringraziamento in stand-up</span></li>
           <li class="flex gap-2"><span>✔</span><span>Biscotto della fortuna (test non garantito)</span></li>
         </ul>
-        <a
-          href={link}
-          target="_blank"
-          class="mt-4 bg-primary bg-secondary-hover text-black shadow transition-colors rounded-xl px-4 py-2 text-sm font-semibold text-center"
-          >Partecipa</a
-        >
+        <Button href={link} target="_blank" size="sm" fw="semibold" primary>Partecipa</Button>
       </article>
       <article
         class="ring-2 ring-offset-2 ring-offset-white ring-mang bg-white backdrop-blur rounded-2xl p-6 flex flex-col scale-[1.01] shadow-lg"
@@ -49,17 +46,12 @@ const { link } = Astro.props;
           </div>
         </div>
         <p class="mt-4 text-3xl font-extrabold">€15</p>
-        <ul class="mt-3 space-y-2 text-sm text-black/90 flex-1">
+        <ul class="mt-3 space-y-2 text-sm text-black/90 flex-1 mb-4">
           <li class="flex gap-2"><span>✔</span><span>Quattro Tab Tab in omaggio</span></li>
           <li class="flex gap-2"><span>✔</span><span>Poster digitale della Blockchain</span></li>
           <li class="flex gap-2"><span>✔</span><span>Menù sagra con una birra</span></li>
         </ul>
-        <a
-          href={link}
-          target="_blank"
-          class="mt-4 bg-primary bg-secondary-hover text-black shadow transition-colors rounded-xl px-4 py-2 text-sm font-semibold text-center"
-          >Partecipa</a
-        >
+        <Button href={link} target="_blank" size="sm" fw="semibold" primary>Partecipa</Button>
       </article>
       <article class="bg-white backdrop-blur border border-black/10 rounded-2xl p-6 flex flex-col shadow-md">
         <div class="flex items-center gap-3">
@@ -75,17 +67,12 @@ const { link } = Astro.props;
           </div>
         </div>
         <p class="mt-4 text-3xl font-extrabold">€49</p>
-        <ul class="mt-3 space-y-2 text-sm text-black/90 flex-1">
+        <ul class="mt-3 space-y-2 text-sm text-black/90 flex-1 mb-4">
           <li class="flex gap-2"><span>✔</span><span>Attestato “Sopravvissuto a Beste”</span></li>
           <li class="flex gap-2"><span>✔</span><span>Sticker “Addio sindaco Sala”</span></li>
           <li class="flex gap-2"><span>✔</span><span>Foto con la gatta (se lei acconsente)</span></li>
         </ul>
-        <a
-          href={link}
-          target="_blank"
-          class="mt-4 bg-primary bg-secondary-hover text-black shadow transition-colors rounded-xl px-4 py-2 text-sm font-semibold text-center"
-          >Partecipa</a
-        >
+        <Button href={link} target="_blank" size="sm" fw="semibold" primary>Partecipa</Button>
       </article>
     </div>
   </div>

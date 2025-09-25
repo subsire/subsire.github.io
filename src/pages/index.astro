@@ -5,9 +5,20 @@ import Layout from "../layouts/Layout.astro";
 import TiersSection from "../layouts/TiersSection.astro";
 import TestimonialSection from "../layouts/TestimonialSection.astro";
 import FaqSection from "../layouts/FaqSection.astro";
+import Button from "../components/Button.astro";
 ---
 
-<Layout title="Luca Farewell Fund" link="https://freedomflotilla.info/sostieni-freedom-flotilla-italia/">
+<Layout
+  title="Luca Farewell Fund"
+  description="Sostieni la Migrazione Assistita"
+  link="https://freedomflotilla.info/sostieni-freedom-flotilla-italia/"
+>
+  <Fragment slot="nav">
+    <Button href="/spotify/" title="La playlist promessa" fw="bold" size="sm"
+      >🎹<span class="hidden sm:inline">&nbsp;&nbsp;La playlist promessa</span></Button
+    >
+    <Button href="#donate" fw="bold" size="sm" primary>Dona<span class="hidden sm:inline"> ora</span></Button>
+  </Fragment>
   <HomeHero />
   <MerchSection />
   <TiersSection link="https://freedomflotilla.info/sostieni-freedom-flotilla-italia/" />
