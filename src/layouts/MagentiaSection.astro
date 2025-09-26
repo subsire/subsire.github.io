@@ -4,6 +4,9 @@ import CloseSvg from "../components/CloseSvg.astro";
 import SubmitSvg from "../components/SubmitSvg.astro";
 
 import frontendSrc from "../images/frontendisti-calabresi.png";
+import ludopatiaSrc from "../images/ludopatia.png";
+import propSrc from "../images/tigre-prop.jpg";
+import tabtabSrc from "../images/tab-tab-tab-sahur.png";
 ---
 
 <div class="sticky bottom-8 z-30">
@@ -14,7 +17,7 @@ import frontendSrc from "../images/frontendisti-calabresi.png";
         Non ho informazioni nel sistema per rispondere alla tua domanda.
       </p>
     </div>
-    <div id="response-ok" class="hidden">
+    <div id="response-calabria" class="hidden">
       <div class="flex flex-col gap-2">
         <p class="bg-neutral-200 rounded-xl text-black/90 px-2 py-1">
           Ecco <span class="font-mono text-black/70 text-sm bg-black/5">frontendisti-calabresi.png</span>
@@ -33,7 +36,65 @@ import frontendSrc from "../images/frontendisti-calabresi.png";
         </div>
       </div>
     </div>
+    <div id="response-ludopatia" class="hidden">
+      <div class="flex flex-col gap-2">
+        <p class="bg-neutral-200 rounded-xl text-black/90 px-2 py-1">
+          Ecco <span class="font-mono text-black/70 text-sm bg-black/5">ludopatia.png</span>
+        </p>
+        <div class="rounded-xl w-10/12 overflow-hidden">
+          <Image
+            src={ludopatiaSrc}
+            alt="ludopatia.png"
+            title="ludopatia.png"
+            width={1024}
+            height={1024}
+            class="h-auto w-full hover:scale-110 transition-transform duration-150 ease-in-out"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="response-tab-tab" class="hidden">
+      <div class="flex flex-col gap-2">
+        <p class="bg-neutral-200 rounded-xl text-black/90 px-2 py-1">
+          Ecco <span class="font-mono text-black/70 text-sm bg-black/5">tab-tab-tab-sahur.png</span>
+        </p>
+        <div class="rounded-xl w-10/12 overflow-hidden">
+          <Image
+            src={tabtabSrc}
+            alt="tab-tab-tab-sahur.png"
+            title="tab-tab-tab-sahur.png"
+            width={500}
+            height={500}
+            class="h-auto w-full hover:scale-110 transition-transform duration-150 ease-in-out"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="response-prop" class="hidden">
+      <div class="flex flex-col gap-2">
+        <p class="bg-neutral-200 rounded-xl text-black/90 px-2 py-1">
+          Ecco <span class="font-mono text-black/70 text-sm bg-black/5">tigre-prop.jpg</span>
+        </p>
+        <div class="rounded-xl w-10/12 overflow-hidden">
+          <Image
+            src={propSrc}
+            alt="tigre-prop.jpg"
+            title="tigre-prop.jpg"
+            width={1500}
+            height={376}
+            class="h-auto w-full hover:scale-110 transition-transform duration-150 ease-in-out"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
   </div>
+
   <div class="mx-auto max-w-xl px-4 py-3 flex items-center justify-center">
     <div class="bg-white relative rounded-3xl w-full overflow-hidden">
       <input
@@ -69,8 +130,11 @@ import frontendSrc from "../images/frontendisti-calabresi.png";
   const button = document.getElementById("submit") as HTMLButtonElement;
   const loader = document.getElementById("loader") as HTMLDivElement;
   const queryBox = document.getElementById("query") as HTMLDivElement;
-  const responseOk = document.getElementById("response-ok") as HTMLDivElement;
   const responseKo = document.getElementById("response-ko") as HTMLDivElement;
+  const responseCalabria = document.getElementById("response-calabria") as HTMLDivElement;
+  const responseLudopatia = document.getElementById("response-ludopatia") as HTMLDivElement;
+  const responseTabTab = document.getElementById("response-tab-tab") as HTMLDivElement;
+  const responseProp = document.getElementById("response-prop") as HTMLDivElement;
   const closeButton = document.getElementById("close-button") as HTMLButtonElement;
 
   input.addEventListener("keydown", (event) => {
@@ -88,14 +152,42 @@ import frontendSrc from "../images/frontendisti-calabresi.png";
     closeChat();
   });
 
-  function submitQuery(query: string) {
-    console.log("Submit query:", query);
+  function magentiaThinkAboutThePNGs(query: string) {
+    const tokens = query.toLocaleLowerCase().split(" ");
+    if (
+      tokens.includes("calabria") ||
+      tokens.includes("calabresi") ||
+      tokens.includes("calabrese") ||
+      tokens.includes("fiore") ||
+      tokens.includes("fiorenzo")
+    ) {
+      return "calabria";
+    }
 
+    if (tokens.includes("visura")) {
+      return "ludopatia";
+    }
+
+    if (tokens.includes("tab") || tokens.includes("tabs")) {
+      return "tab";
+    }
+
+    if (tokens.includes("prop") || tokens.includes("props")) {
+      return "prop";
+    }
+
+    return null;
+  }
+
+  function submitQuery(query: string) {
     if (query.trim().length > 0) {
       queryBox.textContent = query;
       loader.classList.remove("hidden");
       responseKo.classList.add("hidden");
-      responseOk.classList.add("hidden");
+      responseCalabria.classList.add("hidden");
+      responseLudopatia.classList.add("hidden");
+      responseProp.classList.add("hidden");
+      responseTabTab.classList.add("hidden");
       queryBox.classList.remove("hidden");
       input.value = "";
 
@@ -103,24 +195,37 @@ import frontendSrc from "../images/frontendisti-calabresi.png";
         () => {
           loader.classList.add("hidden");
           closeButton.classList.remove("hidden");
-          if (
-            query.toLocaleLowerCase().includes("calabr") ||
-            query.toLocaleLowerCase().includes("frontendist") ||
-            query.toLocaleLowerCase().includes("fiore")
-          ) {
-            responseOk.classList.remove("hidden");
-          } else {
-            responseKo.classList.remove("hidden");
+          const result = magentiaThinkAboutThePNGs(query);
+
+          switch (result) {
+            case "calabria":
+              responseCalabria.classList.remove("hidden");
+              break;
+            case "ludopatia":
+              responseLudopatia.classList.remove("hidden");
+              break;
+            case "prop":
+              responseProp.classList.remove("hidden");
+              break;
+            case "tab":
+              responseTabTab.classList.remove("hidden");
+              break;
+            default:
+              responseKo.classList.remove("hidden");
+              break;
           }
         },
-        500 + Math.random() * 1000
+        1000 + Math.random() * 1000
       );
     }
   }
 
   function closeChat() {
-    responseOk.classList.add("hidden");
     responseKo.classList.add("hidden");
+    responseCalabria.classList.add("hidden");
+    responseLudopatia.classList.add("hidden");
+    responseProp.classList.add("hidden");
+    responseTabTab.classList.add("hidden");
     queryBox.classList.add("hidden");
     closeButton.classList.add("hidden");
   }
