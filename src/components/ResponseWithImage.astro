@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import Response from "./Response.astro";
+
+const { name, src, width, height } = Astro.props;
+---
+
+<div class="flex flex-col gap-2">
+  <Response response="Ecco" imgName={name} />
+  <div class="bg-neutral-200 rounded-xl w-10/12 overflow-hidden shadow-md">
+    <Image
+      src={src}
+      alt={name}
+      title={name}
+      width={width || 1024}
+      height={height || 1024}
+      class="h-auto w-full hover:scale-110 transition-transform duration-150 ease-in-out"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</div>

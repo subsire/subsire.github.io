@@ -1,0 +1,8 @@
+---
+const { response, imgName } = Astro.props;
+---
+
+<p class="bg-neutral-200 rounded-xl text-black/90 px-2 py-1 shadow-md">
+  {response}
+  {imgName ? <span class="font-mono text-black/70 text-sm bg-black/5">{imgName}</span> : ""}
+</p>

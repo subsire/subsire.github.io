@@ -7,96 +7,32 @@ import frontendSrc from "../images/frontendisti-calabresi.png";
 import ludopatiaSrc from "../images/ludopatia.png";
 import propSrc from "../images/tigre-prop.jpg";
 import tabtabSrc from "../images/tab-tab-tab-sahur.png";
+import Response from "../components/Response.astro";
+import ResponseWithImage from "../components/ResponseWithImage.astro";
 ---
 
 <div class="sticky bottom-8 z-30">
   <div class="mx-auto max-w-xl px-4 py-3 flex flex-col gap-2 items-center justify-center">
-    <p id="query" class="hidden bg-secondary rounded-xl text-black/80 px-2 pt-1 pb-2 w-fit ml-auto"></p>
+    <p id="query" class="hidden bg-secondary rounded-xl text-black/80 px-2 pt-1 pb-2 w-fit ml-auto shadow-md"></p>
     <div id="response-ko" class="hidden w-full overflow-hidden">
-      <p class="bg-neutral-200 rounded-xl text-black/90 px-2 py-1">
-        Non ho informazioni nel sistema per rispondere alla tua domanda.
-      </p>
+      <Response response="Non ho informazioni nel sistema per rispondere alla tua domanda." />
     </div>
     <div id="response-calabria" class="hidden">
-      <div class="flex flex-col gap-2">
-        <p class="bg-neutral-200 rounded-xl text-black/90 px-2 py-1">
-          Ecco <span class="font-mono text-black/70 text-sm bg-black/5">frontendisti-calabresi.png</span>
-        </p>
-        <div class="rounded-xl w-10/12 overflow-hidden">
-          <Image
-            src={frontendSrc}
-            alt="Frontendisti calabresi"
-            title="Frontendisti calabresi"
-            width={1536}
-            height={1024}
-            class="h-auto w-full hover:scale-110 transition-transform duration-150 ease-in-out"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </div>
+      <ResponseWithImage name="frontendisti-calabresi.png" src={frontendSrc} width={1536} height={1024} />
     </div>
     <div id="response-ludopatia" class="hidden">
-      <div class="flex flex-col gap-2">
-        <p class="bg-neutral-200 rounded-xl text-black/90 px-2 py-1">
-          Ecco <span class="font-mono text-black/70 text-sm bg-black/5">ludopatia.png</span>
-        </p>
-        <div class="rounded-xl w-10/12 overflow-hidden">
-          <Image
-            src={ludopatiaSrc}
-            alt="ludopatia.png"
-            title="ludopatia.png"
-            width={1024}
-            height={1024}
-            class="h-auto w-full hover:scale-110 transition-transform duration-150 ease-in-out"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </div>
+      <ResponseWithImage name="ludopatia.png" src={ludopatiaSrc} width={1024} height={1024} />
     </div>
     <div id="response-tab-tab" class="hidden">
-      <div class="flex flex-col gap-2">
-        <p class="bg-neutral-200 rounded-xl text-black/90 px-2 py-1">
-          Ecco <span class="font-mono text-black/70 text-sm bg-black/5">tab-tab-tab-sahur.png</span>
-        </p>
-        <div class="rounded-xl w-10/12 overflow-hidden">
-          <Image
-            src={tabtabSrc}
-            alt="tab-tab-tab-sahur.png"
-            title="tab-tab-tab-sahur.png"
-            width={500}
-            height={500}
-            class="h-auto w-full hover:scale-110 transition-transform duration-150 ease-in-out"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </div>
+      <ResponseWithImage name="tab-tab-tab-sahur.png" src={tabtabSrc} width={500} height={500} />
     </div>
     <div id="response-prop" class="hidden">
-      <div class="flex flex-col gap-2">
-        <p class="bg-neutral-200 rounded-xl text-black/90 px-2 py-1">
-          Ecco <span class="font-mono text-black/70 text-sm bg-black/5">tigre-prop.jpg</span>
-        </p>
-        <div class="rounded-xl w-10/12 overflow-hidden">
-          <Image
-            src={propSrc}
-            alt="tigre-prop.jpg"
-            title="tigre-prop.jpg"
-            width={1500}
-            height={376}
-            class="h-auto w-full hover:scale-110 transition-transform duration-150 ease-in-out"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </div>
+      <ResponseWithImage name="tigre-prop.jpg" src={propSrc} width={1500} height={376} />
     </div>
   </div>
 
   <div class="mx-auto max-w-xl px-4 py-3 flex items-center justify-center">
-    <div class="bg-white relative rounded-3xl w-full overflow-hidden">
+    <div class="bg-white relative rounded-3xl w-full overflow-hidden shadow-md">
       <input
         id="magentia"
         class="shadow appearance-none w-full py-3 px-4 text-black/90 leading-tight focus:outline-none focus:shadow-outline"
@@ -123,110 +59,110 @@ import tabtabSrc from "../images/tab-tab-tab-sahur.png";
       </div>
     </div>
   </div>
-</div>
 
-<script>
-  const input = document.getElementById("magentia") as HTMLInputElement;
-  const button = document.getElementById("submit") as HTMLButtonElement;
-  const loader = document.getElementById("loader") as HTMLDivElement;
-  const queryBox = document.getElementById("query") as HTMLDivElement;
-  const responseKo = document.getElementById("response-ko") as HTMLDivElement;
-  const responseCalabria = document.getElementById("response-calabria") as HTMLDivElement;
-  const responseLudopatia = document.getElementById("response-ludopatia") as HTMLDivElement;
-  const responseTabTab = document.getElementById("response-tab-tab") as HTMLDivElement;
-  const responseProp = document.getElementById("response-prop") as HTMLDivElement;
-  const closeButton = document.getElementById("close-button") as HTMLButtonElement;
+  <script>
+    const input = document.getElementById("magentia") as HTMLInputElement;
+    const button = document.getElementById("submit") as HTMLButtonElement;
+    const loader = document.getElementById("loader") as HTMLDivElement;
+    const queryBox = document.getElementById("query") as HTMLDivElement;
+    const responseKo = document.getElementById("response-ko") as HTMLDivElement;
+    const responseCalabria = document.getElementById("response-calabria") as HTMLDivElement;
+    const responseLudopatia = document.getElementById("response-ludopatia") as HTMLDivElement;
+    const responseTabTab = document.getElementById("response-tab-tab") as HTMLDivElement;
+    const responseProp = document.getElementById("response-prop") as HTMLDivElement;
+    const closeButton = document.getElementById("close-button") as HTMLButtonElement;
 
-  input.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        submitQuery(input.value);
+      }
+      if (event.key === "Escape") {
+        closeChat();
+      }
+    });
+    button.addEventListener("click", () => {
       submitQuery(input.value);
-    }
-    if (event.key === "Escape") {
+    });
+    closeButton.addEventListener("click", () => {
       closeChat();
-    }
-  });
-  button.addEventListener("click", () => {
-    submitQuery(input.value);
-  });
-  closeButton.addEventListener("click", () => {
-    closeChat();
-  });
+    });
 
-  function magentiaThinkAboutThePNGs(query: string) {
-    const tokens = query.toLocaleLowerCase().split(" ");
-    if (
-      tokens.includes("calabria") ||
-      tokens.includes("calabresi") ||
-      tokens.includes("calabrese") ||
-      tokens.includes("fiore") ||
-      tokens.includes("fiorenzo")
-    ) {
-      return "calabria";
-    }
+    function magentiaThinkAboutThePNGs(query: string) {
+      const tokens = query.toLocaleLowerCase().split(" ");
+      if (
+        tokens.includes("calabria") ||
+        tokens.includes("calabresi") ||
+        tokens.includes("calabrese") ||
+        tokens.includes("fiore") ||
+        tokens.includes("fiorenzo")
+      ) {
+        return "calabria";
+      }
 
-    if (tokens.includes("visura")) {
-      return "ludopatia";
-    }
+      if (tokens.includes("visura")) {
+        return "ludopatia";
+      }
 
-    if (tokens.includes("tab") || tokens.includes("tabs")) {
-      return "tab";
-    }
+      if (tokens.includes("tab") || tokens.includes("tabs")) {
+        return "tab";
+      }
 
-    if (tokens.includes("prop") || tokens.includes("props")) {
-      return "prop";
+      if (tokens.includes("prop") || tokens.includes("props")) {
+        return "prop";
+      }
+
+      return null;
     }
 
-    return null;
-  }
+    function submitQuery(query: string) {
+      if (query.trim().length > 0) {
+        queryBox.textContent = query;
+        loader.classList.remove("hidden");
+        responseKo.classList.add("hidden");
+        responseCalabria.classList.add("hidden");
+        responseLudopatia.classList.add("hidden");
+        responseProp.classList.add("hidden");
+        responseTabTab.classList.add("hidden");
+        queryBox.classList.remove("hidden");
+        input.value = "";
 
-  function submitQuery(query: string) {
-    if (query.trim().length > 0) {
-      queryBox.textContent = query;
-      loader.classList.remove("hidden");
+        setTimeout(
+          () => {
+            loader.classList.add("hidden");
+            closeButton.classList.remove("hidden");
+            const result = magentiaThinkAboutThePNGs(query);
+
+            switch (result) {
+              case "calabria":
+                responseCalabria.classList.remove("hidden");
+                break;
+              case "ludopatia":
+                responseLudopatia.classList.remove("hidden");
+                break;
+              case "prop":
+                responseProp.classList.remove("hidden");
+                break;
+              case "tab":
+                responseTabTab.classList.remove("hidden");
+                break;
+              default:
+                responseKo.classList.remove("hidden");
+                break;
+            }
+          },
+          1000 + Math.random() * 1000
+        );
+      }
+    }
+
+    function closeChat() {
       responseKo.classList.add("hidden");
       responseCalabria.classList.add("hidden");
       responseLudopatia.classList.add("hidden");
       responseProp.classList.add("hidden");
       responseTabTab.classList.add("hidden");
-      queryBox.classList.remove("hidden");
-      input.value = "";
-
-      setTimeout(
-        () => {
-          loader.classList.add("hidden");
-          closeButton.classList.remove("hidden");
-          const result = magentiaThinkAboutThePNGs(query);
-
-          switch (result) {
-            case "calabria":
-              responseCalabria.classList.remove("hidden");
-              break;
-            case "ludopatia":
-              responseLudopatia.classList.remove("hidden");
-              break;
-            case "prop":
-              responseProp.classList.remove("hidden");
-              break;
-            case "tab":
-              responseTabTab.classList.remove("hidden");
-              break;
-            default:
-              responseKo.classList.remove("hidden");
-              break;
-          }
-        },
-        1000 + Math.random() * 1000
-      );
+      queryBox.classList.add("hidden");
+      closeButton.classList.add("hidden");
     }
-  }
-
-  function closeChat() {
-    responseKo.classList.add("hidden");
-    responseCalabria.classList.add("hidden");
-    responseLudopatia.classList.add("hidden");
-    responseProp.classList.add("hidden");
-    responseTabTab.classList.add("hidden");
-    queryBox.classList.add("hidden");
-    closeButton.classList.add("hidden");
-  }
-</script>
+  </script>
+</div>
