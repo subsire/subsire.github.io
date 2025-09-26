@@ -1,6 +1,9 @@
 ---
 import playlist from "../data/playlist.json";
 
+const tidal = "https://tidal.com/playlist/4978e9b3-99c6-4235-9998-6e944dd4efbd";
+const spotify = "https://open.spotify.com/playlist/2Rr5se0PQw3XtWTJynYGgs?si=5562851554a44841";
+
 const songs = playlist.songs;
 ---
 
@@ -9,7 +12,9 @@ const songs = playlist.songs;
     <div class="mx-auto max-w-6xl px-4 text-black">
       <header class="text-center mb-10 flex flex-col gap-6">
         <h1 class="text-mang text-3xl md:text-4xl uppercase font-extrabold tracking-wider text-shadow-md">
-          La playlist
+          La playlist<sup
+            ><a href="#playlist" class="text-primary font-semibold no-underline text-primary-hover"> * </a></sup
+          >
         </h1>
         <p class="text-lg text-black/80 whitespace-pre-wrap">{playlist.intro}</p>
         <hr class="w-[240px] mx-auto border-b-4 border-mang shadow-md" />
@@ -42,6 +47,13 @@ const songs = playlist.songs;
             </article>
           ))
         }
+        <p id="playlist" class="text-xs text-black/60 text-center">
+          <a href={tidal} target="_blank" class="underline decoration-dotted hover:no-underline">Tidal</a> | <a
+            href={spotify}
+            target="_blank"
+            class="underline decoration-dotted hover:no-underline">Spotify</a
+          >
+        </p>
       </div>
     </div>
   </section>
