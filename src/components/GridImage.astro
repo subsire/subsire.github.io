@@ -4,15 +4,42 @@ import { Image } from "astro:assets";
 const { src, width, height, title } = Astro.props;
 ---
 
-<div class="border-2 border-mang overflow-hidden">
-  <Image
-    src={src}
-    alt={title}
-    title={title}
-    width={width}
-    height={height}
-    class="h-auto w-full hover:scale-110 transition-transform duration-150 ease-in-out"
-    loading="lazy"
-    decoding="async"
-  />
-</div>
+<astro-image>
+  <div class="border-2 border-mang overflow-hidden cursor-pointer">
+    <Image
+      src={src}
+      alt={title}
+      title={title}
+      width={width}
+      height={height}
+      class="h-auto w-full hover:scale-110 transition-transform duration-150 ease-in-out"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</astro-image>
+
+<script>
+  class AstroImage extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.addEventListener("click", this.openImage);
+    }
+
+    disconnectedCallback() {
+      this.removeEventListener("click", this.openImage);
+    }
+
+    openImage() {
+      const imageSrc = this.querySelector("img")?.src;
+      if (imageSrc) {
+        window.open(imageSrc, "_blank");
+      }
+    }
+  }
+
+  customElements.define("astro-image", AstroImage);
+</script>
