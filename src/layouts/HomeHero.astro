@@ -3,78 +3,80 @@ import Button from "../components/Button.astro";
 import Currency from "../components/Currency.astro";
 ---
 
-<section class="relative">
-  <div class="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
-    <div>
-      <h1 class="mt-5 text-4xl md:text-5xl leading-[1.1] tracking-wider">
-        Campagna straordinaria per il <span class="text-primary">Futuro di Luca</span>
-      </h1>
-      <p class="mt-4 text-lg text-white/90">
-        Sostieni la fuga del nostro compagno (✊) verso Losanna: con il tuo contributo potrai garantire una birra, una
-        patch commemorativa e – se gli astri allineano i cron job – anche un biglietto del treno.
-      </p>
-      <div class="mt-6 flex flex-wrap items-center gap-3">
-        <Button href="#merch" fw="semibold">Compra il merch</Button>
-        <Button href="#donate" fw="semibold" primary>Dona ora</Button>
-        <div class="flex items-center gap-2 text-sm">
-          <span class="text-base">🍉</span>
-          <span><span id="happy-donors">42</span> donatori soddisfatti</span>
-        </div>
-      </div>
-    </div>
-    <div class="bg-white backdrop-blur rounded-xl p-6 md:p-8 shadow text-black" id="progressCard">
-      <div class="flex items-center justify-between">
-        <div>
-          <p class="text-sm text-zinc-600">Fondi raccolti</p>
-          <p class="font-extrabold">
-            <Currency id="raised" value={1337} currency="EUR" size="3xl" />
-          </p>
-        </div>
-        <div class="text-right">
-          <p class="text-sm text-zinc-600">Obiettivo</p>
-          <p class="font-extrabold">
-            <Currency id="goal" value={4096} currency="CHF" size="3xl" />
-          </p>
-        </div>
-      </div>
-      <div class="mt-4">
-        <div class="h-4 w-full rounded-full bg-zinc-200 overflow-hidden" aria-hidden="true">
-          <div
-            id="bar"
-            class="h-full rounded-full bg-gradient-to-r to-rose-500 via-white-600 from-emerald-700"
-            style="width: 33%"
-          >
+<div class="pt-3">
+  <section class="relative bg-mang bg-[url(/images/bg-hero.webp)] bg-contain bg-center">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="mt-5 text-4xl md:text-5xl leading-[1.1] tracking-wider">
+          Campagna straordinaria per il <span class="text-primary">Futuro di Luca</span>
+        </h1>
+        <p class="mt-4 text-lg text-white/90">
+          Sostieni la fuga del nostro compagno (✊) verso Losanna: con il tuo contributo potrai garantire una birra, una
+          patch commemorativa e – se gli astri allineano i cron job – anche un biglietto del treno.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <Button href="#merch" fw="semibold">Compra il merch</Button>
+          <Button href="#donate" fw="semibold" primary>Dona ora</Button>
+          <div class="flex items-center gap-2 text-sm">
+            <span class="text-base">🍉</span>
+            <span><span id="happy-donors">42</span> donatori soddisfatti</span>
           </div>
         </div>
-        <div class="mt-2 flex items-center justify-between text-xs text-zinc-600">
-          <span id="percent">33%</span>
-          <span><span id="donors">42</span> donatori</span>
-        </div>
       </div>
-      <ul class="mt-5 space-y-2 text-sm">
-        <li class="flex items-center gap-2">
-          <span class="inline-grid place-items-center size-5 rounded-full bg-primary text-black">✔</span> Stand-up da seduti:
-          raggiunta
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="inline-grid place-items-center size-5 rounded-full bg-primary text-black">✔</span> Documentazione
-          aggiornata: in lavorazione (da quasi 5 anni)
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="inline-grid place-items-center size-5 rounded-full bg-primary text-black">✔</span>
-          <span
-            >Festa d'addio: al <a
-              href="https://www.instagram.com/turnebar/?hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="underline decoration-dotted hover:no-underline">Turné</a
-            ></span
-          >
-        </li>
-      </ul>
+      <div class="bg-white backdrop-blur rounded-xl p-6 md:p-8 shadow text-black" id="progressCard">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm text-zinc-600">Fondi raccolti</p>
+            <p class="font-extrabold">
+              <Currency id="raised" value={1337} currency="EUR" size="3xl" />
+            </p>
+          </div>
+          <div class="text-right">
+            <p class="text-sm text-zinc-600">Obiettivo</p>
+            <p class="font-extrabold">
+              <Currency id="goal" value={4096} currency="CHF" size="3xl" />
+            </p>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="h-4 w-full rounded-full bg-zinc-200 overflow-hidden" aria-hidden="true">
+            <div
+              id="bar"
+              class="h-full rounded-full bg-gradient-to-r to-rose-500 via-white-600 from-emerald-700"
+              style="width: 33%"
+            >
+            </div>
+          </div>
+          <div class="mt-2 flex items-center justify-between text-xs text-zinc-600">
+            <span id="percent">33%</span>
+            <span><span id="donors">42</span> donatori</span>
+          </div>
+        </div>
+        <ul class="mt-5 space-y-2 text-sm">
+          <li class="flex items-center gap-2">
+            <span class="inline-grid place-items-center size-5 rounded-full bg-primary text-black">✔</span> Stand-up da
+            seduti: raggiunta
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="inline-grid place-items-center size-5 rounded-full bg-primary text-black">✔</span> Documentazione
+            aggiornata: in lavorazione (da quasi 5 anni)
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="inline-grid place-items-center size-5 rounded-full bg-primary text-black">✔</span>
+            <span
+              >Festa d'addio: al <a
+                href="https://www.instagram.com/turnebar/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline decoration-dotted hover:no-underline">Turné</a
+              ></span
+            >
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
 <script>
   // Initial config
