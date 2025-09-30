@@ -1,14 +1,14 @@
 ---
-import { Image } from "astro:assets";
 import CloseSvg from "../components/CloseSvg.astro";
 import SubmitSvg from "../components/SubmitSvg.astro";
 
+import Response from "../components/Response.astro";
+import ResponseWithImage from "../components/ResponseWithImage.astro";
 import frontendSrc from "../images/frontendisti-calabresi.png";
 import ludopatiaSrc from "../images/ludopatia.png";
 import propSrc from "../images/tigre-prop.jpg";
 import tabtabSrc from "../images/tab-tab-tab-sahur.png";
-import Response from "../components/Response.astro";
-import ResponseWithImage from "../components/ResponseWithImage.astro";
+import fluidanceSrc from "../images/FLUIDANCE.png";
 ---
 
 <div class="sticky bottom-8 z-30">
@@ -28,6 +28,9 @@ import ResponseWithImage from "../components/ResponseWithImage.astro";
     </div>
     <div id="response-prop" class="hidden">
       <ResponseWithImage name="tigre-prop.jpg" src={propSrc} width={1500} height={376} />
+    </div>
+    <div id="response-fluidance" class="hidden">
+      <ResponseWithImage name="FLUIDANCE.png" src={fluidanceSrc} width={2984} height={1808} />
     </div>
   </div>
 
@@ -70,6 +73,7 @@ import ResponseWithImage from "../components/ResponseWithImage.astro";
     const responseLudopatia = document.getElementById("response-ludopatia") as HTMLDivElement;
     const responseTabTab = document.getElementById("response-tab-tab") as HTMLDivElement;
     const responseProp = document.getElementById("response-prop") as HTMLDivElement;
+    const responseFluidance = document.getElementById("response-fluidance") as HTMLDivElement;
     const closeButton = document.getElementById("close-button") as HTMLButtonElement;
 
     input.addEventListener("keydown", (event) => {
@@ -111,6 +115,10 @@ import ResponseWithImage from "../components/ResponseWithImage.astro";
         return "prop";
       }
 
+      if (tokens.includes("fluidance") || tokens.includes("fluidanza")) {
+        return "fluidance";
+      }
+
       return null;
     }
 
@@ -123,6 +131,7 @@ import ResponseWithImage from "../components/ResponseWithImage.astro";
         responseLudopatia.classList.add("hidden");
         responseProp.classList.add("hidden");
         responseTabTab.classList.add("hidden");
+        responseFluidance.classList.add("hidden");
         queryBox.classList.remove("hidden");
         input.value = "";
 
@@ -145,6 +154,9 @@ import ResponseWithImage from "../components/ResponseWithImage.astro";
               case "tab":
                 responseTabTab.classList.remove("hidden");
                 break;
+              case "fluidance":
+                responseFluidance.classList.remove("hidden");
+                break;
               default:
                 responseKo.classList.remove("hidden");
                 break;
@@ -162,6 +174,7 @@ import ResponseWithImage from "../components/ResponseWithImage.astro";
       responseProp.classList.add("hidden");
       responseTabTab.classList.add("hidden");
       queryBox.classList.add("hidden");
+      responseFluidance.classList.add("hidden");
       closeButton.classList.add("hidden");
     }
   </script>
