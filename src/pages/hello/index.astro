@@ -1,0 +1,209 @@
+---
+import { getEntry, render } from "astro:content";
+import "../../styles/theme.css";
+import { sections, sectionOrder } from "../../sections";
+
+const hello = await getEntry("pages", "hello");
+if (!hello) {
+  throw new Error("Missing src/content/pages/hello.md");
+}
+const frontmatter = hello.data;
+const { Content } = await render(hello);
+
+const fullTitle = `${frontmatter.title} — Hello`;
+---
+
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <link rel="icon" href="/favicon.png" type="image/x-icon" sizes="90x90" />
+    <meta name="description" content={frontmatter.subtitle} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={frontmatter.subtitle} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={frontmatter.subtitle} />
+  </head>
+  <body class="min-h-screen bg-white text-neutral-900 font-display antialiased relative overflow-x-hidden">
+
+    <div class="blob-wrap" aria-hidden="true">
+      <svg
+        class="blob"
+        viewBox="0 0 600 600"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <defs>
+          <linearGradient id="blobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#171717" />
+            <stop offset="50%" stop-color="#b45309" />
+            <stop offset="100%" stop-color="#15803d" />
+          </linearGradient>
+        </defs>
+        <path
+          fill="url(#blobGradient)"
+          d="M421.4,329.5Q401,409,328.5,432.5Q256,456,189,418.5Q122,381,98.5,310Q75,239,118,176Q161,113,232.5,90Q304,67,366.5,108.5Q429,150,438.5,225Q448,300,421.4,329.5Z"
+        />
+      </svg>
+    </div>
+
+    <header class="relative z-10 border-b border-neutral-200/60 backdrop-blur-sm bg-white/70">
+      <div class="mx-auto max-w-5xl px-6 py-5 flex flex-wrap items-center justify-between gap-4">
+        <a href="/hello/" class="font-serif text-lg tracking-tight text-neutral-900">
+          {frontmatter.title}
+        </a>
+        <nav class="flex items-center gap-5 text-sm">
+          {
+            sectionOrder.map((id) => (
+              <a
+                href={`/${id}/`}
+                class="text-neutral-500 hover:text-neutral-900 transition-colors"
+              >
+                {sections[id].label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+
+    <main class="relative z-10">
+
+      <section class="mx-auto max-w-5xl px-6 pt-24 pb-16">
+        <h1 class="font-serif text-6xl md:text-8xl font-medium tracking-tight text-neutral-900 leading-[0.95]">
+          {frontmatter.title}
+        </h1>
+        <p class="mt-6 max-w-2xl text-xl md:text-2xl text-neutral-600">
+          {frontmatter.subtitle}
+        </p>
+      </section>
+
+      <section class="mx-auto max-w-3xl px-6 pb-24">
+        <div class="prose-hello font-serif text-lg md:text-xl leading-relaxed text-neutral-700">
+          <Content />
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-5xl px-6 pb-24">
+        <div class="grid gap-6 md:grid-cols-3">
+          {
+            sectionOrder.map((id) => {
+              const s = sections[id];
+              const copy = frontmatter.sections[id];
+              return (
+                <a
+                  href={`/${id}/`}
+                  class="group relative block rounded-lg border border-neutral-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-lg"
+                  style={`--accent: ${s.accent}; --accent-soft: ${s.accentSoft};`}
+                >
+                  <span
+                    class="absolute left-0 top-0 h-1 w-full rounded-t-lg"
+                    style="background-color: var(--accent);"
+                  />
+                  <span
+                    class="text-xs uppercase tracking-wider"
+                    style="color: var(--accent);"
+                  >
+                    {s.label}
+                  </span>
+                  <h2 class="mt-3 font-serif text-2xl font-medium text-neutral-900">
+                    {copy.heading}
+                  </h2>
+                  <p class="mt-3 text-base text-neutral-600 leading-relaxed">
+                    {copy.blurb}
+                  </p>
+                  <span
+                    class="mt-6 inline-flex items-center gap-1 text-sm font-medium transition-transform group-hover:translate-x-1"
+                    style="color: var(--accent);"
+                  >
+                    {copy.cta}
+                    <span aria-hidden="true">→</span>
+                  </span>
+                </a>
+              );
+            })
+          }
+        </div>
+      </section>
+
+      {
+        frontmatter.outro && (
+          <section class="mx-auto max-w-3xl px-6 pb-32">
+            <p class="text-sm text-neutral-400 italic">{frontmatter.outro}</p>
+          </section>
+        )
+      }
+    </main>
+
+    <footer class="relative z-10 border-t border-neutral-200/60 bg-white/70 backdrop-blur-sm">
+      <div class="mx-auto max-w-5xl px-6 py-8 text-xs text-neutral-500">
+        © 2026 subsire
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .blob-wrap {
+    position: fixed;
+    top: -10%;
+    right: -15%;
+    width: 80vw;
+    height: 80vw;
+    max-width: 900px;
+    max-height: 900px;
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(40px);
+    opacity: 0.45;
+  }
+  .blob {
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 50%;
+    animation: blob-dance linear both;
+    animation-timeline: scroll(root);
+  }
+  @keyframes blob-dance {
+    0% {
+      transform: rotate(0deg) scale(1) translate(0%, 0%);
+      filter: hue-rotate(0deg);
+    }
+    50% {
+      transform: rotate(120deg) scale(1.25) translate(-15%, 10%);
+      filter: hue-rotate(60deg);
+    }
+    100% {
+      transform: rotate(240deg) scale(0.9) translate(10%, -10%);
+      filter: hue-rotate(-40deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .blob {
+      animation: none;
+    }
+  }
+</style>
+
+<style is:global>
+  .prose-hello p {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .prose-hello p:first-child {
+    margin-top: 0;
+  }
+  .prose-hello a {
+    color: #171717;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .prose-hello strong {
+    font-weight: 600;
+    color: #171717;
+  }
+</style>

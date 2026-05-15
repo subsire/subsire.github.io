@@ -25,8 +25,29 @@ const wiki = defineCollection({
   schema: articleSchema,
 });
 
+const sectionCopySchema = z.object({
+  heading: z.string(),
+  blurb: z.string(),
+  cta: z.string(),
+});
+
+const pages = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string(),
+    sections: z.object({
+      research: sectionCopySchema,
+      "dev-diary": sectionCopySchema,
+      wiki: sectionCopySchema,
+    }),
+    outro: z.string().optional(),
+  }),
+});
+
 export const collections = {
   research,
   "dev-diary": devDiary,
   wiki,
+  pages,
 };
