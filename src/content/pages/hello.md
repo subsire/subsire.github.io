@@ -1,5 +1,5 @@
 ---
-title: "subsire"
+title: "Mangrovia"
 subtitle: "Tre raccolte. Un sito."
 sections:
   research:

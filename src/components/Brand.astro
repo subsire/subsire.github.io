@@ -1,0 +1,58 @@
+---
+---
+
+<a href="/hello/" class="brand-link" aria-label="hello MANGROVIA">
+  <span class="brand-prefix">hello </span><span class="brand-m">M</span><span class="brand-rest">ANGROVIA</span>
+</a>
+
+<style>
+  .brand-link {
+    display: inline-block;
+    font-family: var(--font-mangrovia);
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #171717;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .brand-link:hover {
+    color: #525252;
+  }
+  .brand-prefix {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.7em;
+    margin-right: 0.2em;
+    vertical-align: 0.1em;
+    color: #525252;
+  }
+  .brand-prefix,
+  .brand-rest {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 14ch;
+    white-space: nowrap;
+    vertical-align: baseline;
+    animation: brand-shrink linear both;
+    animation-timeline: scroll(root);
+    animation-range: 20px 140px;
+  }
+  @keyframes brand-shrink {
+    to {
+      max-width: 0;
+      opacity: 0;
+      margin-right: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .brand-prefix,
+    .brand-rest {
+      animation: none;
+    }
+  }
+</style>
