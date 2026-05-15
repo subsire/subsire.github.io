@@ -1,7 +1,16 @@
 ---
+interface Props {
+  animated?: boolean;
+}
+
+const { animated = true } = Astro.props;
 ---
 
-<a href="/hello/" class="brand-link" aria-label="hello MANGROVIA">
+<a
+  href="/hello/"
+  class:list={["brand-link", { "is-animated": animated }]}
+  aria-label="hello MANGROVIA"
+>
   <span class="brand-prefix">hello </span><span class="brand-m">M</span><span class="brand-rest">ANGROVIA</span>
 </a>
 
@@ -11,14 +20,14 @@
     font-family: var(--font-mangrovia);
     font-size: 1.5rem;
     line-height: 1;
-    color: #171717;
+    color: inherit;
     text-decoration: none;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     white-space: nowrap;
   }
   .brand-link:hover {
-    color: #525252;
+    opacity: 0.7;
   }
   .brand-prefix {
     font-family: var(--font-serif);
@@ -29,10 +38,10 @@
     font-size: 0.7em;
     margin-right: 0.2em;
     vertical-align: 0.1em;
-    color: #525252;
+    opacity: 0.7;
   }
-  .brand-prefix,
-  .brand-rest {
+  .brand-link.is-animated .brand-prefix,
+  .brand-link.is-animated .brand-rest {
     display: inline-block;
     max-width: 14ch;
     white-space: nowrap;
@@ -49,8 +58,8 @@
     }
   }
   @media (prefers-reduced-motion: reduce) {
-    .brand-prefix,
-    .brand-rest {
+    .brand-link.is-animated .brand-prefix,
+    .brand-link.is-animated .brand-rest {
       animation: none;
     }
   }
