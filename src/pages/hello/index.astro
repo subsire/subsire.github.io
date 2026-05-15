@@ -2,6 +2,7 @@
 import { getEntry, render } from "astro:content";
 import "../../styles/theme.css";
 import Brand from "../../components/Brand.astro";
+import Footer from "../../components/Footer.astro";
 import { sections, sectionOrder } from "../../sections";
 
 const hello = await getEntry("pages", "hello");
@@ -153,13 +154,7 @@ const fullTitle = `${frontmatter.title} — Hello`;
             }
         </main>
 
-        <footer
-            class="relative z-10 border-t border-neutral-200/60 bg-black backdrop-blur-sm"
-        >
-            <div class="mx-auto max-w-5xl px-6 py-8 text-xs text-neutral-300">
-                © 2026 subsire
-            </div>
-        </footer>
+        <Footer />
     </body>
 </html>
 
