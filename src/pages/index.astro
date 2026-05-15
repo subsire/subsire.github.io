@@ -5,22 +5,32 @@ import Layout from "../layouts/Layout.astro";
 import TiersSection from "../layouts/TiersSection.astro";
 import TestimonialSection from "../layouts/TestimonialSection.astro";
 import FaqSection from "../layouts/FaqSection.astro";
-import Brand from "../components/Brand.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout
-  title="Luca Farewell Fund"
-  description="Sostieni la Migrazione Assistita"
-  link="https://freedomflotilla.info/sostieni-freedom-flotilla-italia/"
+    title="Luca Farewell Fund"
+    description="Sostieni la Migrazione Assistita"
+    link="https://freedomflotilla.info/sostieni-freedom-flotilla-italia/"
 >
-  <Fragment slot="nav">
-    <Brand animated={false} />
-  </Fragment>
-  <HomeHero />
-  <MerchSection />
-  <TiersSection link="https://freedomflotilla.info/sostieni-freedom-flotilla-italia/" />
-  <div class="bg-mang bg-[url(/images/bg-hero-tiled.webp)] bg-center bg-fixed">
-    <TestimonialSection />
-    <FaqSection />
-  </div>
+    <Fragment slot="nav">
+        <Button href="/spotify" fw="bold" size="sm"
+            >🎹<span class="hidden sm:inline">&nbsp;&nbsp;La playlist</span
+            ></Button
+        >
+        <Button href="/" fw="bold" size="sm" primary
+            >Dona<span class="hidden sm:inline"> ora</span></Button
+        >
+    </Fragment>
+    <HomeHero />
+    <MerchSection />
+    <TiersSection
+        link="https://freedomflotilla.info/sostieni-freedom-flotilla-italia/"
+    />
+    <div
+        class="bg-mang bg-[url(/images/bg-hero-tiled.webp)] bg-center bg-fixed"
+    >
+        <TestimonialSection />
+        <FaqSection />
+    </div>
 </Layout>
