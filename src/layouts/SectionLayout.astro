@@ -1,0 +1,80 @@
+---
+import "../styles/theme.css";
+import { sectionList, type SectionConfig } from "../sections";
+
+interface Props {
+  section: SectionConfig;
+  pageTitle?: string;
+  description?: string;
+}
+
+const { section, pageTitle, description } = Astro.props;
+
+const computedDescription = description ?? section.subtitle;
+const fullTitle =
+  pageTitle && pageTitle !== section.title
+    ? `${pageTitle} — ${section.label} — subsire`
+    : `${section.label} — subsire`;
+---
+
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <link rel="icon" href="/favicon.png" type="image/x-icon" sizes="90x90" />
+    <meta name="description" content={computedDescription} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={computedDescription} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={computedDescription} />
+  </head>
+  <body
+    class="min-h-screen bg-white text-neutral-900 font-display antialiased"
+    style={`--accent: ${section.accent}; --accent-soft: ${section.accentSoft};`}
+  >
+    <header class="border-b border-neutral-200">
+      <div class="mx-auto max-w-5xl px-6 py-5 flex flex-wrap items-center justify-between gap-4">
+        <a
+          href={`/${section.id}/`}
+          class="flex items-center gap-2 font-serif text-lg tracking-tight text-neutral-900 hover:text-neutral-600 transition-colors"
+        >
+          <span
+            class="inline-block h-2.5 w-2.5 rounded-full"
+            style="background-color: var(--accent);"
+            aria-hidden="true"
+          ></span>
+          {section.label}
+        </a>
+        <nav class="flex items-center gap-5 text-sm">
+          {
+            sectionList.map((s) => (
+              <a
+                href={`/${s.id}/`}
+                class:list={[
+                  "transition-colors",
+                  s.id === section.id
+                    ? "text-neutral-900 font-medium"
+                    : "text-neutral-500 hover:text-neutral-900",
+                ]}
+              >
+                {s.label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="border-t border-neutral-200 mt-24">
+      <div class="mx-auto max-w-5xl px-6 py-8 text-xs text-neutral-500">
+        © 2026 subsire
+      </div>
+    </footer>
+  </body>
+</html>

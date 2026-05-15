@@ -1,15 +1,39 @@
 ---
 import { getCollection } from "astro:content";
-import ResearchLayout from "../../layouts/ResearchLayout.astro";
+import SectionLayout from "../../layouts/SectionLayout.astro";
+import { sections, sectionOrder, type SectionId } from "../../sections";
 
-const isProd = import.meta.env.PROD;
-const all = await getCollection("research", ({ data }) => (isProd ? !data.draft : true));
+export async function getStaticPaths() {
+  const isProd = import.meta.env.PROD;
 
-const articles = all.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  return Promise.all(
+    sectionOrder.map(async (id) => {
+      const entries = await getCollection(id, ({ data }) =>
+        isProd ? !data.draft : true
+      );
+      const articles = entries.sort(
+        (a, b) => b.data.date.getTime() - a.data.date.getTime()
+      );
+      const categories = Array.from(
+        new Set(articles.flatMap((a) => a.data.categories))
+      ).sort((a, b) => a.localeCompare(b));
 
-const categories = Array.from(
-  new Set(articles.flatMap((a) => a.data.categories))
-).sort((a, b) => a.localeCompare(b));
+      return {
+        params: { section: id },
+        props: { sectionId: id, articles, categories },
+      };
+    })
+  );
+}
+
+type Props = {
+  sectionId: SectionId;
+  articles: Awaited<ReturnType<typeof getCollection>>;
+  categories: string[];
+};
+
+const { sectionId, articles, categories } = Astro.props as Props;
+const section = sections[sectionId];
 
 const dateFmt = new Intl.DateTimeFormat("it-IT", {
   year: "numeric",
@@ -18,14 +42,12 @@ const dateFmt = new Intl.DateTimeFormat("it-IT", {
 });
 ---
 
-<ResearchLayout title="Research" description="Appunti, articoli e ricerche di subsire.">
+<SectionLayout section={section}>
   <section class="mx-auto max-w-5xl px-6 pt-16 pb-12">
     <h1 class="font-serif text-5xl md:text-6xl font-medium tracking-tight text-neutral-900">
-      Research
+      {section.title}
     </h1>
-    <p class="mt-4 max-w-2xl text-lg text-neutral-600">
-      Appunti, articoli e ricerche. Un file markdown per ogni voce.
-    </p>
+    <p class="mt-4 max-w-2xl text-lg text-neutral-600">{section.subtitle}</p>
   </section>
 
   <section class="mx-auto max-w-5xl px-6 pb-6">
@@ -71,14 +93,14 @@ const dateFmt = new Intl.DateTimeFormat("it-IT", {
                 <div class="mt-2 md:mt-0 flex-1">
                   <div class="mb-2 flex flex-wrap gap-2">
                     {a.data.categories.map((c) => (
-                      <span class="text-xs uppercase tracking-wider text-neutral-500">
+                      <span class="text-xs uppercase tracking-wider" style="color: var(--accent);">
                         {c}
                       </span>
                     ))}
                   </div>
                   <h2 class="font-serif text-2xl md:text-3xl font-medium leading-snug text-neutral-900">
                     <a
-                      href={`/research/${a.id}/`}
+                      href={`/${section.id}/${a.id}/`}
                       class="hover:text-neutral-600 transition-colors"
                     >
                       {a.data.title}
@@ -98,13 +120,13 @@ const dateFmt = new Intl.DateTimeFormat("it-IT", {
       )
     }
   </section>
-</ResearchLayout>
+</SectionLayout>
 
 <style>
   .filter-active {
-    background-color: #171717;
+    background-color: var(--accent);
     color: #ffffff;
-    border-color: #171717;
+    border-color: var(--accent);
   }
 </style>
 
