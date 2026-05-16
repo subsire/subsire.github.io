@@ -227,6 +227,7 @@ Controllare sempre:
 - Il contenuto segnala se introduce eventi persistenti?
 - Il report privato segnala correttamente impatto canonico, wiki update e timeline update?
 - Il Markdown pubblicabile è privo di `Related Entries`, `Canon Notes`, `Canon Impact` e altre note private?
+- Il Markdown pubblicabile in italiano usa accenti UTF-8 corretti, senza degradare la prosa a ASCII-only?
 - La destinazione del contenuto è rispettata?
 
 ---

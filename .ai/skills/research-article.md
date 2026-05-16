@@ -19,6 +19,12 @@ Generare un articolo research coerente con il canon Mangrovia, utile per aliment
 
 La skill deve produrre un contenuto pubblicabile in Markdown. Il file pubblicato deve reggere come articolo di ricerca anche per un lettore che non conosce la lore Mangrovia. L'impatto canonico va valutato nel report privato del workflow, non nel file pubblicato.
 
+### Lingua e caratteri
+
+Gli articoli pubblicati in italiano devono usare ortografia italiana naturale in UTF-8, incluse le lettere accentate (`è`, `é`, `à`, `ò`, `ù`, `ì`). Non trasformare parole come `è`, `può`, `già`, `verrà`, `capacità` o `verità` in versioni ASCII.
+
+Mantenere invece ASCII dove serve tecnicamente: slug, file name, branch, path, identificatori di codice, chiavi YAML, comandi, metriche, formule e token letterali.
+
 ---
 
 ## Fonti canoniche da consultare

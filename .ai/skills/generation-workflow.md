@@ -213,6 +213,12 @@ Generare una prima bozza del contenuto.
 
 Ogni bozza pubblicabile deve contenere solo il Markdown destinato al sito. Non includere sezioni tecniche come `Related Entries`, `Canon Notes` o `Canon Impact` nel corpo del file.
 
+### Lingua e caratteri
+
+I contenuti pubblicabili in italiano devono usare ortografia italiana naturale in UTF-8, incluse le lettere accentate (`è`, `é`, `à`, `ò`, `ù`, `ì`). Non sostituire gli accenti con forme ASCII come `e`, `puo`, `gia` o `verra` quando la parola italiana richiede l'accento.
+
+La cautela ASCII si applica solo dove è tecnicamente opportuna: slug, nomi file, identificatori di codice, nomi di branch, variabili, chiavi YAML tecniche, comandi, path e token letterali. Nei valori testuali del frontmatter (`title`, `description`, `categories`, `authors`) e nel corpo Markdown usare testo leggibile e corretto.
+
 Accompagnare invece la bozza con un report privato del workflow:
 
 ```md

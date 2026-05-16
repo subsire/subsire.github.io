@@ -24,6 +24,8 @@ Do not use one generic Mangrovia style for all sections. Pick the section first,
 * `dev-diary`: editorial developer log with context, work performed, evidence, decisions and operational next steps; character dynamics are allowed but not the structural center;
 * `wiki`: concise neutral reference page, understandable to a real external reader.
 
+Generated public Markdown is usually written in Italian. Use normal UTF-8 Italian spelling, including accented letters such as `è`, `é`, `à`, `ò`, `ù` and `ì`. Do not degrade prose to ASCII-only spelling. Keep slugs, file names, code identifiers, environment names and literal technical tokens ASCII when appropriate.
+
 ---
 
 ## Repository structure

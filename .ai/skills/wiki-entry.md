@@ -20,6 +20,12 @@ Generare una pagina wiki coerente con il canon Mangrovia, utile per:
 
 La skill deve produrre Markdown pubblicabile. La pagina pubblicata deve catalogare informazioni, non costruire scene o battute. Stato, note e impatto canonico vanno valutati nel report privato del workflow, non nel file pubblicato.
 
+### Lingua e caratteri
+
+Le pagine pubblicate in italiano devono usare ortografia italiana naturale in UTF-8, incluse le lettere accentate (`è`, `é`, `à`, `ò`, `ù`, `ì`). Non trasformare parole come `è`, `può`, `già`, `verrà`, `capacità` o `verità` in versioni ASCII.
+
+Mantenere invece ASCII dove serve tecnicamente: slug, file name, branch, path, identificatori di codice, chiavi YAML, comandi e token letterali.
+
 ---
 
 ## Fonti canoniche da consultare

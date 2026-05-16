@@ -603,6 +603,7 @@ Non usarlo per dialoghi quotidiani banali. Deve apparire poco e pesare molto.
 - Usare il linguaggio corporate come causa di eventi, non solo come decorazione.
 - Tenere traccia delle conseguenze canoniche.
 - Scrivere in modo asciutto, con ritmo naturale.
+- Usare ortografia italiana naturale in UTF-8 nei contenuti pubblicati, incluse le lettere accentate.
 
 ## Evitare
 
@@ -614,6 +615,7 @@ Non usarlo per dialoghi quotidiani banali. Deve apparire poco e pesare molto.
 - Abusare di The Rock.
 - Trasformare ogni testo in caos.
 - Usare inglese corporate a caso senza funzione.
+- Sostituire gli accenti italiani con forme ASCII nei testi editoriali, salvo dentro slug, codice, path o token tecnici.
 
 ---
 

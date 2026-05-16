@@ -21,6 +21,12 @@ Generare una entry editoriale coerente con il canon Mangrovia, utile per aliment
 
 Il testo deve essere pubblicabile in Markdown. L'impatto canonico va valutato nel report privato del workflow, non nel file pubblicato.
 
+### Lingua e caratteri
+
+Le entry pubblicate in italiano devono usare ortografia italiana naturale in UTF-8, incluse le lettere accentate (`è`, `é`, `à`, `ò`, `ù`, `ì`). Non trasformare parole come `è`, `può`, `già`, `verrà`, `capacità` o `verità` in versioni ASCII.
+
+Mantenere invece ASCII dove serve tecnicamente: slug, file name, branch, path, identificatori di codice, chiavi YAML, comandi e token letterali.
+
 ---
 
 ## Fonti canoniche da consultare
@@ -126,11 +132,15 @@ Anche in questo caso la scena è raccontata in terza persona. Adriano e Andrea p
 
 ---
 
-## Struttura standard
+## Struttura variabile
 
-Default per una entry media in formato product log:
+La struttura in capitoli non è fissa. Ogni dev-diary deve scegliere i heading in base all'episodio, al materiale disponibile e al ritmo operativo della giornata.
+
+Le sezioni ricorrenti sotto sono un toolkit, non un template obbligatorio. Usarle solo quando aiutano davvero a ordinare il contenuto.
 
 Il sito Astro renderizza il titolo e la data dalla frontmatter: non inserire un heading `# Titolo` nel corpo del Markdown pubblicato.
+
+Possibili capitoli:
 
 ```md
 _Date or approximate date, optional_
@@ -154,7 +164,9 @@ Decisione presa o non-decisione esplicita, con motivo.
 Conseguenza concreta: ticket, owner, follow-up, demo, refactor, decisione rimandata, criterio di verifica.
 ```
 
-Per entry brevi si può usare una struttura ridotta:
+Una entry media può usare tutti questi capitoli, solo alcuni, oppure capitoli più specifici come `## Ricognizione`, `## Ticket`, `## Evidenze`, `## Nota di review`, `## Esito della demo`, `## Cosa resta aperto`, `## Decisione provvisoria` o `## Follow-up operativo`.
+
+Per entry brevi o molto focalizzate si può usare una struttura ridotta:
 
 ```md
 ## Summary
@@ -174,6 +186,8 @@ Per entry brevi:
 ```md
 Testo breve in terza persona, orientato a lavoro svolto, evidenze e prossimi passi.
 ```
+
+Non forzare mai una sezione vuota o artificiale solo per rispettare un formato. Se l'episodio è una pausa sigaretta, un incident note, una review, una demo o un thread Slack, la struttura deve riflettere quella forma. Il vincolo stabile non è il nome dei capitoli, ma la presenza di una traiettoria chiara: contesto minimo, cosa è stato osservato o fatto, quali evidenze contano, cosa è stato deciso o rimandato.
 
 Non includere `Related Entries`, `Canon Impact`, canon check notes, suggerimenti wiki o timeline assessment nel Markdown pubblicato. Queste informazioni appartengono al report privato del workflow.
 
@@ -590,7 +604,9 @@ Se ci sono contraddizioni, correggerle prima dell’output.
 
 L’output finale deve essere Markdown valido.
 
-Default:
+Scegliere 2-6 heading di secondo livello (`##`) adatti all'episodio. I capitoli possono cambiare ogni volta: non esiste una sequenza fissa obbligatoria.
+
+Esempio product-log completo:
 
 ```md
 ## Summary
@@ -612,7 +628,7 @@ Default:
 ...
 ```
 
-Per entry breve o con materiali interni:
+Esempio breve o con materiali interni:
 
 ```md
 ## Summary
@@ -627,6 +643,18 @@ Per entry breve o con materiali interni:
 
 ## Outcome
 ...
+```
+
+Altri heading validi, quando più naturali per l'episodio:
+
+```md
+## Ricognizione
+## Evidenze
+## Ticket
+## Nota interna
+## Decisione provvisoria
+## Cosa resta aperto
+## Follow-up operativo
 ```
 
 Non aggiungere `Related Entries`, `Canon Impact` o note private nel Markdown pubblicato.
