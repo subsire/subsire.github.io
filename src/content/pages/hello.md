@@ -1,24 +1,19 @@
 ---
 title: "Mangrovia"
-subtitle: "Tre raccolte. Un sito."
+subtitle: "AI research e prodotti che mettono i devs a rischio."
 sections:
   research:
     heading: "Research"
-    blurb: "Articoli più strutturati. Approfondimenti, pezzi lunghi, ricerche."
+    blurb: "Articoli, report e studi interni. Ipotesi trattate con rigore, anche quando il problema nasce da una metafora dirigenziale o da un design system in escalation."
     cta: "Vai a Research"
   dev-diary:
     heading: "Dev Diary"
-    blurb: "Note di sviluppo a caldo. Decisioni tecniche, errori, cose imparate."
+    blurb: "Giornate di lavoro, incidenti minori, call, ticket e pause sigaretta. Una cronaca operativa di ciò che accade quando la strategia incontra il repository."
     cta: "Vai al Dev Diary"
   wiki:
     heading: "Wiki"
-    blurb: "Voci di riferimento. Definizioni, glossario, come funziona cosa."
+    blurb: "Voci di riferimento su persone, progetti, processi e concetti ricorrenti. Un tentativo di dare ordine a Mangrovia senza fingere che l'ordine sia davvero possibile."
     cta: "Vai al Wiki"
-outro: "Niente di tutto questo è linkato dall'altra home."
 ---
 
-C'è chi scrive saggi, chi tiene un blocco appunti, chi compila vocabolari.
-
-Questo posto tiene tutti e tre in cartelle separate, senza fingere che siano la stessa cosa. Ogni voce è un file markdown, ogni sezione ha il suo colore, ogni colore vuol dire qualcosa di diverso.
-
-Si entra da una porta, ci si muove nelle altre.
+Noi di Mangrovia sviluppiamo ~~Blockchain~~ l'intelligenza artificiale per contribuire al benessere a lungo termine dell'umanità.

@@ -1,10 +1,140 @@
 ---
+const mangroviaLinks = [
+    { href: "/", label: "Home" },
+    { href: "/mangrovia/", label: "Mangrovia" },
+    { href: "/spotify/", label: "La playlist" },
+];
+
+const helloLinks = [
+    { href: "/hello/", label: "Hello" },
+    { href: "/research/", label: "Research" },
+    { href: "/dev-diary/", label: "Dev Diary" },
+    { href: "/wiki/", label: "Wiki" },
+];
+
+const codeLinks = [
+    {
+        href: "https://github.com/subsire/subsire.github.io",
+        label: "GitHub",
+        external: true,
+    },
+];
 ---
 
-<footer
-    class="relative z-10 border-t border-neutral-200/60 bg-black backdrop-blur-sm"
->
-    <div class="mx-auto max-w-5xl px-6 py-8 text-xs text-neutral-300">
-        © 2026 subsire
+<footer class="relative z-10 bg-black text-neutral-300">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+            <div class="col-span-2 md:col-span-1">
+                <a
+                    href="/hello/"
+                    class="footer-mark"
+                    aria-label="hello MANGROVIA"
+                >
+                    M
+                </a>
+            </div>
+
+            <nav aria-label="Mangrovia">
+                <h3 class="footer-col-title">Mangrovia</h3>
+                <ul class="footer-list">
+                    {
+                        mangroviaLinks.map((l) => (
+                            <li>
+                                <a href={l.href} class="footer-link">
+                                    {l.label}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
+
+            <nav aria-label="hello MANGROVIA">
+                <h3 class="footer-col-title">hello MANGROVIA</h3>
+                <ul class="footer-list">
+                    {
+                        helloLinks.map((l) => (
+                            <li>
+                                <a href={l.href} class="footer-link">
+                                    {l.label}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
+
+            <nav aria-label="Codice">
+                <h3 class="footer-col-title">Codice</h3>
+                <ul class="footer-list">
+                    {
+                        codeLinks.map((l) => (
+                            <li>
+                                <a
+                                    href={l.href}
+                                    class="footer-link"
+                                    target={l.external ? "_blank" : undefined}
+                                    rel={
+                                        l.external
+                                            ? "noopener noreferrer"
+                                            : undefined
+                                    }
+                                >
+                                    {l.label}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
+        </div>
+
+        <div
+            class="mt-16 pt-8 border-t border-neutral-800 text-xs text-neutral-500"
+        >
+            © 2026 subsire
+        </div>
     </div>
 </footer>
+
+<style>
+    .footer-mark {
+        display: inline-block;
+        font-family: var(--font-mangrovia);
+        font-size: 2.5rem;
+        line-height: 1;
+        color: #f5f5f4;
+        text-decoration: none;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        transition: opacity 0.15s ease;
+    }
+    .footer-mark:hover {
+        opacity: 0.7;
+    }
+    .footer-col-title {
+        font-family: var(--font-display);
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #f5f5f4;
+        margin-bottom: 1rem;
+        letter-spacing: 0.01em;
+    }
+    .footer-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .footer-link {
+        color: #a3a3a3;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.15s ease;
+    }
+    .footer-link:hover {
+        color: #fafafa;
+    }
+</style>
