@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Open+Sans&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Cantarell&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&display=swap");
 @import "tailwindcss";
 
 @theme {
-    --font-display: "Open Sans", sans-serif;
+    --font-display: "Cantarell", sans-serif;
     --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
     --font-mangrovia:
         "DotGothic16", "Impact", "Helvetica Neue Condensed", sans-serif;
