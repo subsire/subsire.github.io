@@ -2,9 +2,9 @@
 
 Questa skill genera contenuti per la sezione `blog` / `dev-diary` dell’universo Mangrovia.
 
-Il dev-diary racconta giornate, incidenti, meeting, piccoli disastri, scambi tra personaggi e conseguenze operative. È la sezione in cui vive la storia principale di Mangrovia: scene, personaggi, tensioni, fraintendimenti, conseguenze e ritmo da mockumentary aziendale.
+Il dev-diary è un aggiornamento editoriale di sviluppo in-universe: racconta cosa è stato osservato, provato, deciso e rimandato durante una giornata di lavoro. Può includere personaggi, attriti e conseguenze operative, ma il centro del testo deve restare il lavoro: componenti, requisiti, tradeoff, ticket, rischi, scelte tecniche e prossimi passi.
 
-Il formato canonico è quello del mockumentary: una voce terza, esterna o semi-interna, osserva la vita aziendale con satira asciutta e dettagli tecnici credibili. Se `research` è il paper assurdo e `wiki` è la reference, il dev-diary è la puntata.
+Il formato canonico è una cronaca tecnica/editoriale simile a un developer diary di prodotto: contesto, lavoro svolto, risultati, decisioni, follow-up. Se `research` è il paper assurdo e `wiki` è la reference, il dev-diary è il log di avanzamento commentato. Il mockumentary resta disponibile come variante esplicita, non come default.
 
 Una entry non deve mai essere scritta come diario in prima persona di un personaggio. Può però includere spezzoni di dialoghi, interviste, ticket, messaggi Slack, note interne, documenti o incident report scritti dai personaggi.
 
@@ -12,7 +12,7 @@ Una entry non deve mai essere scritta come diario in prima persona di un persona
 
 ## Obiettivo
 
-Generare una entry narrativa coerente con il canon Mangrovia, utile per alimentare:
+Generare una entry editoriale coerente con il canon Mangrovia, utile per alimentare:
 
 - la sezione `blog` o `dev-diary`;
 - eventuali pagine wiki correlate;
@@ -43,29 +43,29 @@ Se la richiesta contraddice il canon, segnalare il problema e proporre una versi
 La skill può ricevere uno o più di questi input:
 
 ```md
-Topic: tema o giornata da raccontare
-Narrative frame: mockumentary / editorial / document-heavy / interview-heavy
+Topic: tema o giornata da documentare
+Narrative frame: product-log / editorial / document-heavy / mockumentary / interview-heavy
 Characters: personaggi coinvolti
 Setting: ufficio / call / Slack / pausa sigaretta / retrospettiva / deploy / altro
 Event: cosa succede
-Tone: dry / more comic / more technical / more corporate / darker
+Tone: dry / more technical / more corporate / more comic / darker
 Canon status: episodic / minor canon / major canon / undecided
 Length: short / medium / long
-Materials: dialoghi / interviste / Slack / ticket / documenti / mixed
+Materials: changelog / ticket / Slack / snippet / decision log / interviste / mixed
 Notes: istruzioni aggiuntive
 ```
 
 Esempio:
 
 ```md
-Topic: una frase di The Rock viene interpretata come requisito funzionale
-Narrative frame: mockumentary
-Characters: The Rock, Giulia, Giorgio, Gigi, Adriano, Andrea
-Setting: town hall + Slack + pausa sigaretta
+Topic: Mattia inizia l'onboarding sul Design System Qadra via Storybook
+Narrative frame: product-log
+Characters: Mattia, Giulia, Nikita, Vas, Giorgio, Adriano
+Setting: Storybook + Figma + repository + Linear
 Tone: dry
 Canon status: minor canon
 Length: medium
-Materials: dialoghi + Slack + ticket
+Materials: ticket + snippet + decision log
 ```
 
 Se l’input è incompleto, fare una scelta ragionevole e procedere. Chiedere chiarimenti solo se manca completamente l’evento centrale.
@@ -76,15 +76,21 @@ Se l’input è incompleto, fare una scelta ragionevole e procedere. Chiedere ch
 
 Scegliere il tipo più adatto.
 
-### 1. Dev-diary mockumentary
+### 1. Dev-diary product log
 
-Voce terza, asciutta, osservativa. Racconta la giornata come se una troupe invisibile avesse seguito call, corridoi, Slack, ticket e conseguenze operative.
+Voce terza o editoriale, asciutta, orientata al lavoro. Documenta una giornata o una sessione di sviluppo come aggiornamento di prodotto: cosa si voleva capire, cosa è stato controllato, cosa è emerso, cosa è stato deciso e cosa resta aperto.
 
 È il formato canonico e il default.
 
-### 2. Dev-diary con inserti di intervista
+### 2. Dev-diary document-heavy
 
-La struttura resta in terza persona, ma include brevi risposte dei personaggi come se fossero state raccolte dopo l'evento.
+Formato ibrido con changelog, decision log, estratti ticket, snippet, note di retrospettiva o recap Slack. La voce editoriale deve collegare i materiali e spiegare il loro impatto operativo.
+
+Da usare quando il contenuto vive più nei documenti e nei sistemi di lavoro che nella scena.
+
+### 3. Dev-diary con inserti di intervista
+
+La struttura resta editoriale, ma include brevi risposte dei personaggi come se fossero state raccolte dopo l'evento.
 
 Da usare quando la voce individuale è utile, senza trasformare l'entry in un testo autonomo firmato dal personaggio.
 
@@ -94,19 +100,25 @@ Esempio:
 Intervistato più tardi, Adriano ha detto che la parte difficile non era il bug, ma il fatto che il bug avesse già una roadmap.
 ```
 
-### 3. Frammento interno
+### 4. Dev-diary mockumentary
+
+Voce terza, asciutta, osservativa. Racconta la giornata come se una troupe invisibile avesse seguito call, corridoi, Slack, ticket e conseguenze operative.
+
+Da usare solo quando l'utente chiede esplicitamente una scena, un episodio molto narrativo o un formato mockumentary. Non è il default.
+
+### 5. Frammento interno
 
 Formato ibrido: Slack recap, meeting notes, incident note, retrospettiva, estratto ticket, comunicazione interna.
 
 Il frammento deve comunque essere incorniciato da una voce terza che contestualizza chi lo ha prodotto, quando e con quali conseguenze.
 
-### 4. Giornata corale
+### 6. Giornata corale
 
-Più personaggi reagiscono allo stesso evento. La voce resta mockumentary, ma segue diversi momenti e può alternare scena, dialogo, transcript e documenti.
+Più personaggi reagiscono allo stesso evento. La voce resta editoriale, ma può alternare sezioni di lavoro, commenti brevi, transcript e documenti.
 
 Da usare con moderazione: troppi personaggi possono rendere l’entry dispersiva.
 
-### 5. Pausa sigaretta
+### 7. Pausa sigaretta
 
 Formato ricorrente, soprattutto per Adriano e Andrea. Breve, asciutto, spesso più vicino alla verità di molte retrospettive ufficiali.
 
@@ -116,7 +128,7 @@ Anche in questo caso la scena è raccontata in terza persona. Adriano e Andrea p
 
 ## Struttura standard
 
-Default per una entry media:
+Default per una entry media in formato product log:
 
 Il sito Astro renderizza il titolo e la data dalla frontmatter: non inserire un heading `# Titolo` nel corpo del Markdown pubblicato.
 
@@ -124,21 +136,43 @@ Il sito Astro renderizza il titolo e la data dalla frontmatter: non inserire un 
 _Date or approximate date, optional_
 
 ## Summary
-Breve descrizione dell’episodio.
+Breve descrizione del lavoro svolto, del problema emerso e dell'esito.
 
-## Entry
-Racconto della giornata o dell’evento.
+## Context
+Perché il tema è stato affrontato oggi e quale domanda operativa guidava la sessione.
 
-## Outcome
-Conseguenza concreta: ticket, decisione, mancata decisione, update, nuovo meeting, piccolo incidente.
+## Worklog
+Cosa è stato guardato, provato o confrontato. Usare dettagli concreti: repository, Storybook, Figma, ticket, log, branch, ambienti, varianti, vincoli cliente.
+
+## Findings
+Risultati della ricognizione. Separare fatti verificati, ipotesi e zone ancora ambigue.
+
+## Decision
+Decisione presa o non-decisione esplicita, con motivo.
+
+## Next steps
+Conseguenza concreta: ticket, owner, follow-up, demo, refactor, decisione rimandata, criterio di verifica.
 ```
 
-Per entry più narrative, si può omettere `Summary` e usare direttamente il racconto.
+Per entry brevi si può usare una struttura ridotta:
+
+```md
+## Summary
+...
+
+## Entry
+Cronaca editoriale del lavoro, senza trasformarla in scena narrativa.
+
+## Outcome
+Decisione, ticket o follow-up.
+```
+
+Per entry esplicitamente narrative o mockumentary, si può usare `Summary / Entry / Outcome`, ma solo se richiesto dal brief o se il contenuto vive davvero nella scena.
 
 Per entry brevi:
 
 ```md
-Testo breve in terza persona.
+Testo breve in terza persona, orientato a lavoro svolto, evidenze e prossimi passi.
 ```
 
 Non includere `Related Entries`, `Canon Impact`, canon check notes, suggerimenti wiki o timeline assessment nel Markdown pubblicato. Queste informazioni appartengono al report privato del workflow.
@@ -149,10 +183,10 @@ Non includere `Related Entries`, `Canon Impact`, canon check notes, suggerimenti
 
 Il dev-diary deve:
 
-- essere narrativo ma asciutto;
-- usare sempre una cornice in terza persona;
-- sviluppare una scena o una sequenza riconoscibile;
-- usare i personaggi come motore dell’episodio;
+- essere editoriale, asciutto e orientato al lavoro;
+- usare una cornice in terza persona o una voce redazionale impersonale;
+- documentare una sequenza di lavoro riconoscibile;
+- usare i personaggi come fonti, owner o partecipanti, non come motore principale dell'episodio;
 - usare dettagli concreti;
 - evitare punchline forzate;
 - lasciare emergere il sottotesto;
@@ -162,15 +196,25 @@ Il dev-diary deve:
 
 Il testo non deve spiegare la comicità.
 
-È corretto che il dev-diary contenga lore, riferimenti ricorrenti e dinamiche da “The Office” aziendale. Questi elementi non devono essere esportati con lo stesso tono in `research` o `wiki`.
+È corretto che il dev-diary contenga lore, riferimenti ricorrenti e dinamiche aziendali, ma il formato base non deve sembrare un racconto breve o una scena da sitcom. Questi elementi devono emergere da ticket, decisioni, compromessi tecnici, recap e conseguenze operative.
+
+Evitare come default:
+
+- dettagli fisici o psicologici da racconto se non servono a capire il lavoro;
+- sequenze dialogate lunghe;
+- finali aforistici o da battuta;
+- scene costruite su call, silenzi, sguardi e pausa sigaretta se il tema è tecnico;
+- personaggi trattati come gag ricorrenti invece che come persone coinvolte in una decisione.
+
+La satira deve stare soprattutto nella frizione tra processo e realtà tecnica.
 
 Scrivere:
 
-> Giorgio ha chiesto se la frase andasse aperta come bug, task o iniziativa strategica. Giulia ha risposto che forse era presto per categorizzare. Gigi ha detto che se diventava roadmap lui si licenziava, ma lo ha detto in modo abbastanza tecnico da farlo sembrare un parere architetturale.
+> Oggi il team ha confrontato Storybook, Figma e produzione sul componente `Select`. Storybook documenta quattro varianti, Figma ne contiene sei e in produzione ne esistono due, entrambe modificate per contesti cliente diversi. Per la demo non serve risolvere l'intero Design System: serve scegliere una variante stabile, documentare l'eccezione e aprire una ricognizione separata.
 
 Non scrivere:
 
-> Tutti erano confusi perché The Rock aveva detto una frase assurda e Giorgio, come sempre, voleva farci un ticket. Che situazione ridicola.
+> Nikita ha aperto una tab, poi un'altra. Mattia ha guardato il taccuino. Per qualche secondo nessuno ha parlato. Adriano ha detto che il Design System aveva tre fonti della verità e nessuna abbastanza coraggiosa da mentire da sola.
 
 ---
 
@@ -178,21 +222,21 @@ Non scrivere:
 
 La voce editoriale deve essere calma, precisa e leggermente sospetta.
 
-Non deve giudicare troppo. Deve osservare.
+Non deve giudicare troppo. Deve osservare e ordinare il lavoro.
 
 Buon esempio:
 
 ```md
-La giornata è iniziata con un messaggio di Giulia sul canale prodotto. Il messaggio proponeva un rapido allineamento sul concetto di completamento, ma conteneva quattro definizioni diverse di completamento e nessun riferimento al codice.
+La giornata è stata dedicata alla prima ricognizione del Design System Qadra. L'obiettivo dichiarato era capire se Storybook potesse essere usato come fonte operativa per la schermata cliente in preparazione. Dopo il confronto con Figma e produzione, la risposta è stata: solo per alcuni componenti e solo dopo aver esplicitato quali varianti sono ancora affidabili.
 ```
 
-La voce editoriale può entrare nel sottotesto, ma senza diventare onnisciente in modo pesante.
+La voce editoriale può entrare nel sottotesto, ma deve tornare rapidamente a evidenze, decisioni e follow-up.
 
 ---
 
 ## Voci dei personaggi come materiali interni
 
-Le voci individuali devono comparire solo come materiali dentro la cornice mockumentary:
+Le voci individuali devono comparire solo come materiali dentro la cornice editoriale:
 
 - dialoghi osservati;
 - spezzoni di intervista;
@@ -328,27 +372,25 @@ Nel keynote trimestrale, The Rock ha detto: "We are not integrating AI into the 
 
 ## Uso dei dialoghi
 
-I dialoghi devono essere brevi e mirati.
+I dialoghi sono materiali di supporto, non la struttura dell'entry. Devono essere brevi, mirati e usati solo quando chiariscono una decisione, un conflitto di definizione o una responsabilità operativa.
 
-Preferire scambi asciutti a lunghe conversazioni teatrali.
+Preferire una citazione singola o uno scambio asciutto a lunghe conversazioni teatrali. In una entry product-log media, 0-2 interventi diretti sono sufficienti.
 
 Buon esempio:
 
 ```md
-“Quindi è una feature?” ha chiesto Mattia.
+Mattia ha chiesto se Storybook dovesse essere considerato la fonte primaria.
 
-Adriano ha guardato il ticket. “È una promessa vestita da bug.”
-
-Andrea ha spento la sigaretta. “E neanche bene.”
+Nikita ha risposto che, per alcuni componenti, Storybook documentava "la direzione prevista" più che lo stato effettivo. La distinzione è stata annotata nel ticket di ricognizione.
 ```
 
 Evitare dialoghi in cui ogni personaggio spiega se stesso o fa battute troppo riconoscibili.
 
-Dialoghi, interviste e documenti devono funzionare come prove raccolte dalla narrazione, non come sostituti della narrazione. Dopo un inserto, tornare alla voce terza e mostrare la conseguenza operativa.
+Dialoghi, interviste e documenti devono funzionare come prove raccolte dalla cronaca, non come sostituti della cronaca. Dopo un inserto, tornare alla voce editoriale e mostrare la conseguenza operativa.
 
 ---
 
-## Pattern narrativi consigliati
+## Pattern editoriali consigliati
 
 ### 1. Frase astratta → lavoro concreto
 
@@ -358,13 +400,13 @@ Una frase di The Rock o Giulia produce ticket, meeting o refactor.
 
 Un problema tecnico rivela che nessuno ha la stessa definizione di completamento, owner o requisito.
 
-### 3. Pausa sigaretta → diagnosi corretta
+### 3. Recap informale → diagnosi corretta
 
-Adriano e Andrea capiscono fuori dal processo ciò che il processo non riesce a vedere.
+Un confronto informale identifica ciò che il processo non riesce a nominare. Può essere una pausa sigaretta, ma non deve diventare automaticamente una scena narrativa.
 
-### 4. Design system → archeologia
+### 4. Design system → ricognizione
 
-Qualcuno cerca di capire lo stato del Design System Qadra e scopre livelli di intenzione, copia, commenti e componenti mai conclusi.
+Qualcuno confronta Storybook, Figma, repository e produzione per capire quali parti del Design System Qadra sono davvero adottabili.
 
 ### 5. Meeting → ticketizzazione
 
@@ -376,9 +418,9 @@ Un articolo research interno viene preso abbastanza sul serio da diventare proce
 
 Quando un research compare nel dev-diary, trattarlo come oggetto di scena o documento che produce conseguenze operative. Non copiare il tono da paper nel racconto, se non in brevi estratti.
 
-### 7. Onboarding → trauma controllato
+### 7. Onboarding → mappa operativa
 
-Mattia viene introdotto a un sistema che gli era stato descritto come moderno, flessibile e quasi documentato.
+Mattia viene introdotto a un sistema che gli era stato descritto come moderno, flessibile e quasi documentato; l'entry deve trasformare la confusione in mappa, non solo in scena.
 
 ### 8. Backend → pazienza finita
 
@@ -531,7 +573,9 @@ Prima di produrre l’entry finale, verificare:
 - l’evento è plausibile dentro `mangrovia-world.md`?
 - l’entry introduce cambiamenti canonici?
 - se sì, sono segnalati nel report privato del workflow?
-- la cornice narrativa scelta è coerente con il formato mockumentary?
+- la cornice scelta sembra un developer log editoriale e non un racconto breve?
+- se la cornice è mockumentary, è stata richiesta esplicitamente o è davvero necessaria?
+- il testo chiarisce lavoro svolto, evidenze, decisione e prossimi passi?
 - la voce resta in terza persona anche quando include materiali dei personaggi?
 - The Rock è usato con parsimonia?
 - Giorgio resta centrato su ticket e task?
@@ -552,14 +596,23 @@ Default:
 ## Summary
 ...
 
-## Entry
+## Context
 ...
 
-## Outcome
+## Worklog
+...
+
+## Findings
+...
+
+## Decision
+...
+
+## Next steps
 ...
 ```
 
-Per entry con materiali interni:
+Per entry breve o con materiali interni:
 
 ```md
 ## Summary
@@ -580,32 +633,37 @@ Non aggiungere `Related Entries`, `Canon Impact` o note private nel Markdown pub
 
 ---
 
-## Esempio breve editoriale
+## Esempio breve product log
 
 ```md
 ## Summary
 
-Dopo un workshop sul concetto di completamento, Adriano e Andrea escono a fumare e identificano in tre minuti il problema che il workshop non è riuscito a nominare.
+Oggi Mattia ha iniziato l'onboarding sul Design System Qadra usando Storybook come punto di ingresso. La ricognizione ha chiarito che alcuni componenti sono usabili come riferimento, mentre altri richiedono un confronto esplicito con Figma e produzione.
 
-## Entry
+## Context
 
-Il workshop era iniziato con una slide di Giulia intitolata “Towards a Shared Definition of Done”. La slide conteneva quattro definizioni, due frecce circolari e una citazione di The Rock sulla disciplina come muscolo organizzativo.
+L'obiettivo della sessione era capire se Storybook potesse essere trattato come fonte operativa per la schermata cliente in preparazione. Giulia ha impostato il lavoro come ricognizione leggera, con focus su componenti già presenti nella libreria Qadra.
 
-Nikita aveva detto che per lui un componente era done quando la parte difficile era stata impostata. Mattia aveva chiesto se “impostata” volesse dire committata. Nessuno gli aveva risposto subito.
+## Worklog
 
-Giorgio aveva aperto un ticket per chiarire il significato operativo di “done”, poi un secondo ticket per capire chi fosse l’owner del primo.
+Il primo controllo ha riguardato il `Button`, che risulta abbastanza coerente tra Storybook e implementazione. Le differenze principali sono di naming e stato di adozione.
 
-Alle 11:47 Adriano era uscito. Andrea lo aveva seguito senza dire niente.
+Il `Select` ha mostrato il problema reale: Storybook documenta quattro varianti, Figma ne contiene sei e in produzione ne esistono due, entrambe adattate in contesti cliente diversi. Nel repository è presente anche una variante con commento `TODO: align after DS merge`.
 
-“Il problema è che non sanno se stanno parlando di codice, Figma o desiderio,” disse Adriano.
+## Findings
 
-Andrea accese la sigaretta. “Stanno parlando di budget.”
+- Storybook è utile come indice dei componenti, ma non sempre come fonte di verità.
+- Figma conserva varianti non sempre adottate.
+- La produzione contiene eccezioni nate prima della fusione Qadra-Mangrovia.
+- Per la demo cliente serve una variante stabile del `Select`, non una normalizzazione completa del Design System.
 
-La retrospettiva informale durò meno di quattro minuti. Non produsse action item, ma identificò correttamente il rischio principale della release.
+## Decision
 
-## Outcome
+Per la demo verrà scelta una sola variante del `Select`, documentando esplicitamente perché è quella usata. La ricognizione completa della libreria resta separata dalla delivery corrente.
 
-Nel pomeriggio Giulia propose un nuovo meeting per consolidare la definizione di completamento. Giorgio collegò i due ticket precedenti a una nuova epic.
+## Next steps
+
+Giorgio ha aperto una epic `Ricognizione componenti Qadra`. Mattia seguirà il confronto Storybook/Figma/produzione insieme a Nikita. Vas ha chiesto che la scelta del `Select` venga chiusa prima della demo cliente.
 ```
 
 ---
@@ -617,7 +675,11 @@ Nel pomeriggio Giulia propose un nuovo meeting per consolidare la definizione di
 
 Un presunto bug frontend viene analizzato come incidente API e si rivela una divergenza tra implementazione, aspettativa di prodotto e commenti rimasti su Figma.
 
-## Entry
+## Context
+
+La segnalazione è arrivata durante la preparazione di una schermata cliente. Il comportamento visibile non corrispondeva al mockup Figma, ma il ticket originale non descriveva il campo contestato.
+
+## Worklog
 
 La richiesta arrivava al servizio nuovo alle 10:14. Il backend rispondeva con un payload formalmente valido. Il frontend, però, aspettava un campo che non era nello schema, non era nella documentazione e non compariva in nessun ticket approvato.
 
@@ -629,15 +691,17 @@ Andrea ha verificato i log senza particolare enfasi. Poi ha allegato una nota al
 >
 > Dal punto di vista API non c’è un bug.
 
-Il ticket è rimasto aperto perché la frase "dal punto di vista API" ha creato spazio sufficiente per una controanalisi di prodotto.
+## Findings
 
-Alle 11:02 Adriano è uscito a fumare. Andrea lo ha seguito pochi secondi dopo.
+- Il backend rispetta lo schema attuale.
+- Il frontend implementa un'aspettativa derivata da Figma.
+- Il commento Figma non è mai stato trasformato in requisito.
 
-“Quindi non è un bug?” ha chiesto Adriano.
+## Decision
 
-Andrea ha spento lo schermo del telefono. “È una richiesta che funziona contro se stessa.”
+Il ticket non viene chiuso come bug API. Serve una decisione di prodotto: aggiungere il campo opzionale o aggiornare il mockup.
 
-## Outcome
+## Next steps
 
 Giulia ha proposto di aggiungere un campo opzionale per preservare l'intento originale del commento Figma. Giorgio ha chiesto se aprire un bug, una task o un sotto-ticket di interpretazione.
 ```

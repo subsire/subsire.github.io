@@ -21,7 +21,7 @@ Default to safe, conservative generation. Prefer `episodic` or `minor-canon` con
 Do not use one generic Mangrovia style for all sections. Pick the section first, then obey its register:
 
 * `research`: fake frontier-lab paper with method, metrics, results and at least one table/figure for medium or long pieces; no scenes, no character banter, no lore-dependent jokes;
-* `dev-diary`: mockumentary-style episode with characters, scene, tension and operational consequence;
+* `dev-diary`: editorial developer log with context, work performed, evidence, decisions and operational next steps; character dynamics are allowed but not the structural center;
 * `wiki`: concise neutral reference page, understandable to a real external reader.
 
 ---
@@ -462,7 +462,7 @@ The section register is more important than the generic Mangrovia tone.
 
 Research must look like a serious lab publication. Humor comes from applying measurement, metrics and figures to an over-specific internal phenomenon.
 
-Dev diary is the narrative core: it can use character dynamics, awkward meetings, dialogue and workplace-comedy rhythm.
+Dev diary is the operational narrative core: it should read like a developer update from inside Mangrovia, with character dynamics used sparingly to clarify decisions, ambiguity and process friction.
 
 Wiki must be dry reference: short, neutral, factual and free of winked-at jokes.
 

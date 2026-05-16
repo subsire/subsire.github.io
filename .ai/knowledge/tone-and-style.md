@@ -235,17 +235,17 @@ Non deve usare personaggi, scene o inside joke come motore del testo. I personag
 
 ### Funzione
 
-La sezione `blog` o `dev diary` racconta giornate, incidenti, piccoli eventi e dinamiche interne. È la sede principale della storia Mangrovia.
+La sezione `blog` o `dev diary` documenta giornate di lavoro, incidenti, piccoli eventi e dinamiche interne. È la sede principale della storia operativa Mangrovia.
 
-Deve funzionare come uno spezzone di mockumentary aziendale: una piccola puntata con scena, personaggi, sottotesto e conseguenze operative. Può includere materiali firmati dai personaggi, ma la cornice resta editoriale e in terza persona.
+Deve funzionare prima di tutto come developer log editoriale: contesto, lavoro svolto, evidenze, decisioni e prossimi passi. Può includere materiali firmati dai personaggi, attriti e sottotesto, ma la cornice resta editoriale e in terza persona. Il mockumentary è una variante possibile, non il default.
 
 ### Tono editoriale
 
-Asciutto, narrativo, osservativo. Una voce che racconta la giornata senza giudicare troppo, lasciando che siano i dettagli a fare il lavoro.
+Asciutto, tecnico-editoriale, osservativo. Una voce che ordina la giornata senza giudicare troppo, lasciando che siano i dettagli operativi a fare il lavoro.
 
 Esempio:
 
-> La giornata è iniziata con un messaggio di Giulia sul canale prodotto. Diceva che serviva un rapido allineamento sul concetto di completamento. Adriano ha letto il messaggio, ha chiuso Slack e ha chiesto ad Andrea se avesse una sigaretta.
+> La giornata è stata dedicata a confrontare Storybook, Figma e produzione sul componente `Select`. Storybook documentava quattro varianti, Figma ne conservava sei e la produzione ne usava due. Per la demo cliente è stata scelta una variante stabile; la normalizzazione completa è stata spostata in una ricognizione separata.
 
 ### Voci dei personaggi nei materiali interni
 
@@ -266,12 +266,12 @@ Il dev-diary non deve diventare un diario in prima persona. Quando include mater
 
 ### Struttura consigliata
 
-- Data o titolo della giornata.
-- Evento iniziale concreto.
-- Complicazione.
-- Interazioni tra personaggi.
-- Piccolo esito operativo.
-- Nota finale asciutta.
+- Summary.
+- Context.
+- Worklog.
+- Findings.
+- Decision.
+- Next steps.
 
 ### Esempi di titoli
 

@@ -211,9 +211,9 @@ Il tono research deve essere serio in superficie. La comicità deve emergere da 
 
 ## Dev-Diary
 
-La sezione `dev-diary` racconta giornate, episodi, incidenti, meeting e piccoli disastri quotidiani.
+La sezione `dev-diary` documenta giornate di lavoro, incidenti, meeting e piccoli disastri quotidiani.
 
-Il dev-diary è la sede principale della storia Mangrovia. Il formato canonico è quello del mockumentary aziendale: una voce terza, esterna o semi-interna, osserva i personaggi durante call, incidenti, pause sigaretta, retrospettive, demo e momenti di lavoro ordinario. Il testo deve sembrare scritto da qualcuno che ha accesso alla scena, ai documenti e alle conseguenze operative, ma non coincide mai con uno dei personaggi.
+Il dev-diary è la sede principale della storia operativa Mangrovia. Il formato canonico è quello del developer log editoriale: una voce terza, esterna o semi-interna, ordina contesto, lavoro svolto, evidenze, decisioni e prossimi passi. Il testo deve sembrare scritto da qualcuno che ha accesso alla scena, ai documenti e alle conseguenze operative, ma non coincide mai con uno dei personaggi. Il mockumentary aziendale è una variante possibile quando richiesta esplicitamente, non il formato base.
 
 I personaggi non firmano il dev diary e non ne sono i narratori principali. Possono però comparire attraverso materiali diegetici inseriti nella cronaca:
 

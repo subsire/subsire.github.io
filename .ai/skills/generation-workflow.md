@@ -113,7 +113,7 @@ Genera paper fittizi da laboratorio per la sezione `research`: metriche, dataset
 
 ### `dev-diary-entry.md`
 
-Genera post narrativi, diary, frammenti interni e giornate aziendali.
+Genera developer log editoriali, frammenti interni e giornate aziendali documentate con contesto, lavoro svolto, evidenze, decisioni e prossimi passi.
 
 ### `wiki-entry.md`
 
@@ -163,7 +163,7 @@ Generate a wiki entry for Pausa Sigaretta.
 Non applicare un generico “tono Mangrovia” a tutte le sezioni. La skill specifica vince sempre:
 
 - `research`: paper frontier-lab fittizio, con metodo, dati, metriche, tabelle/grafici e personaggi assenti o anonimizzati;
-- `dev-diary`: episodio narrativo in terza persona, con personaggi, scene, dialoghi brevi e conseguenze operative;
+- `dev-diary`: developer log editoriale in terza persona, con lavoro svolto, evidenze, decisioni e conseguenze operative; scene e dialoghi sono opzionali e non sono il default;
 - `wiki`: reference neutra, breve e asciutta, comprensibile anche a un lettore esterno.
 
 Se un contenuto usa il tono giusto ma nella sezione sbagliata, va spostato o riscritto.
@@ -458,25 +458,25 @@ src/content/research/feature-completion-confidence-index.md
 
 ```md
 Topic: tema o giornata
-Narrative frame: mockumentary / editorial / document-heavy / interview-heavy
+Narrative frame: product-log / editorial / document-heavy / mockumentary / interview-heavy
 Characters: personaggi coinvolti
 Setting: ufficio / call / Slack / pausa sigaretta / deploy / altro
 Event: cosa succede
 Tone: dry / more comic / more technical / more corporate / darker
 Canon status: episodic / minor canon / major canon / undecided
 Length: short / medium / long
-Materials: dialoghi / interviste / Slack / ticket / documenti / mixed
+Materials: changelog / ticket / Slack / snippet / decision log / interviste / mixed
 ```
 
 ## Flow
 
 1. Leggere knowledge file.
 2. Caricare `dev-diary-entry.md`.
-3. Generare entry narrativa in formato mockumentary.
+3. Generare entry in formato developer log editoriale. Usare il mockumentary solo se richiesto esplicitamente.
 4. Non includere `Related Entries`, `Canon Impact` o note private nel Markdown pubblicato.
 5. Eseguire `canon-check.md` e produrre il report canonico separatamente.
 6. Se il check passa, valutare se nascono nuove wiki entry.
-7. Se l’episodio introduce una milestone aziendale, eseguire `timeline-update.md`.
+7. Se l'entry introduce una milestone aziendale, eseguire `timeline-update.md`.
 8. Preparare `Visual Brief` e generare immagini se utili.
 9. Salvare in `src/content/dev-diary`.
 
@@ -1111,7 +1111,7 @@ Usare le reference disponibili in `.ai/images/` per i personaggi presenti. La co
 Per evitare monotonia, alternare:
 
 1. research in forma di paper fittizio;
-2. dev diary mockumentary;
+2. dev diary product-log;
 3. wiki entry;
 4. dev diary con inserti di intervista o documenti;
 5. research tecnico;

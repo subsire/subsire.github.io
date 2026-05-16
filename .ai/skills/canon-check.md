@@ -406,11 +406,11 @@ Problemi tipici:
 
 Controllare che:
 
-- sia narrativo ma asciutto;
-- funzioni come episodio o scena mockumentary;
-- abbia evento, complicazione e conseguenza;
+- sia editoriale, asciutto e orientato al lavoro;
+- funzioni come developer log, non come racconto breve;
+- chiarisca contesto, lavoro svolto, evidenze, decisione e prossimi passi;
 - i dialoghi siano brevi e in voce;
-- non spieghi la gag;
+- non costruisca la gag come obiettivo del testo;
 - non usi troppi personaggi;
 - non cambi il mondo senza segnalarlo;
 - se contiene materiali firmati o citati, rispetti la voce del personaggio.
