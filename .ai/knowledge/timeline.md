@@ -1,8 +1,10 @@
 # Timeline
 
-Questo file contiene la timeline canonica iniziale dell’universo Mangrovia.
+Questo file contiene la roadmap cronologica canonica dell’universo Mangrovia.
 
-La timeline registra solo eventi con impatto persistente su azienda, personaggi, progetti, relazioni o concetti interni. Non deve raccogliere ogni gag, meeting o episodio minore.
+La timeline non è un archivio completo di tutto ciò che accade. Funziona quasi come una roadmap storica di Mangrovia: registra solo le grandi tappe aziendali, strategiche e organizzative che cambiano lo stato della società o delle sue linee di prodotto principali.
+
+Devono entrarci eventi come fondazione, finanziamenti strutturali, cambi di fase tecnologica, acquisizioni/fusioni, cambi di CEO, nascita o chiusura di iniziative strategiche e cambiamenti ufficiali di prodotti centrali. Non devono entrarci dinamiche tra personaggi, gag ricorrenti, meeting, piccoli incidenti, onboarding individuali o micro-processi interni.
 
 Le date possono essere precise, approssimative o volutamente vaghe. Se un evento non ha ancora una data canonica, usare formule come `Anno non definito`, `Prima della fusione`, `Durante la fase Qadra`, `Dopo la fusione`.
 
@@ -10,11 +12,13 @@ Le date possono essere precise, approssimative o volutamente vaghe. Se un evento
 
 ## Regole della timeline
 
-- Registrare solo eventi con impatto persistente.
+- Registrare solo milestone aziendali, strategiche, organizzative o di prodotto centrale.
 - Non registrare battute isolate o episodi senza conseguenze.
+- Non registrare dinamiche tra personaggi, relazioni interne o rituali del team, salvo che diventino parte di un cambiamento aziendale ufficiale.
+- Non registrare singoli ticket, singoli meeting, singoli incidenti minori o prime occorrenze di concetti da wiki.
 - Distinguere sempre tra fatto canonico, interpretazione ufficiale e percezione del team.
 - Se una data non è definita, non inventare precisione inutile.
-- Ogni nuovo evento major canon deve essere aggiunto qui.
+- Ogni nuovo evento major canon deve essere aggiunto qui solo se cambia la storia aziendale di Mangrovia/Qadra, la leadership, la strategia o lo stato di un prodotto centrale.
 - Ogni aggiornamento della timeline deve essere compatibile con `canon-rules.md`.
 
 ---
@@ -39,7 +43,7 @@ Eventi canonici senza data precisa.
 
 ---
 
-# Canon Timeline
+# Canon Company Roadmap
 
 ---
 
@@ -227,7 +231,7 @@ Dopo la fusione, molti membri di Mangrovia descrivono Qadra come il male assolut
 
 ---
 
-## Durante la fase Qadra — Ascesa di Nikita come nuova promessa frontend
+## Durante la fase Qadra — Avvio e stallo del Design System Qadra
 
 ### Date status
 
@@ -235,110 +239,32 @@ Relative
 
 ### Summary
 
-Nikita entra in Qadra come nuova promessa del frontend e si vende come “economico programmatore”. Si presenta o viene presentato come figura capace di modernizzare il frontend e rifare il design system.
+Qadra avvia il proprio design system per standardizzare interfacce, componenti e linguaggio visivo dei prodotti wealth management. Il progetto viene presentato come rapido consolidamento frontend, ma resta incompleto e difficile da verificare.
 
 ### Impact
 
-Introduce il pattern dell’economico programmatore e prepara il fallimento mitologico del Design System Qadra.
+Crea un asset strategico ambiguo: abbastanza importante da essere ereditato da Mangrovia dopo la fusione, abbastanza incompleto da diventare debito tecnico e narrativo.
 
 ### Official interpretation
 
-Nikita viene trattato come risorsa agile, economica e promettente per accelerare la standardizzazione frontend.
+Il Design System Qadra viene descritto come base per aumentare coerenza, velocità di prodotto e maturità della piattaforma.
 
 ### Team perception
 
-In retrospettiva, Nikita diventa il simbolo della differenza tra promessa, stima e consegna.
+Il team tecnico lo considera un progetto in cui roadmap, Storybook, commit e stato reale smettono presto di raccontare la stessa cosa.
 
 ### Related characters
 
 - Nikita
 - Giulia
-- The Rock
 - Adriano
-- Mattia
 
 ### Related entries
 
-- Nikita
-- Economico Programmatore
 - Design System Qadra
 - Qadra
-
----
-
-## Durante la fase Qadra — Stima iniziale del Design System Qadra
-
-### Date status
-
-Relative
-
-### Summary
-
-Nikita stima tre settimane più una di test per rifare il Design System Qadra.
-
-### Impact
-
-La stima diventa uno degli eventi fondativi della mitologia frontend Qadra/Mangrovia. Il Design System Qadra viene associato in modo permanente all’espressione “quasi finito”.
-
-### Official interpretation
-
-La stima viene interpretata come piano rapido e pragmatico di consolidamento frontend.
-
-### Team perception
-
-Il team tecnico la ricorda come il momento in cui il tempo ha smesso di essere una misura affidabile.
-
-### Related characters
-
-- Nikita
-- Giulia
-- Adriano
-- Mattia
-
-### Related entries
-
-- Design System Qadra
 - Economico Programmatore
-- Definition of Done
-- Feature Completion Confidence
-
----
-
-## Aprile, anno non definito — Ultimo commit noto di Nikita
-
-### Date status
-
-Approximate
-
-### Summary
-
-Nikita carica l’ultimo commit noto relativo al lavoro frontend / Design System Qadra. Dopo aprile non risultano nuovi commit rilevanti.
-
-### Impact
-
-Lo stato del Design System Qadra diventa sempre più difficile da verificare. Da questo momento il completamento del progetto è una questione interpretativa più che tecnica.
-
-### Official interpretation
-
-Il lavoro viene descritto come in fase di consolidamento o in attesa di riallineamento.
-
-### Team perception
-
-Adriano e altri membri tecnici considerano l’assenza di commit un dato più affidabile delle slide di avanzamento.
-
-### Related characters
-
-- Nikita
-- Giulia
-- Adriano
-- Mattia
-
-### Related entries
-
-- Design System Qadra
-- Last Known Commit
-- Definition of Done
-- Economico Programmatore
+- Component Library
 
 ---
 
@@ -426,46 +352,6 @@ Il team tecnico lo percepisce come una forza atmosferica: una frase pronunciata 
 
 ---
 
-## Dopo la fusione — Giulia diventa PM anche per Mangrovia
-
-### Date status
-
-Relative
-
-### Summary
-
-Giulia, designer/PM torinese e persona di fiducia di The Rock, assume un ruolo di PM anche in Mangrovia dopo la fusione.
-
-### Impact
-
-Introduce in Mangrovia un linguaggio più corporate, processuale e Qadra-oriented. Aumenta la tensione con il team tecnico, in particolare con Adriano e Andrea.
-
-### Official interpretation
-
-Il nuovo ruolo di Giulia viene presentato come passo necessario per migliorare allineamento, ownership e collaborazione cross-funzionale.
-
-### Team perception
-
-Adriano e altri membri tecnici la vedono come una delle manifestazioni più concrete della deriva Qadra.
-
-### Related characters
-
-- Giulia
-- The Rock
-- Adriano
-- Andrea
-- Vas
-- Nikita
-
-### Related entries
-
-- Giulia
-- Cross-functional Alignment
-- Qadra
-- Mangrovia Blockchain Solutions
-
----
-
 ## Dopo la fusione — Il Design System Qadra entra nell’orbita Mangrovia
 
 ### Date status
@@ -505,163 +391,6 @@ Il team tecnico lo considera un oggetto parziale, duplicato, non verificabile e 
 
 ---
 
-## Dopo la fusione — Consolidamento della coppia Adriano / Andrea
-
-### Date status
-
-Relative
-
-### Summary
-
-Adriano e Andrea diventano una coppia informale di sigarette e sventure. Non è un’amicizia dichiarata, ma una compatibilità pratica nel pessimismo e nella diagnosi laterale dei problemi aziendali.
-
-### Impact
-
-Stabilisce la Pausa Sigaretta come spazio ricorrente di verità tecnica informale.
-
-### Official interpretation
-
-Nessuna. La relazione non è riconosciuta come processo, collaborazione strutturata o rituale aziendale.
-
-### Team perception
-
-Alcuni membri del team intuiscono che molte diagnosi corrette emergono proprio fuori dai meeting, ma nessuno riesce a trasformare questa intuizione in processo senza distruggerla.
-
-### Related characters
-
-- Adriano
-- Andrea
-- Giulia
-- Giorgio
-
-### Related entries
-
-- Pausa Sigaretta
-- Informal Incident Review
-- Incidenti Backend Ricorrenti
-
----
-
-## Dopo la fusione — Tensione sottile tra Giulia e Vas
-
-### Date status
-
-Relative
-
-### Summary
-
-Giulia e Vas sviluppano una relazione professionalmente cordiale ma attraversata da rivalità sottile. Giulia disprezza segretamente Vas, probabilmente perché Vas è più naturale, più amata dal team e meno costruita.
-
-### Impact
-
-Introduce una tensione sociale e politica interna tra due modi diversi di essere figure prodotto: uno corporate e processuale, l’altro pratico e umano.
-
-### Official interpretation
-
-La relazione è presentata come normale collaborazione tra figure cross-funzionali.
-
-### Team perception
-
-Il team tecnico si rilassa con Vas e si irrigidisce di più con Giulia, anche quando nessuno lo dice apertamente.
-
-### Related characters
-
-- Giulia
-- Vas
-- Adriano
-- Andrea
-- The Rock
-
-### Related entries
-
-- Giulia
-- Vas
-- Product Ownership
-- Cross-functional Alignment
-
----
-
-## Dopo la fusione — Gigi e Giorgio formalizzano il caos
-
-### Date status
-
-Relative
-
-### Summary
-
-Gigi, CTO romanaccio, e Giorgio, armadillo gigante romano responsabile di task e ticket, diventano una coppia funzionale nella gestione del caos operativo: Gigi decide, Giorgio ticketizza.
-
-### Impact
-
-Stabilisce una dinamica ricorrente per trasformare visioni, emergenze, metafore e confusioni in lavoro assegnabile.
-
-### Official interpretation
-
-Gigi e Giorgio contribuiscono a rendere più efficiente la gestione tecnica e operativa.
-
-### Team perception
-
-Il team percepisce che ogni frase può diventare lavoro se passa abbastanza vicino a Giorgio.
-
-### Related characters
-
-- Gigi
-- Giorgio
-- The Rock
-- Giulia
-- Adriano
-- Andrea
-
-### Related entries
-
-- Gigi
-- Giorgio
-- Ticketizzazione
-- Executive Metaphors
-- Backlog
-
----
-
-## Dopo la fusione — Arrivo di Mattia
-
-### Date status
-
-Relative
-
-### Summary
-
-Mattia, frontendista di Latina, entra nell’orbita Mangrovia. Ha fatto un corso online un paio di anni prima e si vende come nuovo “economico programmatore”.
-
-### Impact
-
-Rafforza il pattern dell’economico programmatore e crea un parallelo diretto con Nikita: una nuova promessa economica viene introdotta in un ambiente già pieno di debito tecnico e ambiguità frontend.
-
-### Official interpretation
-
-Mattia viene presentato come risorsa giovane, flessibile e pronta a contribuire.
-
-### Team perception
-
-Adriano lo guarda con diffidenza immediata. Nikita può vederlo come clone più giovane, minaccia o monito.
-
-### Related characters
-
-- Mattia
-- Nikita
-- Adriano
-- Giulia
-- Vas
-
-### Related entries
-
-- Mattia
-- Nikita
-- Economico Programmatore
-- Design System Qadra
-- Onboarding
-
----
-
 ## Stato attuale — Mangrovia come azienda AI-first post-Qadra
 
 ### Date status
@@ -682,7 +411,7 @@ Mangrovia è una piattaforma AI-first pronta a integrare prodotto, dati, automaz
 
 ### Team perception
 
-Mangrovia è un posto dove una metafora di The Rock può diventare un ticket, un design system incompleto può generare tre research article e una pausa sigaretta può essere più utile di una retrospettiva.
+Mangrovia è un’azienda in cui la distanza tra roadmap ufficiale e realtà tecnica produce ticket, research interni, iniziative AI e nuovi modi di descrivere debito già esistente.
 
 ### Related characters
 
@@ -706,7 +435,6 @@ Mangrovia è un posto dove una metafora di The Rock può diventare un ticket, un
 - AI-first Transformation
 - Design System Qadra
 - Economico Programmatore
-- Pausa Sigaretta
 
 ---
 
@@ -725,31 +453,22 @@ Decidere se la timeline userà:
 
 Per ora il sistema usa soprattutto date relative.
 
-## Ordine preciso degli arrivi
+## Confine tra roadmap e wiki
 
-Non è ancora definito l’ordine preciso di arrivo in Mangrovia di:
-
-- Andrea;
-- Vas;
-- Lorenzo;
-- Giorgio;
-- Gigi;
-- Mattia.
-
-Il canon attuale richiede solo che siano presenti nello stato attuale post-fusione.
+Alcuni eventi possono essere importanti per personaggi, dinamiche interne o sezioni dev-diary senza diventare milestone aziendali. In quei casi vanno documentati in `wiki`, `characters`, `relationships` o nei contenuti narrativi, non in questa timeline.
 
 ## Eventi futuri da creare
 
-Possibili eventi futuri da generare con research, diary e wiki:
+Possibili milestone future da generare con research, diary e wiki:
 
-- primo research article sulla Pausa Sigaretta;
-- formalizzazione involontaria della Classificazione delle Metafore Dirigenziali;
-- primo onboarding documentato di Mattia;
-- incidente legato al Design System Qadra;
+- lancio di una nuova piattaforma AI per wealth management;
+- chiusura ufficiale o rilancio del Design System Qadra;
+- prima integrazione commerciale post-fusione tra prodotti Mangrovia e Qadra;
+- rebrand ufficiale della società dopo la fusione;
 - primo grande keynote AI-first di The Rock;
-- prima dashboard di Lorenzo che misura una cosa non misurabile;
-- primo ticket di Giorgio nato da un sentimento;
-- primo scontro tecnico Andrea/Fiorenzo.
+- apertura di una nuova linea di prodotto agentic;
+- chiusura dichiarata della fase blockchain legacy;
+- grande incidente tecnico che cambia governance, roadmap o offerta aziendale.
 
 ---
 
@@ -758,7 +477,7 @@ Possibili eventi futuri da generare con research, diary e wiki:
 Ogni nuova entry timeline deve seguire questo formato:
 
 ```md
-## Data o periodo — Titolo evento
+## Data o periodo — Titolo milestone
 
 ### Date status
 Precise / Approximate / Relative / Undefined
@@ -773,7 +492,7 @@ Conseguenze persistenti sul canon.
 Come l’azienda descrive l’evento.
 
 ### Team perception
-Come il team o i personaggi percepiscono l’evento.
+Come il team percepisce l’evento.
 
 ### Related characters
 - Personaggio 1
@@ -789,7 +508,7 @@ Come il team o i personaggi percepiscono l’evento.
 # Timeline maintenance rules
 
 - Se un contenuto introduce solo una giornata o un episodio minore, non aggiornare la timeline.
-- Se un contenuto introduce un concetto ricorrente, valutare se aggiungere una timeline entry o solo una pagina wiki.
-- Se un contenuto cambia un personaggio, una relazione, un processo o un progetto, aggiornare la timeline.
-- Se un contenuto completa, chiude, avvia o formalizza un progetto centrale, aggiornare la timeline.
-- Se un contenuto contraddice la timeline, correggerlo o proporre un aggiornamento canonico esplicito
+- Se un contenuto introduce un concetto ricorrente, una dinamica tra personaggi o un rituale interno, usare wiki/characters/relationships, non la timeline.
+- Se un contenuto cambia un personaggio, una relazione o un processo locale, non aggiornare la timeline salvo che il cambiamento coincida con una milestone aziendale ufficiale.
+- Se un contenuto completa, chiude, avvia o formalizza un progetto centrale, una fase strategica o una decisione dirigenziale, aggiornare la timeline.
+- Se un contenuto contraddice la timeline, correggerlo o proporre un aggiornamento canonico esplicito.

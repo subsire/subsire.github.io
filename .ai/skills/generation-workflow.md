@@ -15,7 +15,8 @@ Ogni contenuto generato deve poter passare attraverso un flusso chiaro:
 3. controllare la coerenza;
 4. decidere lo stato canonico;
 5. aggiornare wiki o timeline se necessario;
-6. salvare il contenuto nella sezione corretta.
+6. valutare se servono immagini a supporto;
+7. salvare il contenuto e gli asset nella sezione corretta.
 
 Il workflow deve permettere generazione automatica, ma con abbastanza controlli da mantenere continuità.
 
@@ -30,7 +31,7 @@ Il workflow deve permettere generazione automatica, ma con abbastanza controlli 
 I file di knowledge definiscono il mondo, i personaggi, la timeline e le regole.
 
 ```txt
-/knowledge
+.ai/knowledge
   mangrovia-world.md
   characters.md
   relationships.md
@@ -65,12 +66,40 @@ Eventi canonici già accaduti o già stabiliti.
 
 ---
 
+## Visual reference files
+
+Le immagini in `.ai/images/` sono reference visive e di stile per i protagonisti. Servono per mantenere continuità quando un post generato viene accompagnato da una o più immagini.
+
+```txt
+.ai/images
+  adriano.png
+  fiorenzo.png
+  gigi.png
+  giulia.png
+  mattia.png
+  nikita.png
+  salvatore.png
+  the-rock.png
+  vas.png
+```
+
+Regole operative:
+
+- usare queste immagini come reference, non come output da sovrascrivere;
+- caricare le reference dei personaggi effettivamente presenti nell’immagine;
+- se un personaggio non ha reference, evitare primi piani o dettagli troppo specifici;
+- mantenere lo stile coerente con l’immaginario visivo già presente nel progetto;
+- generare immagini che completano il post, senza introdurre fatti canonici non presenti nel testo;
+- non usare le immagini per rendere “ufficiale” un evento che il testo lascia ambiguo.
+
+---
+
 ## Skill files
 
 Le skill definiscono come produrre o controllare contenuti.
 
 ```txt
-/skills
+.ai/skills
   research-article.md
   dev-diary-entry.md
   wiki-entry.md
@@ -161,6 +190,7 @@ blog/diary -> dev-diary-entry.md
 wiki -> wiki-entry.md
 canon validation -> canon-check.md
 timeline evaluation -> timeline-update.md
+visual assets -> .ai/images references + image generation tool/skill
 ```
 
 La skill specifica definisce struttura, formato, tono e output.
@@ -197,6 +227,37 @@ Only if needed.
 
 ### Notes
 Brief explanation.
+```
+
+Quando il contenuto può essere accompagnato da immagini, aggiungere anche un brief visivo tecnico:
+
+```md
+## Visual Brief
+
+### Images needed
+Yes / No
+
+### Suggested image count
+0 / 1 / 2 / 3
+
+### Purpose
+cover / inline / gallery / document insert / character moment
+
+### Subjects
+- Personaggio, luogo, oggetto o scena
+
+### Reference images
+- `.ai/images/adriano.png`
+- `.ai/images/giulia.png`
+
+### Style notes
+Indicazioni su composizione, tono, luce, formato e coerenza con il post.
+
+### Prompt draft
+Prompt sintetico per generare l’immagine.
+
+### Suggested output path
+`public/images/posts/<slug>-cover.png`
 ```
 
 Questa sezione può essere rimossa dalla versione pubblicata, ma è utile per il workflow automatico.
@@ -288,6 +349,48 @@ Possibili azioni:
 
 ---
 
+## Step 7 — Generate optional visual assets
+
+Ogni contenuto pubblicabile può avere zero, una o più immagini di accompagnamento.
+
+Generare immagini solo dopo che il testo ha passato `canon-check.md` almeno come `Pass with notes`. Le immagini devono illustrare o completare il contenuto, non aggiungere eventi nuovi.
+
+Flow consigliato:
+
+1. Leggere il `Visual Brief`, se presente.
+2. Identificare personaggi, ambienti, oggetti o documenti da rappresentare.
+3. Caricare le reference rilevanti da `.ai/images/`.
+4. Generare una cover se il post beneficia di un’immagine principale.
+5. Generare immagini inline solo se aggiungono valore narrativo o documentale.
+6. Salvare gli output in `public/images/posts/` con slug coerente.
+7. Aggiornare il markdown o il frontmatter solo se il sito supporta già quel campo.
+8. Se il sito non supporta ancora immagini nel frontmatter, inserire l’immagine nel corpo Markdown.
+9. Non aggiungere campi `image`, `cover` o simili al frontmatter finché lo schema Astro non li supporta.
+
+Esempio di output:
+
+```txt
+public/images/posts/pausa-sigaretta-workshop-allineamento-cover.png
+public/images/posts/pausa-sigaretta-workshop-allineamento-ticket.png
+```
+
+Esempio Markdown:
+
+```md
+![Adriano e Andrea fuori dall’ufficio dopo il workshop di allineamento](/images/posts/pausa-sigaretta-workshop-allineamento-cover.png)
+```
+
+Le immagini generate devono rispettare:
+
+- personaggi coerenti con `characters.md`;
+- relazioni coerenti con `relationships.md`;
+- tono coerente con `tone-and-style.md`;
+- nessuna nuova milestone aziendale implicita;
+- nessuna contraddizione con `timeline.md`;
+- nessuna sovrascrittura delle reference in `.ai/images/`.
+
+---
+
 # Workflow per Research
 
 ---
@@ -311,25 +414,26 @@ Length: short / medium / long
 4. Includere `Canon Impact`.
 5. Eseguire `canon-check.md`.
 6. Se il check passa, decidere se serve `wiki-entry.md`.
-7. Se l’articolo introduce evento persistente, eseguire `timeline-update.md`.
-8. Salvare in `/content/research`.
+7. Se l’articolo introduce una milestone aziendale, eseguire `timeline-update.md`.
+8. Preparare `Visual Brief` e generare immagini se utili.
+9. Salvare in `src/content/research`.
 
 ## Output path consigliato
 
 ```txt
-/content/research/YYYY-MM-DD-slug.md
+src/content/research/YYYY-MM-DD-slug.md
 ```
 
 Se non si usano date precise:
 
 ```txt
-/content/research/slug.md
+src/content/research/slug.md
 ```
 
 ## Esempio
 
 ```txt
-/content/research/feature-completion-confidence-index.md
+src/content/research/feature-completion-confidence-index.md
 ```
 
 ---
@@ -342,42 +446,44 @@ Se non si usano date precise:
 
 ```md
 Topic: tema o giornata
-Point of view: editorial / character name / mixed
+Narrative frame: mockumentary / editorial / document-heavy / interview-heavy
 Characters: personaggi coinvolti
 Setting: ufficio / call / Slack / pausa sigaretta / deploy / altro
 Event: cosa succede
 Tone: dry / more comic / more technical / more corporate / darker
 Canon status: episodic / minor canon / major canon / undecided
 Length: short / medium / long
+Materials: dialoghi / interviste / Slack / ticket / documenti / mixed
 ```
 
 ## Flow
 
 1. Leggere knowledge file.
 2. Caricare `dev-diary-entry.md`.
-3. Generare entry narrativa.
+3. Generare entry narrativa in formato mockumentary.
 4. Includere `Canon Impact`.
 5. Eseguire `canon-check.md`.
 6. Se il check passa, valutare se nascono nuove wiki entry.
-7. Se l’episodio cambia il mondo, eseguire `timeline-update.md`.
-8. Salvare in `/content/blog` o `/content/diary`.
+7. Se l’episodio introduce una milestone aziendale, eseguire `timeline-update.md`.
+8. Preparare `Visual Brief` e generare immagini se utili.
+9. Salvare in `src/content/dev-diary`.
 
 ## Output path consigliato
 
 ```txt
-/content/diary/YYYY-MM-DD-slug.md
+src/content/dev-diary/YYYY-MM-DD-slug.md
 ```
 
 Oppure, se non si usano date precise:
 
 ```txt
-/content/diary/slug.md
+src/content/dev-diary/slug.md
 ```
 
 ## Esempio
 
 ```txt
-/content/diary/pausa-sigaretta-workshop-allineamento.md
+src/content/dev-diary/pausa-sigaretta-workshop-allineamento.md
 ```
 
 ---
@@ -406,21 +512,22 @@ Length: short / medium / long
 4. Generare pagina wiki semi-neutra.
 5. Includere `Canon Notes` e `Canon Impact`.
 6. Eseguire `canon-check.md`.
-7. Se la pagina wiki formalizza un evento persistente, eseguire `timeline-update.md`.
-8. Salvare in `/content/wiki`.
+7. Se la pagina wiki formalizza una milestone aziendale, eseguire `timeline-update.md`.
+8. Preparare `Visual Brief` e generare immagini se utili.
+9. Salvare in `src/content/wiki`.
 
 ## Output path consigliato
 
 ```txt
-/content/wiki/slug.md
+src/content/wiki/slug.md
 ```
 
 ## Esempio
 
 ```txt
-/content/wiki/pausa-sigaretta.md
-/content/wiki/design-system-qadra.md
-/content/wiki/economico-programmatore.md
+src/content/wiki/pausa-sigaretta.md
+src/content/wiki/design-system-qadra.md
+src/content/wiki/economico-programmatore.md
 ```
 
 ---
@@ -433,15 +540,14 @@ Length: short / medium / long
 
 Eseguire `timeline-update.md` quando un contenuto:
 
-- introduce evento persistente;
-- modifica stato di progetto;
-- cambia relazione importante;
-- formalizza un processo;
-- introduce personaggio canonico;
-- cambia ruolo di un personaggio;
-- produce conseguenze operative stabili;
-- è classificato come `Major canon`;
-- è classificato come `Minor canon` ma introduce origine o formalizzazione di un concetto.
+- introduce una milestone aziendale;
+- modifica lo stato di Mangrovia o Qadra;
+- cambia CEO, leadership o governance centrale;
+- avvia, chiude o rilancia una linea di prodotto centrale;
+- cambia stato ufficiale del Design System Qadra;
+- introduce fusione, acquisizione, annessione o rebrand;
+- produce un grande incidente che cambia roadmap, governance o offerta;
+- è classificato come `Major canon` e riguarda la roadmap aziendale.
 
 ## Flow
 
@@ -449,7 +555,7 @@ Eseguire `timeline-update.md` quando un contenuto:
 2. Caricare `timeline-update.md`.
 3. Valutare se serve update.
 4. Se `No update needed`, non modificare `timeline.md`.
-5. Se `Update recommended`, decidere se aggiungere evento o solo wiki entry.
+5. Se `Update recommended`, decidere se confermare la milestone o documentarla solo in wiki/world.
 6. Se `Update required`, generare entry e aggiornare `timeline.md`.
 7. Eseguire `canon-check.md` sulla nuova timeline entry.
 
@@ -475,7 +581,8 @@ canon-check.md
 If pass:
   ├─ save research article
   ├─ generate/update wiki entries if needed
-  └─ run timeline-update.md if canon impact requires it
+  ├─ generate optional visual assets
+  └─ run timeline-update.md only if it introduces a company milestone
 ```
 
 ---
@@ -496,7 +603,8 @@ canon-check.md
 If pass:
   ├─ save diary entry
   ├─ suggest wiki entries for recurring concepts
-  └─ run timeline-update.md only if event has persistent impact
+  ├─ generate optional visual assets
+  └─ run timeline-update.md only if it introduces a company milestone
 ```
 
 ---
@@ -516,7 +624,8 @@ canon-check.md
   ↓
 If pass:
   ├─ save wiki page
-  └─ run timeline-update.md only if page formalizes an event or process
+  ├─ generate optional visual assets
+  └─ run timeline-update.md only if page formalizes a company milestone
 ```
 
 ---
@@ -569,7 +678,7 @@ Usare per:
 
 Può richiedere wiki update.
 
-Richiede timeline solo se ha origine importante o conseguenze persistenti.
+Richiede timeline solo se coincide con una milestone aziendale.
 
 ---
 
@@ -578,15 +687,14 @@ Richiede timeline solo se ha origine importante o conseguenze persistenti.
 Usare per:
 
 - fusioni;
-- arrivi di personaggi canonici;
-- cambi ruolo;
+- cambi di CEO o leadership centrale;
 - grandi incidenti;
-- nuovi processi ufficiali;
+- nuove linee di prodotto ufficiali;
 - cambi stato di progetti centrali;
 - decisioni strutturali di The Rock;
-- modifiche stabili alle relazioni.
+- rebrand, acquisizioni o cambi di fase aziendale.
 
-Richiede sempre timeline update.
+Richiede timeline update solo se riguarda la roadmap aziendale.
 
 Può richiedere update anche di characters, relationships o world.
 
@@ -599,7 +707,7 @@ Può richiedere update anche di characters, relationships o world.
 ## Minimal structure
 
 ```txt
-/knowledge
+.ai/knowledge
   canon-rules.md
   mangrovia-world.md
   characters.md
@@ -607,7 +715,7 @@ Può richiedere update anche di characters, relationships o world.
   tone-and-style.md
   timeline.md
 
-/skills
+.ai/skills
   research-article.md
   dev-diary-entry.md
   wiki-entry.md
@@ -615,10 +723,18 @@ Può richiedere update anche di characters, relationships o world.
   timeline-update.md
   generation-workflow.md
 
-/content
+.ai/images
+  adriano.png
+  giulia.png
+  ...
+
+src/content
   /research
-  /diary
+  /dev-diary
   /wiki
+
+public/images/posts
+  generated-post-images.png
 ```
 
 ---
@@ -626,7 +742,7 @@ Può richiedere update anche di characters, relationships o world.
 ## Expanded structure
 
 ```txt
-/knowledge
+.ai/knowledge
   canon-rules.md
   mangrovia-world.md
   characters.md
@@ -634,7 +750,7 @@ Può richiedere update anche di characters, relationships o world.
   tone-and-style.md
   timeline.md
 
-/skills
+.ai/skills
   research-article.md
   dev-diary-entry.md
   wiki-entry.md
@@ -642,11 +758,22 @@ Può richiedere update anche di characters, relationships o world.
   timeline-update.md
   generation-workflow.md
 
-/content
+.ai/images
+  adriano.png
+  fiorenzo.png
+  gigi.png
+  giulia.png
+  mattia.png
+  nikita.png
+  salvatore.png
+  the-rock.png
+  vas.png
+
+src/content
   /research
     feature-completion-confidence-index.md
     smoke-breaks-incident-review.md
-  /diary
+  /dev-diary
     pausa-sigaretta-workshop-allineamento.md
     mattia-primo-incontro-storybook.md
   /wiki
@@ -656,6 +783,10 @@ Può richiedere update anche di characters, relationships o world.
     design-system-qadra.md
     economico-programmatore.md
     pausa-sigaretta.md
+
+public/images/posts
+  feature-completion-confidence-index-cover.png
+  pausa-sigaretta-workshop-allineamento-cover.png
 
 /indexes
   research-index.md
@@ -744,7 +875,7 @@ wiki_update: true
 title: "Pausa sigaretta dopo il workshop di allineamento"
 type: "dev-diary"
 status: "minor-canon"
-point_of_view: "editorial"
+narrative_frame: "mockumentary"
 characters:
   - Adriano
   - Andrea
@@ -774,6 +905,28 @@ related:
 
 Timeline entries possono non avere frontmatter se restano dentro `timeline.md`.
 
+## Visual assets
+
+I campi `visual_assets`, `cover_image`, `image` o simili vanno usati nel frontmatter solo se lo schema Astro li supporta. In caso contrario, inserire le immagini nel corpo Markdown.
+
+Esempio sicuro nel corpo del contenuto:
+
+```md
+![Descrizione breve e utile dell’immagine](/images/posts/slug-cover.png)
+```
+
+Esempio di metadata tecnico per il workflow, non necessariamente da pubblicare:
+
+```yaml
+visual_assets:
+  cover: "/images/posts/slug-cover.png"
+  inline:
+    - "/images/posts/slug-ticket.png"
+  references:
+    - ".ai/images/adriano.png"
+    - ".ai/images/giulia.png"
+```
+
 ---
 
 # Automation-safe rules
@@ -791,6 +944,9 @@ Quando il sistema genera contenuti senza supervisione diretta, usare default con
 - non introdurre nuovi personaggi canonici;
 - non rendere ufficiali processi informali;
 - non usare The Rock come personaggio quotidiano;
+- generare al massimo una cover per contenuto, salvo richiesta esplicita;
+- usare `.ai/images/` solo come reference e non sovrascriverla;
+- non generare immagini che aggiungono fatti canonici non presenti nel testo;
 - proporre timeline update invece di applicarlo automaticamente, salvo regole esplicite.
 
 ## Allowed automatic content
@@ -800,6 +956,8 @@ Sono sicuri da generare automaticamente:
 - research proposal non strutturali;
 - diary episodici;
 - wiki su concetti già approvati;
+- cover image per contenuti già passati dal canon check;
+- immagini inline documentali, se rappresentano oggetti, schermate fittizie, ticket o scene già descritte;
 - aggiornamenti di indici;
 - canon check report;
 - timeline update assessment senza applicazione automatica.
@@ -815,6 +973,9 @@ Richiedono conferma dell’autore:
 - completamento o abbandono di progetti centrali;
 - grandi incidenti;
 - decisioni strutturali di The Rock;
+- immagini che mostrano eventi major canon non approvati;
+- primi piani di personaggi senza reference visiva disponibile;
+- immagini che contraddicono schede personaggio o relazioni;
 - aggiornamenti a `characters.md`, `relationships.md`, `mangrovia-world.md` e `canon-rules.md`.
 
 ---
@@ -833,11 +994,14 @@ Questo workflow è pensato per un task automatico giornaliero.
 3. Leggere knowledge file.
 4. Generare contenuto con skill specifica.
 5. Eseguire canon check.
-6. Se `Pass` o `Pass with notes`, salvare bozza.
-7. Se `Needs revision`, correggere una volta e ricontrollare.
-8. Se `Blocked`, scartare o salvare come non-canon.
-9. Produrre un breve report con:
+6. Se `Pass` o `Pass with notes`, preparare eventuale `Visual Brief`.
+7. Generare al massimo una cover se utile e sicura.
+8. Salvare bozza e asset.
+9. Se `Needs revision`, correggere una volta e ricontrollare.
+10. Se `Blocked`, scartare o salvare come non-canon.
+11. Produrre un breve report con:
   - file creato;
+  - immagini create;
   - stato canonico;
   - wiki update suggeriti;
   - timeline update suggeriti;
@@ -849,7 +1013,10 @@ Questo workflow è pensato per un task automatico giornaliero.
 # Daily Generation Report
 
 ## Created content
-- `/content/diary/slug.md`
+- `src/content/dev-diary/slug.md`
+
+## Visual assets
+- `/images/posts/slug-cover.png`
 
 ## Canon status
 Episodic / Minor canon / Major canon
@@ -876,6 +1043,8 @@ Quando l’autore rivede un contenuto, può decidere:
 
 - pubblicare così com’è;
 - pubblicare rimuovendo `Canon Impact`;
+- pubblicare con o senza immagini;
+- richiedere rigenerazione o rimozione delle immagini;
 - trasformare un episodic in minor canon;
 - promuovere un minor canon a major canon;
 - aggiornare timeline;
@@ -929,7 +1098,11 @@ Economico Programmatore
 
 ## 4. Valutare timeline update
 
-Probabilmente no, salvo che l’episodio venga definito come arrivo canonico di Mattia o formalizzazione del pattern.
+Probabilmente no, salvo che l’episodio venga definito come milestone aziendale.
+
+## 5. Generare una cover opzionale
+
+Usare le reference disponibili in `.ai/images/` per i personaggi presenti. La cover deve mostrare la scena descritta, non introdurre nuove conseguenze canoniche.
 
 ---
 
@@ -938,9 +1111,9 @@ Probabilmente no, salvo che l’episodio venga definito come arrivo canonico di 
 Per evitare monotonia, alternare:
 
 1. research pseudo-serio;
-2. dev diary editoriale;
+2. dev diary mockumentary;
 3. wiki entry;
-4. dev diary firmato;
+4. dev diary con inserti di intervista o documenti;
 5. research tecnico;
 6. wiki update;
 7. canon check / index maintenance.
@@ -951,7 +1124,7 @@ Esempio rotazione settimanale:
 Monday: research
 Tuesday: dev diary
 Wednesday: wiki entry
-Thursday: dev diary signed by character
+Thursday: dev diary document-heavy
 Friday: research or incident report
 Saturday: wiki/index maintenance
 Sunday: no major canon, only episodic content
@@ -974,6 +1147,13 @@ Sunday: no major canon, only episodic content
 - Non aggiornare timeline.
 - Verificare se il contenuto introduce major canon non autorizzato.
 - Trasformare l’evento in episodico o chiedere decisione umana.
+
+## If visual generation fails
+
+- Pubblicare il testo senza immagine.
+- Non sostituire reference mancanti con somiglianze inventate.
+- Salvare il visual brief come nota tecnica, se utile.
+- Rigenerare solo dopo aver chiarito soggetto, reference e funzione dell’immagine.
 
 ## If content is good but too impactful
 
@@ -1000,6 +1180,8 @@ Wiki organizza concetti.
 Timeline registra conseguenze.
 
 Canon check protegge il mondo.
+
+Images completano il post, ma non fanno canon da sole.
 
 Se un contenuto non cambia niente, può essere pubblicato senza timeline.
 
