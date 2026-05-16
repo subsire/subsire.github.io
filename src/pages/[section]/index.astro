@@ -44,7 +44,7 @@ const dateFmt = new Intl.DateTimeFormat("it-IT", {
 
 <SectionLayout section={section}>
   <section class="mx-auto max-w-5xl px-6 pt-16 pb-12">
-    <h1 class="font-serif text-5xl md:text-6xl font-medium tracking-tight text-neutral-900">
+    <h1 class="font-display text-5xl md:text-6xl font-semibold tracking-tight text-neutral-900">
       {section.title}
     </h1>
     <p class="mt-4 max-w-2xl text-lg text-neutral-600">{section.subtitle}</p>
@@ -98,7 +98,7 @@ const dateFmt = new Intl.DateTimeFormat("it-IT", {
                       </span>
                     ))}
                   </div>
-                  <h2 class="font-serif text-2xl md:text-3xl font-medium leading-snug text-neutral-900">
+                  <h2 class="font-display text-2xl md:text-3xl font-semibold leading-snug text-neutral-900">
                     <a
                       href={`/${section.id}/${a.id}/`}
                       class="hover:text-neutral-600 transition-colors"
