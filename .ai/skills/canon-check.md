@@ -139,7 +139,7 @@ Usare quando:
 
 - il testo è coerente;
 - eventuali problemi sono minori;
-- la sezione `Canon Impact` può essere migliorata;
+- il report canonico può essere migliorato;
 - servono piccole correzioni non bloccanti.
 
 ### Needs revision
@@ -195,7 +195,7 @@ Esempi:
 - tono troppo narrativo per una pagina wiki;
 - research troppo comico e poco pseudo-serio;
 - diary con troppi personaggi fuori voce;
-- evento importante senza `Canon Impact`;
+- evento importante senza valutazione nel report privato;
 - nuova metrica presentata come già ufficiale senza timeline;
 - relazione cambiata senza spiegazione.
 
@@ -205,8 +205,8 @@ Non blocca necessariamente la pubblicazione.
 
 Esempi:
 
-- mancano alcune related entries;
-- `Canon Impact` poco preciso;
+- mancano alcuni suggerimenti di wiki update nel report privato;
+- report canonico poco preciso;
 - titolo migliorabile;
 - un personaggio è leggermente troppo esplicito;
 - tono un po’ troppo brillante ma ancora accettabile.
@@ -225,7 +225,8 @@ Controllare sempre:
 - L’eventuale assurdità ha una forma aziendale riconoscibile?
 - L’AI dentro il mondo non funziona come magia?
 - Il contenuto segnala se introduce eventi persistenti?
-- La sezione `Canon Impact`, se presente, è coerente?
+- Il report privato segnala correttamente impatto canonico, wiki update e timeline update?
+- Il Markdown pubblicabile è privo di `Related Entries`, `Canon Notes`, `Canon Impact` e altre note private?
 - La destinazione del contenuto è rispettata?
 
 ---
@@ -386,7 +387,7 @@ Controllare che:
 - abbia struttura coerente;
 - findings, limitations e next steps siano credibili;
 - i personaggi compaiano come autori, stakeholder, fonti o casi studio;
-- non renda ufficiale un progetto senza `Canon Impact`.
+- non renda ufficiale un progetto senza valutazione nel report privato.
 
 Problemi tipici:
 
@@ -483,9 +484,9 @@ Verificare che il contenuto rispetti il registro della sezione.
 
 ---
 
-## Controllo Canon Impact
+## Controllo del report canonico
 
-Se il contenuto include `Canon Impact`, verificare che sia coerente.
+Verificare che il report canonico privato sia coerente con il contenuto pubblicabile. Se il Markdown contiene `Related Entries`, `Canon Notes`, `Canon Impact` o altre note private, richiedere revisione prima della pubblicazione.
 
 ### Episodic
 
@@ -554,7 +555,7 @@ Se il contenuto introduce un nuovo personaggio:
 
 - verificare se era necessario;
 - non considerarlo canonico senza aggiunta a `characters.md`;
-- segnalarlo in `Canon Impact`;
+- segnalarlo nel report privato;
 - proporre eventuale scheda personaggio.
 
 ### Nuovi concetti
@@ -611,7 +612,7 @@ Gli optional improvements devono aiutare a migliorare il contenuto senza bloccar
 
 Esempi:
 
-- aggiungere `Related Entries` più precise;
+- aggiungere wiki updates suggeriti più precisi nel report privato;
 - rendere il titolo meno brillante e più documentale;
 - spostare una frase comica da wiki a diary;
 - rafforzare una limitation nel research;
@@ -637,8 +638,8 @@ Il contenuto è coerente con il canon e rafforza il ruolo della Pausa Sigaretta 
 ## Issues
 
 ### Minor
-- La sezione `Related Entries` dovrebbe includere `Andrea` oltre ad `Adriano`.
-- `Canon Impact` indica correttamente `Minor canon`, ma dovrebbe specificare che non serve aggiornamento timeline.
+- I wiki updates suggeriti dovrebbero includere `Andrea` oltre ad `Adriano`.
+- Il report canonico indica correttamente `Minor canon`, ma dovrebbe specificare che non serve aggiornamento timeline.
 
 ## Required changes
 None.
@@ -681,7 +682,7 @@ L’episodio è coerente come idea, ma alcuni personaggi risultano fuori voce e 
 
 ## Required changes
 - Riscrivere Giulia in modo più corporate e indiretto.
-- Cambiare `Canon Impact` da `Major canon` a `Episodic`, oppure aggiungere un evento reale e persistente che giustifichi il major canon.
+- Cambiare lo status suggerito nel report canonico da `Major canon` a `Episodic`, oppure aggiungere un evento reale e persistente che giustifichi il major canon.
 - Rendere il titolo più asciutto.
 
 ## Optional improvements

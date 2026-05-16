@@ -15,7 +15,7 @@ Generare un articolo research coerente con il canon Mangrovia, utile per aliment
 - eventuali eventi timeline;
 - nuovi concetti interni ricorrenti.
 
-La skill deve produrre un contenuto pubblicabile in Markdown e, quando necessario, una sezione finale di impatto canonico.
+La skill deve produrre un contenuto pubblicabile in Markdown. L'impatto canonico va valutato nel report privato del workflow, non nel file pubblicato.
 
 ---
 
@@ -139,9 +139,9 @@ Adatto a:
 
 Usare questa struttura come default.
 
-```md
-# Titolo
+Il sito Astro renderizza il titolo dalla frontmatter: non inserire un heading `# Titolo` nel corpo del Markdown pubblicato.
 
+```md
 ## Abstract
 Breve sintesi dell’articolo. Deve sembrare seria e utile, ma può contenere una premessa sottilmente assurda.
 
@@ -165,27 +165,19 @@ Limiti dello studio. Questa sezione è spesso utile per far emergere la comicit�
 
 ## Next Steps
 Passi successivi, iniziative, esperimenti o decisioni.
-
-## Related Entries
-Link o nomi di possibili pagine wiki correlate.
-
-## Canon Impact
-Sezione tecnica non necessariamente pubblicabile. Valuta se l’articolo cambia il canon.
 ```
 
 Per articoli brevi, si può usare una struttura ridotta:
 
 ```md
-# Titolo
-
 ## Summary
 
 ## Key Observations
 
 ## Implications
-
-## Canon Impact
 ```
+
+Non includere `Related Entries`, `Canon Impact`, canon check notes, suggerimenti wiki o timeline assessment nel Markdown pubblicato. Queste informazioni appartengono al report privato del workflow.
 
 ---
 
@@ -454,15 +446,13 @@ Esempi:
 
 ---
 
-## Related Entries
+## Related entries per il report privato
 
-Ogni articolo deve proporre 3-8 voci correlate.
+Ogni articolo deve proporre 3-8 voci correlate nel report privato del workflow, non nel Markdown pubblicato.
 
 Esempi:
 
 ```md
-## Related Entries
-
 - Design System Qadra
 - Economico Programmatore
 - The Rock
@@ -475,13 +465,11 @@ Le voci correlate possono essere già esistenti o suggerite come future pagine w
 
 ---
 
-## Canon Impact
+## Canon impact per il report privato
 
-Ogni articolo deve chiudere con questa sezione tecnica.
+Ogni articolo deve essere accompagnato da questa valutazione nel report privato del workflow.
 
 ```md
-## Canon Impact
-
 ### Suggested status
 Episodic / Minor canon / Major canon
 
@@ -505,7 +493,7 @@ Only if needed.
 Brief explanation.
 ```
 
-La sezione `Canon Impact` può essere rimossa dalla versione pubblicata, ma deve essere prodotta nel workflow automatico.
+Non inserire questa valutazione nel Markdown pubblicato.
 
 ---
 
@@ -555,7 +543,7 @@ Prima di produrre l’articolo finale, verificare:
 - le relazioni rispettano `relationships.md`?
 - il tono rispetta `tone-and-style.md`?
 - l’articolo introduce cambiamenti canonici?
-- se sì, sono segnalati in `Canon Impact`?
+- se sì, sono segnalati nel report privato del workflow?
 - ci sono contraddizioni con fatti già stabiliti?
 
 Se ci sono contraddizioni, correggerle prima dell’output.
@@ -569,8 +557,6 @@ L’output finale deve essere Markdown valido.
 Default:
 
 ```md
-# Title
-
 ## Abstract
 ...
 
@@ -594,23 +580,15 @@ Default:
 
 ## Next Steps
 ...
-
-## Related Entries
-...
-
-## Canon Impact
-...
 ```
 
-Non aggiungere spiegazioni fuori dall’articolo, salvo richiesta esplicita.
+Non aggiungere `Related Entries`, `Canon Impact` o note private nel Markdown pubblicato.
 
 ---
 
 ## Esempio breve
 
 ```md
-# Smoke Breaks as Informal Incident Review Mechanisms
-
 ## Abstract
 
 This article examines the role of informal cigarette breaks in backend incident analysis at Mangrovia. Based on recurring interactions between Adriano and Andrea, we identify a pattern of high diagnostic precision, low documentation rate and near-zero organizational recognition.
@@ -650,36 +628,4 @@ The study relies on partial recollection. Andrea declined to confirm several quo
 - Define criteria for informal incident insight.
 - Avoid scheduling smoke breaks.
 - Ask Giorgio whether unstructured technical truth can exist without a ticket.
-
-## Related Entries
-
-- Adriano
-- Andrea
-- Pausa Sigaretta
-- Incidenti Backend Ricorrenti
-- Giorgio
-
-## Canon Impact
-
-### Suggested status
-Minor canon
-
-### Timeline update needed
-No
-
-### Wiki update needed
-Yes
-
-### Character update needed
-No
-
-### Suggested wiki entries
-- Pausa Sigaretta
-- Informal Incident Review
-
-### Suggested timeline entry
-None.
-
-### Notes
-The article formalizes the recurring role of smoke breaks as informal diagnostic spaces, but does not introduce a major event.
 ```

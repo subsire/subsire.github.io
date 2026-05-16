@@ -49,7 +49,7 @@ Public Astro content files:
 src
   content
     research
-    diary
+    dev-diary
     wiki
 ```
 
@@ -57,7 +57,7 @@ Generated files must go only in one of:
 
 ```txt
 src/content/research
-src/content/diary
+src/content/dev-diary
 src/content/wiki
 ```
 
@@ -98,7 +98,7 @@ Before choosing a topic, inspect existing files in:
 
 ```txt
 src/content/research
-src/content/diary
+src/content/dev-diary
 src/content/wiki
 ```
 
@@ -222,25 +222,9 @@ wiki -> minor-canon if based on existing concepts, otherwise episodic
 
 Use `major-canon` only if explicitly requested.
 
-Every generated content file must include frontmatter with:
+The canon status must be assessed in the private `Canon Check Report`, not embedded in the published Markdown file.
 
-```yaml
-status: "episodic"
-```
-
-or:
-
-```yaml
-status: "minor-canon"
-```
-
-Avoid:
-
-```yaml
-status: "major-canon"
-```
-
-unless specifically instructed.
+Do not include `status: "major-canon"` in a public content file unless the user explicitly requests a schema change and a major-canon update.
 
 ---
 
@@ -248,20 +232,29 @@ unless specifically instructed.
 
 Every generated file must begin with YAML frontmatter.
 
+Use the frontmatter fields currently supported by the Astro content schema:
+
+```yaml
+title: "Title"
+date: 2026-05-16
+description: "Short description."
+categories: ["Category One", "Category Two"]
+authors: ["Author Name"]
+```
+
+`authors` is optional. `draft` may be used only when the content should not be published in production.
+
+Do not add private workflow metadata to public frontmatter unless the Astro schema is updated first. This includes `status`, `type`, `entry_type`, `characters`, `point_of_view`, `related`, `wiki_update`, and `timeline_update`.
+
 ### Research frontmatter
 
 ```yaml
 ---
 title: "Title"
+date: 2026-05-16
 description: "Short description."
-type: "research"
-status: "episodic"
-authors: []
-related:
-  - Entry One
-  - Entry Two
-wiki_update: false
-timeline_update: false
+categories: ["Research", "Qadra"]
+authors: ["Mangrovia Research"]
 ---
 ```
 
@@ -270,41 +263,24 @@ timeline_update: false
 ```yaml
 ---
 title: "Title"
+date: 2026-05-16
 description: "Short description."
-type: "dev-diary"
-status: "episodic"
-point_of_view: "editorial"
-characters:
-  - Character One
-  - Character Two
-related:
-  - Entry One
-  - Entry Two
-wiki_update: false
-timeline_update: false
+categories: ["Dev Diary", "Qadra"]
+authors: ["Mangrovia Editorial"]
 ---
 ```
 
-For a signed dev diary, use:
-
-```yaml
-point_of_view: "Andrea"
-```
-
-or another character name.
+For a signed dev diary, use the character name in `authors`.
 
 ### Wiki frontmatter
 
 ```yaml
 ---
 title: "Title"
+date: 2026-05-16
 description: "Short description."
-type: "wiki"
-entry_type: "concept"
-status: "minor-canon"
-related:
-  - Entry One
-  - Entry Two
+categories: ["Wiki", "Concept"]
+authors: ["Mangrovia Wiki"]
 ---
 ```
 
@@ -333,7 +309,7 @@ Examples:
 
 ```txt
 src/content/research/smoke-breaks-incident-review.md
-src/content/diary/mattia-first-storybook-encounter.md
+src/content/dev-diary/mattia-first-storybook-encounter.md
 src/content/wiki/pausa-sigaretta.md
 ```
 
@@ -357,7 +333,7 @@ Look at existing files under:
 
 ```txt
 src/content/research
-src/content/diary
+src/content/dev-diary
 src/content/wiki
 ```
 
@@ -374,6 +350,10 @@ Prefer safe, local, low-impact content.
 Use the matching skill file.
 
 Generate a complete Markdown file with frontmatter.
+
+The Markdown file content must be publication-ready. Do not include `Related Entries`, `Canon Impact`, canon check notes, suggested wiki updates, timeline assessments, or other private workflow notes inside the Markdown file content.
+
+Do not include a top-level `# Title` heading in the Markdown body. The Astro layout renders the page title from frontmatter. Start the body at `##`.
 
 ### Step 5 — Run canon check internally
 
@@ -397,15 +377,11 @@ Pass with notes
 
 ### Step 6 — Assess timeline impact
 
-If `timeline_update: true`, or if the content appears to introduce persistent consequences, use `.ai/skills/timeline-update.md`.
+If the private canon check suggests a timeline update, or if the content appears to introduce persistent consequences, use `.ai/skills/timeline-update.md`.
 
-Default should be:
+Default should be no timeline update.
 
-```yaml
-timeline_update: false
-```
-
-Do not update the timeline automatically unless the user or workflow explicitly allows it.
+Do not update the timeline automatically unless the user explicitly allows it.
 
 ### Step 7 — Produce final output
 
@@ -431,7 +407,7 @@ Brief topic description.
 
 ## File content
 ```md
-[full Markdown file content here]
+[full publication-ready Markdown file content here; no Related Entries, Canon Impact, or private workflow notes]
 ````
 
 ## Canon Check Report
@@ -541,7 +517,7 @@ episodic
 Suggested path:
 
 ```txt
-src/content/diary/mattia-first-qadra-design-system.md
+src/content/dev-diary/mattia-first-qadra-design-system.md
 ```
 
 Keep the story low-impact. It can suggest future wiki entries like `Economico Programmatore` and `Design System Qadra`, but it should not update the timeline.

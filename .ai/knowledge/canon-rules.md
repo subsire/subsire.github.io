@@ -526,12 +526,12 @@ Ogni skill dovrebbe indicare, quando opportuno, quale stato propone per il conte
 
 ---
 
-## Output consigliato per contenuti importanti
+## Report canonico consigliato per contenuti importanti
 
-Quando l’AI genera un contenuto con possibile impatto canonico, deve produrre anche una sezione finale:
+Quando l’AI genera un contenuto con possibile impatto canonico, deve produrre anche un report privato del workflow:
 
 ```md
-## Canon Impact
+## Canon Check Report
 
 ### Suggested status
 Episodic / Minor canon / Major canon
@@ -549,7 +549,7 @@ Yes / No
 Eventuali dettagli da registrare.
 ```
 
-Questa sezione può essere rimossa dalla versione pubblicata, ma è utile nel workflow automatico.
+Questo report non va inserito nel Markdown pubblicato. Il file pubblicabile non deve contenere `Related Entries`, `Canon Notes`, `Canon Impact` o altre note private.
 
 ---
 

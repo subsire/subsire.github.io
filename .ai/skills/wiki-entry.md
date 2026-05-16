@@ -18,7 +18,7 @@ Generare una pagina wiki coerente con il canon Mangrovia, utile per:
 - mantenere continuità tra contenuti generati automaticamente;
 - rendere navigabile l’universo Mangrovia.
 
-La skill deve produrre Markdown pubblicabile e, quando necessario, una sezione tecnica `Canon Impact`.
+La skill deve produrre Markdown pubblicabile. Stato, note e impatto canonico vanno valutati nel report privato del workflow, non nel file pubblicato.
 
 ---
 
@@ -187,9 +187,9 @@ La Pausa Sigaretta è quando Adriano e Andrea escono a fumare e dicono cose catt
 
 Default:
 
-```md
-# Entry Title
+Il sito Astro renderizza il titolo dalla frontmatter: non inserire un heading `# Entry Title` nel corpo del Markdown pubblicato.
 
+```md
 ## Definition
 Definizione breve e chiara.
 
@@ -207,30 +207,17 @@ Eventi collegati, se rilevanti.
 
 ## Related Characters
 Personaggi collegati.
-
-## Related Entries
-Voci wiki correlate.
-
-## Canon Notes
-Note su stato canonico, limiti o ambiguità.
-
-## Canon Impact
-Sezione tecnica non necessariamente pubblicabile.
 ```
 
 Per voci brevi:
 
 ```md
-# Entry Title
-
 ## Definition
 
 ## Notes
-
-## Related Entries
-
-## Canon Impact
 ```
+
+Non includere `Related Entries`, `Canon Notes`, `Canon Impact`, canon check notes, suggerimenti wiki o timeline assessment nel Markdown pubblicato. Queste informazioni appartengono al report privato del workflow.
 
 ---
 
@@ -239,8 +226,6 @@ Per voci brevi:
 Usare per personaggi.
 
 ```md
-# Character Name
-
 ## Definition
 Una frase che identifica il personaggio.
 
@@ -264,15 +249,6 @@ Relazioni principali.
 
 ## Known Events
 Eventi collegati.
-
-## Related Entries
-Voci correlate.
-
-## Canon Notes
-Limiti e cose da non contraddire.
-
-## Canon Impact
-...
 ```
 
 ### Nota
@@ -286,8 +262,6 @@ Per i personaggi già presenti in `characters.md`, la pagina wiki deve sintetizz
 Usare per aziende o entità organizzative.
 
 ```md
-# Company Name
-
 ## Definition
 
 ## Overview
@@ -301,12 +275,6 @@ Usare per aziende o entità organizzative.
 ## Key People
 
 ## Known Events
-
-## Related Entries
-
-## Canon Notes
-
-## Canon Impact
 ```
 
 ---
@@ -316,8 +284,6 @@ Usare per aziende o entità organizzative.
 Usare per prodotti, sistemi, iniziative, strumenti e progetti.
 
 ```md
-# Project Name
-
 ## Definition
 
 ## Status
@@ -336,12 +302,6 @@ Active / abandoned / partial / proposed / unclear / mythological
 ## Related Characters
 
 ## Related Events
-
-## Related Entries
-
-## Canon Notes
-
-## Canon Impact
 ```
 
 La sezione `Status` è particolarmente importante per progetti come il Design System Qadra.
@@ -353,8 +313,6 @@ La sezione `Status` è particolarmente importante per progetti come il Design Sy
 Usare per concetti ricorrenti, rituali, categorie o pattern.
 
 ```md
-# Concept Name
-
 ## Definition
 
 ## Overview
@@ -366,12 +324,6 @@ Usare per concetti ricorrenti, rituali, categorie o pattern.
 ## Examples
 
 ## Related Characters
-
-## Related Entries
-
-## Canon Notes
-
-## Canon Impact
 ```
 
 ---
@@ -381,8 +333,6 @@ Usare per concetti ricorrenti, rituali, categorie o pattern.
 Usare per eventi canonici.
 
 ```md
-# Event Name
-
 ## Definition
 
 ## Date
@@ -398,13 +348,7 @@ Data precisa o approssimativa.
 
 ## Related Characters
 
-## Related Entries
-
 ## Timeline Reference
-
-## Canon Notes
-
-## Canon Impact
 ```
 
 ---
@@ -414,8 +358,6 @@ Data precisa o approssimativa.
 Usare per incidenti tecnici o organizzativi.
 
 ```md
-# Incident Name
-
 ## Definition
 
 ## Date
@@ -432,12 +374,6 @@ Data precisa o approssimativa.
 ## Impact
 
 ## Related Characters
-
-## Related Entries
-
-## Canon Notes
-
-## Canon Impact
 ```
 
 ---
@@ -456,7 +392,7 @@ Voce ricorrente o concetto stabile, ma non strutturale.
 
 Voce fondamentale per il mondo, la timeline, i personaggi o le dinamiche aziendali.
 
-Ogni pagina wiki deve indicare lo stato proposto in `Canon Impact`.
+Ogni pagina wiki deve indicare lo stato proposto nel report privato del workflow.
 
 ---
 
@@ -542,9 +478,9 @@ La Classificazione delle Metafore Dirigenziali è un processo proposto per disti
 
 ---
 
-## Related Entries
+## Related entries per il report privato
 
-Ogni pagina deve proporre 3-10 voci correlate.
+Ogni pagina deve proporre 3-10 voci correlate nel report privato del workflow, non nel Markdown pubblicato.
 
 Le voci correlate possono includere:
 
@@ -560,8 +496,6 @@ Le voci correlate possono includere:
 Esempio:
 
 ```md
-## Related Entries
-
 - Adriano
 - Andrea
 - Informal Incident Review
@@ -572,23 +506,19 @@ Esempio:
 
 ---
 
-## Canon Notes
+## Canon notes per il report privato
 
-La sezione `Canon Notes` serve a indicare limiti e precisazioni.
+Le `Canon Notes` servono a indicare limiti e precisazioni nel report privato del workflow.
 
 Esempi:
 
 ```md
-## Canon Notes
-
 - La Pausa Sigaretta non è un processo ufficiale Mangrovia.
 - Non deve essere descritta come una retrospettiva formalizzata.
 - Il suo valore sta nella natura informale e non riconosciuta.
 ```
 
 ```md
-## Canon Notes
-
 - Il Design System Qadra non è considerato completato.
 - Nikita può descriverlo come quasi pronto, ma questa è una sua interpretazione.
 - Qualsiasi completamento ufficiale richiede aggiornamento timeline.
@@ -596,13 +526,11 @@ Esempi:
 
 ---
 
-## Canon Impact
+## Canon impact per il report privato
 
-Ogni pagina deve chiudere con questa sezione tecnica.
+Ogni pagina deve essere accompagnata da questa valutazione nel report privato del workflow.
 
 ```md
-## Canon Impact
-
 ### Suggested status
 Episodic / Minor canon / Major canon
 
@@ -622,7 +550,7 @@ Yes / No
 Brief explanation.
 ```
 
-La sezione può essere rimossa dalla versione pubblicata, ma deve essere prodotta nel workflow automatico.
+Non inserire questa valutazione nel Markdown pubblicato.
 
 ---
 
@@ -636,7 +564,7 @@ Prima di produrre la pagina finale, verificare:
 - se è un evento, è coerente con `timeline.md`?
 - se deriva da research o diary, distingue fatti da tono del testo source?
 - introduce nuovi dettagli canonici?
-- se sì, sono segnalati in `Canon Impact`?
+- se sì, sono segnalati nel report privato del workflow?
 - la pagina è abbastanza neutra per una wiki?
 - ci sono voci correlate utili?
 
@@ -651,8 +579,6 @@ L’output finale deve essere Markdown valido.
 Default:
 
 ```md
-# Entry Title
-
 ## Definition
 ...
 
@@ -670,26 +596,15 @@ Default:
 
 ## Related Characters
 ...
-
-## Related Entries
-...
-
-## Canon Notes
-...
-
-## Canon Impact
-...
 ```
 
-Non aggiungere spiegazioni fuori dalla pagina wiki, salvo richiesta esplicita.
+Non aggiungere `Related Entries`, `Canon Notes`, `Canon Impact` o note private nel Markdown pubblicato.
 
 ---
 
 ## Esempio: Concept Entry
 
 ```md
-# Pausa Sigaretta
-
 ## Definition
 
 La Pausa Sigaretta è un rituale informale associato principalmente ad Adriano e Andrea, durante il quale vengono spesso formulate diagnosi tecniche e organizzative non riconosciute dai processi ufficiali Mangrovia.
@@ -720,36 +635,6 @@ La Pausa Sigaretta viene usata nei diary come momento di diagnosi informale. Pu�
 - Andrea
 - Giulia
 - Giorgio
-
-## Related Entries
-
-- Informal Incident Review
-- Incidenti Backend Ricorrenti
-- Definition of Done
-- Ticketizzazione
-
-## Canon Notes
-
-- La Pausa Sigaretta non è un processo ufficiale Mangrovia.
-- Non deve diventare una retrospettiva formalizzata.
-- Il suo valore narrativo dipende dal fatto che resti esterna al processo.
-
-## Canon Impact
-
-### Suggested status
-Minor canon
-
-### Timeline update needed
-No
-
-### Character update needed
-No
-
-### Related files to update
-None.
-
-### Notes
-La voce formalizza un rituale ricorrente già coerente con Adriano e Andrea, senza introdurre un evento strutturale.
 ```
 
 ---
@@ -757,8 +642,6 @@ La voce formalizza un rituale ricorrente già coerente con Adriano e Andrea, sen
 ## Esempio: Project Entry
 
 ```md
-# Design System Qadra
-
 ## Definition
 
 Il Design System Qadra è l’insieme di componenti, token, convenzioni visive e intenzioni progettuali sviluppate durante la fase Qadra e parzialmente ereditate da Mangrovia dopo la fusione.
@@ -805,35 +688,4 @@ Dopo la fusione, il Design System Qadra diventa una delle eredità più problema
 - Stima iniziale di tre settimane più una di test.
 - Ultimo commit noto di Nikita.
 - Fusione Qadra-Mangrovia.
-
-## Related Entries
-
-- Economico Programmatore
-- Definition of Done
-- Component Library
-- Qadra
-- Mangrovia Blockchain Solutions
-
-## Canon Notes
-
-- Il Design System Qadra non deve essere considerato completato.
-- Qualsiasi completamento ufficiale richiede aggiornamento della timeline.
-- Nikita può sostenere che il lavoro fosse quasi finito, ma questa è una posizione soggettiva.
-
-## Canon Impact
-
-### Suggested status
-Major canon
-
-### Timeline update needed
-No
-
-### Character update needed
-No
-
-### Related files to update
-None.
-
-### Notes
-La voce documenta un elemento strutturale già presente nel canon. Non introduce un nuovo evento.
 ```

@@ -201,10 +201,12 @@ La skill specifica definisce struttura, formato, tono e output.
 
 Generare una prima bozza del contenuto.
 
-Ogni bozza deve includere, salvo eccezioni, una sezione tecnica finale:
+Ogni bozza pubblicabile deve contenere solo il Markdown destinato al sito. Non includere sezioni tecniche come `Related Entries`, `Canon Notes` o `Canon Impact` nel corpo del file.
+
+Accompagnare invece la bozza con un report privato del workflow:
 
 ```md
-## Canon Impact
+## Canon Check Report
 
 ### Suggested status
 Episodic / Minor canon / Major canon
@@ -323,8 +325,8 @@ Il contenuto è pubblicabile, ma applicare eventuali piccoli miglioramenti se au
 
 Esempi:
 
-- aggiungere related entries;
-- chiarire Canon Impact;
+- aggiungere wiki updates suggeriti al report privato;
+- chiarire il canon check report;
 - correggere titolo;
 - ridurre una frase troppo comica.
 
@@ -411,8 +413,8 @@ Length: short / medium / long
 1. Leggere knowledge file.
 2. Caricare `research-article.md`.
 3. Generare articolo con struttura research.
-4. Includere `Canon Impact`.
-5. Eseguire `canon-check.md`.
+4. Non includere `Related Entries`, `Canon Impact` o note private nel Markdown pubblicato.
+5. Eseguire `canon-check.md` e produrre il report canonico separatamente.
 6. Se il check passa, decidere se serve `wiki-entry.md`.
 7. Se l’articolo introduce una milestone aziendale, eseguire `timeline-update.md`.
 8. Preparare `Visual Brief` e generare immagini se utili.
@@ -461,8 +463,8 @@ Materials: dialoghi / interviste / Slack / ticket / documenti / mixed
 1. Leggere knowledge file.
 2. Caricare `dev-diary-entry.md`.
 3. Generare entry narrativa in formato mockumentary.
-4. Includere `Canon Impact`.
-5. Eseguire `canon-check.md`.
+4. Non includere `Related Entries`, `Canon Impact` o note private nel Markdown pubblicato.
+5. Eseguire `canon-check.md` e produrre il report canonico separatamente.
 6. Se il check passa, valutare se nascono nuove wiki entry.
 7. Se l’episodio introduce una milestone aziendale, eseguire `timeline-update.md`.
 8. Preparare `Visual Brief` e generare immagini se utili.
@@ -510,8 +512,8 @@ Length: short / medium / long
 2. Caricare `wiki-entry.md`.
 3. Se la voce deriva da un research o diary, estrarre solo i fatti utili.
 4. Generare pagina wiki semi-neutra.
-5. Includere `Canon Notes` e `Canon Impact`.
-6. Eseguire `canon-check.md`.
+5. Non includere `Related Entries`, `Canon Notes`, `Canon Impact` o note private nel Markdown pubblicato.
+6. Eseguire `canon-check.md` e produrre il report canonico separatamente.
 7. Se la pagina wiki formalizza una milestone aziendale, eseguire `timeline-update.md`.
 8. Preparare `Visual Brief` e generare immagini se utili.
 9. Salvare in `src/content/wiki`.
@@ -849,22 +851,19 @@ Per contenuti senza data canonica, preferire file senza data o con data di pubbl
 
 # Metadata consigliati
 
-Ogni contenuto pubblicabile può iniziare con frontmatter YAML.
+Ogni contenuto pubblicabile deve iniziare con frontmatter YAML compatibile con lo schema Astro del sito.
+
+Non inserire nel frontmatter pubblico campi privati o non supportati dallo schema, come `status`, `type`, `entry_type`, `characters`, `related`, `timeline_update` o `wiki_update`, finché lo schema Astro non li supporta esplicitamente.
 
 ## Research
 
 ```yaml
 ---
 title: "Smoke Breaks as Informal Incident Review Mechanisms"
-type: "research"
-status: "minor-canon"
-related:
-  - Adriano
-  - Andrea
-  - Pausa Sigaretta
-  - Incidenti Backend Ricorrenti
-timeline_update: false
-wiki_update: true
+date: 2026-05-16
+description: "Analisi del ruolo delle pause informali nella diagnosi degli incidenti tecnici."
+categories: ["Research", "Incident Review"]
+authors: ["Mangrovia Research"]
 ---
 ```
 
@@ -873,16 +872,10 @@ wiki_update: true
 ```yaml
 ---
 title: "Pausa sigaretta dopo il workshop di allineamento"
-type: "dev-diary"
-status: "minor-canon"
-narrative_frame: "mockumentary"
-characters:
-  - Adriano
-  - Andrea
-  - Giulia
-  - Giorgio
-timeline_update: false
-wiki_update: true
+date: 2026-05-16
+description: "Un breve episodio sulla differenza tra allineamento dichiarato e comprensione operativa."
+categories: ["Dev Diary", "Workshop"]
+authors: ["Mangrovia Editorial"]
 ---
 ```
 
@@ -891,13 +884,10 @@ wiki_update: true
 ```yaml
 ---
 title: "Pausa Sigaretta"
-type: "wiki"
-entry_type: "concept"
-status: "minor-canon"
-related:
-  - Adriano
-  - Andrea
-  - Informal Incident Review
+date: 2026-05-16
+description: "Rituale informale associato ad analisi tecniche non ufficiali."
+categories: ["Wiki", "Concept"]
+authors: ["Mangrovia Wiki"]
 ---
 ```
 
@@ -1042,7 +1032,7 @@ Brief notes.
 Quando l’autore rivede un contenuto, può decidere:
 
 - pubblicare così com’è;
-- pubblicare rimuovendo `Canon Impact`;
+- pubblicare solo se il Markdown non contiene `Related Entries`, `Canon Impact` o note private del workflow;
 - pubblicare con o senza immagini;
 - richiedere rigenerazione o rimozione delle immagini;
 - trasformare un episodic in minor canon;

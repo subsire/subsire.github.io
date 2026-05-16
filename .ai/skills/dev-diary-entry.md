@@ -17,7 +17,7 @@ Generare una entry narrativa coerente con il canon Mangrovia, utile per alimenta
 - possibili eventi timeline;
 - nuovi concetti interni ricorrenti.
 
-Il testo deve essere pubblicabile in Markdown e includere, quando necessario, una sezione finale `Canon Impact` per valutare se l’episodio modifica il mondo.
+Il testo deve essere pubblicabile in Markdown. L'impatto canonico va valutato nel report privato del workflow, non nel file pubblicato.
 
 ---
 
@@ -116,9 +116,9 @@ Anche in questo caso la scena è raccontata in terza persona. Adriano e Andrea p
 
 Default per una entry media:
 
-```md
-# Titolo
+Il sito Astro renderizza il titolo e la data dalla frontmatter: non inserire un heading `# Titolo` nel corpo del Markdown pubblicato.
 
+```md
 _Date or approximate date, optional_
 
 ## Summary
@@ -129,12 +129,6 @@ Racconto della giornata o dell’evento.
 
 ## Outcome
 Conseguenza concreta: ticket, decisione, mancata decisione, update, nuovo meeting, piccolo incidente.
-
-## Related Entries
-Voci wiki o contenuti collegati.
-
-## Canon Impact
-Valutazione tecnica dell’impatto canonico.
 ```
 
 Per entry più narrative, si può omettere `Summary` e usare direttamente il racconto.
@@ -142,13 +136,10 @@ Per entry più narrative, si può omettere `Summary` e usare direttamente il rac
 Per entry brevi:
 
 ```md
-# Titolo
-
 Testo breve in terza persona.
-
-## Canon Impact
-...
 ```
+
+Non includere `Related Entries`, `Canon Impact`, canon check notes, suggerimenti wiki o timeline assessment nel Markdown pubblicato. Queste informazioni appartengono al report privato del workflow.
 
 ---
 
@@ -434,15 +425,13 @@ Da evitare:
 
 ---
 
-## Related Entries
+## Related entries per il report privato
 
-Ogni entry deve proporre 3-8 voci correlate.
+Ogni entry deve proporre 3-8 voci correlate nel report privato del workflow, non nel Markdown pubblicato.
 
 Esempi:
 
 ```md
-## Related Entries
-
 - Adriano
 - Andrea
 - Pausa Sigaretta
@@ -455,13 +444,11 @@ Le voci correlate possono essere già esistenti o suggerite come future pagine w
 
 ---
 
-## Canon Impact
+## Canon impact per il report privato
 
-Ogni entry deve chiudere con questa sezione tecnica.
+Ogni entry deve essere accompagnata da questa valutazione nel report privato del workflow.
 
 ```md
-## Canon Impact
-
 ### Suggested status
 Episodic / Minor canon / Major canon
 
@@ -485,7 +472,7 @@ Only if needed.
 Brief explanation.
 ```
 
-La sezione `Canon Impact` può essere rimossa dalla versione pubblicata, ma deve essere prodotta nel workflow automatico.
+Non inserire questa valutazione nel Markdown pubblicato.
 
 ---
 
@@ -535,7 +522,7 @@ Prima di produrre l’entry finale, verificare:
 - il tono rispetta `tone-and-style.md`?
 - l’evento è plausibile dentro `mangrovia-world.md`?
 - l’entry introduce cambiamenti canonici?
-- se sì, sono segnalati in `Canon Impact`?
+- se sì, sono segnalati nel report privato del workflow?
 - la cornice narrativa scelta è coerente con il formato mockumentary?
 - la voce resta in terza persona anche quando include materiali dei personaggi?
 - The Rock è usato con parsimonia?
@@ -554,8 +541,6 @@ L’output finale deve essere Markdown valido.
 Default:
 
 ```md
-# Title
-
 ## Summary
 ...
 
@@ -564,19 +549,11 @@ Default:
 
 ## Outcome
 ...
-
-## Related Entries
-...
-
-## Canon Impact
-...
 ```
 
 Per entry con materiali interni:
 
 ```md
-# Title
-
 ## Summary
 ...
 
@@ -589,23 +566,15 @@ Per entry con materiali interni:
 
 ## Outcome
 ...
-
-## Related Entries
-...
-
-## Canon Impact
-...
 ```
 
-Non aggiungere spiegazioni fuori dall’entry, salvo richiesta esplicita.
+Non aggiungere `Related Entries`, `Canon Impact` o note private nel Markdown pubblicato.
 
 ---
 
 ## Esempio breve editoriale
 
 ```md
-# Pausa sigaretta dopo il workshop di allineamento
-
 ## Summary
 
 Dopo un workshop sul concetto di completamento, Adriano e Andrea escono a fumare e identificano in tre minuti il problema che il workshop non è riuscito a nominare.
@@ -629,40 +598,6 @@ La retrospettiva informale durò meno di quattro minuti. Non produsse action ite
 ## Outcome
 
 Nel pomeriggio Giulia propose un nuovo meeting per consolidare la definizione di completamento. Giorgio collegò i due ticket precedenti a una nuova epic.
-
-## Related Entries
-
-- Adriano
-- Andrea
-- Giulia
-- Giorgio
-- Design System Qadra
-- Pausa Sigaretta
-- Definition of Done
-
-## Canon Impact
-
-### Suggested status
-Minor canon
-
-### Timeline update needed
-No
-
-### Wiki update needed
-Yes
-
-### Character update needed
-No
-
-### Suggested wiki entries
-- Pausa Sigaretta
-- Definition of Done
-
-### Suggested timeline entry
-None.
-
-### Notes
-L’entry rafforza il ruolo della pausa sigaretta come spazio informale di diagnosi, ma non introduce un evento strutturale.
 ```
 
 ---
@@ -670,8 +605,6 @@ L’entry rafforza il ruolo della pausa sigaretta come spazio informale di diagn
 ## Esempio breve con documento interno
 
 ```md
-# La richiesta funzionava
-
 ## Summary
 
 Un presunto bug frontend viene analizzato come incidente API e si rivela una divergenza tra implementazione, aspettativa di prodotto e commenti rimasti su Figma.
@@ -699,36 +632,4 @@ Andrea ha spento lo schermo del telefono. “È una richiesta che funziona contr
 ## Outcome
 
 Giulia ha proposto di aggiungere un campo opzionale per preservare l'intento originale del commento Figma. Giorgio ha chiesto se aprire un bug, una task o un sotto-ticket di interpretazione.
-
-## Related Entries
-
-- Andrea
-- Adriano
-- Giulia
-- Figma
-- API
-- Pausa Sigaretta
-
-## Canon Impact
-
-### Suggested status
-Episodic
-
-### Timeline update needed
-No
-
-### Wiki update needed
-No
-
-### Character update needed
-No
-
-### Suggested wiki entries
-None.
-
-### Suggested timeline entry
-None.
-
-### Notes
-Episodio coerente con Andrea e Adriano, senza impatto persistente.
 ```
