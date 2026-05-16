@@ -2,7 +2,9 @@
 
 Questa skill genera contenuti per la sezione `blog` / `dev-diary` dell’universo Mangrovia.
 
-Il dev-diary racconta giornate, incidenti, meeting, piccoli disastri, scambi tra personaggi e conseguenze operative. Il formato canonico è quello del mockumentary aziendale: una voce terza, esterna o semi-interna, osserva la vita aziendale con satira asciutta e dettagli tecnici credibili.
+Il dev-diary racconta giornate, incidenti, meeting, piccoli disastri, scambi tra personaggi e conseguenze operative. È la sezione in cui vive la storia principale di Mangrovia: scene, personaggi, tensioni, fraintendimenti, conseguenze e ritmo da mockumentary aziendale.
+
+Il formato canonico è quello del mockumentary: una voce terza, esterna o semi-interna, osserva la vita aziendale con satira asciutta e dettagli tecnici credibili. Se `research` è il paper assurdo e `wiki` è la reference, il dev-diary è la puntata.
 
 Una entry non deve mai essere scritta come diario in prima persona di un personaggio. Può però includere spezzoni di dialoghi, interviste, ticket, messaggi Slack, note interne, documenti o incident report scritti dai personaggi.
 
@@ -149,6 +151,8 @@ Il dev-diary deve:
 
 - essere narrativo ma asciutto;
 - usare sempre una cornice in terza persona;
+- sviluppare una scena o una sequenza riconoscibile;
+- usare i personaggi come motore dell’episodio;
 - usare dettagli concreti;
 - evitare punchline forzate;
 - lasciare emergere il sottotesto;
@@ -157,6 +161,8 @@ Il dev-diary deve:
 - far seguire agli eventi conseguenze operative plausibili.
 
 Il testo non deve spiegare la comicità.
+
+È corretto che il dev-diary contenga lore, riferimenti ricorrenti e dinamiche da “The Office” aziendale. Questi elementi non devono essere esportati con lo stesso tono in `research` o `wiki`.
 
 Scrivere:
 
@@ -367,6 +373,8 @@ Un meeting produce più lavoro di quello che avrebbe dovuto risolvere.
 ### 6. Research → conseguenza assurda
 
 Un articolo research interno viene preso abbastanza sul serio da diventare processo.
+
+Quando un research compare nel dev-diary, trattarlo come oggetto di scena o documento che produce conseguenze operative. Non copiare il tono da paper nel racconto, se non in brevi estratti.
 
 ### 7. Onboarding → trauma controllato
 

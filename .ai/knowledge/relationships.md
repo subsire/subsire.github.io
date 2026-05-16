@@ -541,12 +541,12 @@ Non farli diventare doppioni backend. Salvo è umano e paziente; Andrea è tratt
 
 ## Research
 
-Usare le relazioni per produrre articoli pseudo-seri che nascondono dinamiche interne. Esempi:
+Non usare le relazioni come scene o inside joke nel testo research pubblicato. Le dinamiche tra personaggi possono ispirare dataset, ipotesi o variabili, ma vanno aggregate o anonimizzate. Esempi:
 
-- Giulia + Lorenzo: metriche aziendali sospette.
-- The Rock + Giulia: trasformazione AI-first.
-- Nikita + Mattia: automazione della produttività frontend.
-- Fiorenzo + Salvo: resilienza backend e CI.
+- Giulia + Lorenzo: metriche aziendali sospette -> `planning metric variance`.
+- The Rock + Giulia: trasformazione AI-first -> `executive-to-process translation`.
+- Nikita + Mattia: automazione della produttività frontend -> `junior frontend productivity proxy`.
+- Fiorenzo + Salvo: resilienza backend e CI -> `backend incident response cohort`.
 
 ## Dev-Diary
 

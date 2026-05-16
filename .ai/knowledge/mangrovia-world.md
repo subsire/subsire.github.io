@@ -190,7 +190,7 @@ La satira deve restare ambivalente: l’AI non è solo fuffa. A volte funziona d
 
 La sezione `research` contiene finti articoli su ciò che Mangrovia sta facendo, studiando o dichiarando di studiare.
 
-Questi articoli devono sembrare documenti aziendali o pseudo-accademici, ma possono rivelare in modo indiretto le assurdità dell’azienda.
+Questi articoli devono sembrare pubblicazioni di laboratorio all’avanguardia: misurabili, visuali, metodologiche, con dataset, metriche, risultati, limiti e future work. Possono rivelare in modo indiretto le assurdità dell’azienda, ma non devono raccontarle come scene.
 
 Temi possibili:
 
@@ -205,7 +205,7 @@ Temi possibili:
 - produttività dei frontendisti economici;
 - impatto del fumo sulla risoluzione degli incidenti backend.
 
-Il tono research deve essere serio in superficie. La comicità deve emergere da premesse assurde trattate con rigore.
+Il tono research deve essere serio in superficie. La comicità deve emergere da premesse assurde trattate con rigore, non da ammiccamenti o personaggi in scena.
 
 ---
 
@@ -213,7 +213,7 @@ Il tono research deve essere serio in superficie. La comicità deve emergere da 
 
 La sezione `dev-diary` racconta giornate, episodi, incidenti, meeting e piccoli disastri quotidiani.
 
-Il formato canonico è quello del mockumentary aziendale: una voce terza, esterna o semi-interna, osserva i personaggi durante call, incidenti, pause sigaretta, retrospettive, demo e momenti di lavoro ordinario. Il testo deve sembrare scritto da qualcuno che ha accesso alla scena, ai documenti e alle conseguenze operative, ma non coincide mai con uno dei personaggi.
+Il dev-diary è la sede principale della storia Mangrovia. Il formato canonico è quello del mockumentary aziendale: una voce terza, esterna o semi-interna, osserva i personaggi durante call, incidenti, pause sigaretta, retrospettive, demo e momenti di lavoro ordinario. Il testo deve sembrare scritto da qualcuno che ha accesso alla scena, ai documenti e alle conseguenze operative, ma non coincide mai con uno dei personaggi.
 
 I personaggi non firmano il dev diary e non ne sono i narratori principali. Possono però comparire attraverso materiali diegetici inseriti nella cronaca:
 
@@ -232,7 +232,7 @@ Questo permette di mantenere una voce editoriale coerente senza perdere le voci 
 
 ## Wiki
 
-La sezione `wiki` è la piccola enciclopedia dell’universo Mangrovia.
+La sezione `wiki` è la reference dell’universo Mangrovia.
 
 Deve mettere insieme:
 
@@ -246,7 +246,7 @@ Deve mettere insieme:
 - post del blog;
 - timeline.
 
-La wiki deve avere un tono più neutro rispetto al blog, ma non completamente asettico. Può sembrare scritta da un sistema interno che cerca di mantenere ordine in una realtà che non lo desidera.
+La wiki deve avere un tono neutro, asciutto e comprensibile anche per un lettore esterno. Serve a spiegare, collegare e catalogare; non deve replicare il tono narrativo del dev-diary né quello metodologico del research.
 
 Esempi di pagine wiki:
 

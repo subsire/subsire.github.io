@@ -1,8 +1,10 @@
 # Skill: Research Article
 
-Questa skill genera finti articoli `research` per l’universo Mangrovia.
+Questa skill genera articoli `research` fittizi per l’universo Mangrovia.
 
-Gli articoli devono sembrare documenti aziendali, white paper interni, report pseudo-accademici o analisi tecnico-strategiche prodotte da Mangrovia/Qadra. Devono essere seri in superficie e satirici nel sottotesto.
+La sezione `research` non è dev-diary travestito da report e non è wiki con tono accademico. Deve sembrare una pubblicazione di laboratorio all’avanguardia, nello spirito di paper tecnici OpenAI/Anthropic: rigorosa, misurabile, visuale, sproporzionata rispetto all’oggetto e quasi completamente priva di ammiccamenti narrativi.
+
+L’umorismo nasce dal fatto che un oggetto interno, piccolo o assurdo viene trattato con strumenti da ricerca avanzata: metriche, dataset, benchmark, grafici, ablation, tassonomie, limitazioni sperimentali. Non nasce da battute, personaggi in scena o frasi “strambe”.
 
 ---
 
@@ -15,7 +17,7 @@ Generare un articolo research coerente con il canon Mangrovia, utile per aliment
 - eventuali eventi timeline;
 - nuovi concetti interni ricorrenti.
 
-La skill deve produrre un contenuto pubblicabile in Markdown. L'impatto canonico va valutato nel report privato del workflow, non nel file pubblicato.
+La skill deve produrre un contenuto pubblicabile in Markdown. Il file pubblicato deve reggere come articolo di ricerca anche per un lettore che non conosce la lore Mangrovia. L'impatto canonico va valutato nel report privato del workflow, non nel file pubblicato.
 
 ---
 
@@ -41,7 +43,7 @@ La skill può ricevere uno o più di questi input:
 ```md
 Topic: tema dell’articolo
 Angle: taglio specifico
-Characters: personaggi coinvolti o citati
+Evidence roles: ruoli o fonti osservate, preferibilmente anonimizzate
 Related concepts: concetti interni collegati
 Canon status: episodic / minor canon / major canon / undecided
 Length: short / medium / long
@@ -52,10 +54,10 @@ Notes: eventuali istruzioni aggiuntive
 Esempio:
 
 ```md
-Topic: classificazione delle metafore dirigenziali
-Angle: capire se le frasi di The Rock possono essere convertite automaticamente in requisiti funzionali
-Characters: The Rock, Giorgio, Gigi, Giulia
-Related concepts: AI-first, ticket, roadmap
+Topic: classificazione delle metafore dirigenziali in ambienti AI-first
+Angle: misurare quando una frase executive viene convertita in requisito funzionale
+Evidence roles: executive speaker, delivery coordinator, product stakeholder
+Related concepts: AI-first, ticket, roadmap, requirement ambiguity
 Canon status: minor canon
 Length: medium
 ```
@@ -68,22 +70,23 @@ Se l’input è incompleto, fare una scelta ragionevole e procedere. Chiedere ch
 
 Scegliere il tipo più adatto al tema.
 
-### 1. White paper interno
+### 1. Frontier lab paper
 
-Documento strategico, pulito, corporate, orientato a visione e applicazioni.
+Documento tecnico-scientifico fittizio con abstract, metodo, dataset, risultati, figure, metriche e limiti. È il formato consigliato.
 
 Adatto a:
 
-- AI-first transformation;
-- wealth management;
+- modelli predittivi su ticket, feature o incidenti;
+- valutazione di componenti e processi;
+- misurazione di drift organizzativo;
+- metriche interne;
 - agentic workflows;
-- automazione;
-- operational excellence;
-- knowledge layer.
+- knowledge layer;
+- design system trattati come sistema sperimentale.
 
 ### 2. Studio tecnico-operativo
 
-Documento più vicino all’ingegneria, con problemi, metodo, osservazioni e conseguenze.
+Documento più vicino all’ingegneria, ma comunque con ipotesi, dataset, misure e risultati.
 
 Adatto a:
 
@@ -96,17 +99,17 @@ Adatto a:
 - ticket;
 - metriche.
 
-### 3. Analisi pseudo-scientifica
+### 3. Systems paper
 
-Documento con tono quasi accademico, applicato a un oggetto ridicolo ma trattato con rigore.
+Documento che propone una tassonomia, architettura, metrica o framework operativo.
 
 Adatto a:
 
-- probabilità che una feature sia davvero finita;
-- produttività dei frontendisti economici;
-- impatto della pausa sigaretta;
-- modelli predittivi su bug e ticket;
-- classificazione delle metafore dirigenziali.
+- classificazione delle metafore dirigenziali;
+- metriche di disponibilità dei componenti;
+- modelli di ownership;
+- workflow AI interni;
+- valutazione di knowledge base o documentazione.
 
 ### 4. Report post-incidente
 
@@ -123,7 +126,7 @@ Adatto a:
 
 ### 5. Proposal research
 
-Documento che propone una nuova iniziativa, ma non la rende automaticamente canonica.
+Documento che propone una nuova iniziativa tecnica o sperimentale, ma non la rende automaticamente canonica.
 
 Adatto a:
 
@@ -143,28 +146,28 @@ Il sito Astro renderizza il titolo dalla frontmatter: non inserire un heading `#
 
 ```md
 ## Abstract
-Breve sintesi dell’articolo. Deve sembrare seria e utile, ma può contenere una premessa sottilmente assurda.
+Sintesi concisa: problema, metodo, dati, risultato principale, implicazione.
 
-## Context
-Contesto aziendale, tecnico o organizzativo.
+## Introduction
+Contesto tecnico e motivazione della ricerca. Il riferimento a Mangrovia/Qadra deve essere minimo e funzionale.
 
-## Problem
-Qual è il problema analizzato.
+## Methodology
+Dataset, procedura sperimentale, annotazione, metriche e criteri di valutazione.
 
-## Method
-Come Mangrovia ha studiato o intende studiare il problema.
+## Metrics
+Definizione di metriche, indici o variabili operative.
 
-## Findings
-Osservazioni principali.
+## Results
+Risultati principali, possibilmente con tabelle, grafici Markdown o figure descritte.
 
-## Operational Implications
-Conseguenze pratiche per team, prodotto, processi o tecnologia.
+## Discussion
+Interpretazione dei risultati e conseguenze operative.
 
 ## Limitations
-Limiti dello studio. Questa sezione è spesso utile per far emergere la comicità.
+Limiti dello studio, bias, dati mancanti, generalizzabilità.
 
-## Next Steps
-Passi successivi, iniziative, esperimenti o decisioni.
+## Future Work
+Esperimenti successivi, dataset da estendere, validazioni.
 ```
 
 Per articoli brevi, si può usare una struttura ridotta:
@@ -185,13 +188,14 @@ Non includere `Related Entries`, `Canon Impact`, canon check notes, suggerimenti
 
 L’articolo deve:
 
-- sembrare serio;
-- usare precisione formale;
+- sembrare un paper frontier-lab credibile;
+- usare precisione formale e metodologica;
+- includere almeno una tabella, grafico testuale, metrica o figura descritta negli articoli medium/long;
 - evitare battute esplicite;
-- trattare l’assurdo come oggetto legittimo di analisi;
-- usare linguaggio aziendale e tecnico con funzione narrativa;
+- trattare l’assurdo come oggetto legittimo di misurazione;
+- usare linguaggio tecnico con funzione analitica, non narrativa;
 - mantenere credibilità interna;
-- far emergere la satira dal contrasto tra forma e contenuto.
+- far emergere la satira dal contrasto tra metodo e oggetto.
 
 Non scrivere:
 
@@ -201,75 +205,70 @@ Scrivere invece:
 
 > La classificazione automatica delle metafore dirigenziali richiede una distinzione preliminare tra visione strategica, indicazione operativa e frase motivazionale non azionabile.
 
+### Anti-pattern specifici
+
+Evitare:
+
+- scene, dialoghi o dinamiche da dev-diary;
+- battute in `Limitations` che sembrano punchline;
+- personaggi nominati come gag o lore;
+- riferimenti che richiedono di conoscere episodi precedenti;
+- toni da white paper corporate generico;
+- titoli “divertenti”;
+- affermazioni senza dati, benchmark, metriche o osservazioni strutturate.
+
 ---
 
 ## Uso dei personaggi
 
-Gli articoli research non devono sembrare scene di blog. I personaggi possono comparire come:
+Gli articoli research non devono sembrare scene di blog. I personaggi devono essere assenti dal testo pubblicato salvo necessità metodologica. Quando servono, preferire ruoli anonimizzati:
 
-- autori;
-- referenti interni;
-- stakeholder;
-- soggetti osservati;
-- fonti di dati;
-- casi studio;
-- persone citate in modo indiretto.
+- `frontend engineer`;
+- `product stakeholder`;
+- `design-system maintainer`;
+- `delivery coordinator`;
+- `executive speaker`;
+- `participant P3`.
+
+I nomi propri possono comparire nel report privato del workflow e nelle pagine dev-diary/wiki collegate. Nel research pubblicato usarli solo se l’utente lo chiede esplicitamente o se il paper è dichiaratamente in-universe e firmato.
 
 Esempi:
 
 ```md
-The initial dataset was assembled from 37 Slack messages, 12 unresolved Linear tickets and one post-meeting note written by Giorgio.
+The dataset was assembled from 37 Slack messages, 12 unresolved Linear tickets and one post-meeting note produced by a delivery coordinator.
 ```
 
 ```md
-Nikita’s definition of “almost complete” was excluded from the baseline model because it introduced excessive semantic variance.
+Definitions of “almost complete” provided by frontend participants were excluded from the baseline model when they introduced excessive semantic variance.
 ```
 
 ```md
-Andrea and Adriano’s cigarette breaks were treated as informal retrospectives, with the limitation that neither participant agreed to call them that.
+Informal technical conversations were treated as retrospective-adjacent events, with the limitation that participants did not accept the retrospective label.
 ```
 
 ---
 
 ## Voci e autori possibili
 
-Un articolo research può essere:
+Un articolo research dovrebbe avere una voce impersonale, tecnica e collettiva.
+
+### Mangrovia Research
+
+Default consigliato per la frontmatter. Il testo deve comunque sembrare un paper, non un comunicato aziendale.
 
 ### Non firmato
 
-Default consigliato. Tono aziendale neutro, come documento interno Mangrovia.
+Accettabile quando il formato del sito lo consente. Tono da laboratorio, neutro, tecnico, non narrativo.
 
-### Firmato da Lorenzo
+### Firmato da personaggi
 
-Più tecnico, statistico, con caveat, modelli e deviazioni occasionali sul Milan.
-
-### Firmato da Giulia
-
-Più corporate, orientato a processo, adoption, alignment e narrativa aziendale.
-
-### Firmato da Vas
-
-Più pratico, chiaro, orientato a cosa serve davvero e cosa può funzionare.
-
-### Firmato da Fiorenzo
-
-Più severo, tecnico, moraleggiante, con metafore fisiche.
-
-### Firmato da Giorgio
-
-Raro. Possibile solo se il research riguarda ticket, backlog, classificazioni operative. Tono romanaccio ma strutturato come report.
-
-### Firmato da The Rock
-
-Molto raro. Deve sembrare un manifesto o una nota strategica, non un articolo quotidiano.
-
-Evitare articoli research firmati da troppi personaggi. Al massimo uno o due autori.
+Da evitare salvo richiesta esplicita dell’utente. Se un research deve essere firmato da un personaggio, la voce del personaggio può influenzare il report privato o la premessa, ma il corpo deve restare metodologico. Non trasformare l’articolo in una scena o in un documento caratteriale.
 
 ---
 
 ## Titoli
 
-I titoli devono essere seri, specifici e leggermente sproporzionati.
+I titoli devono sembrare titoli da paper: seri, specifici, misurabili e leggermente sproporzionati.
 
 Buoni esempi:
 
@@ -279,6 +278,8 @@ Buoni esempi:
 - `Smoke Breaks as Informal Incident Review Mechanisms`
 - `Frontend Cost Optimization and the Economico Programmatore Pattern`
 - `Measuring Strategic Alignment Drift After Wealth Management Integration`
+- `Component Availability Gap: Measuring Adoption Readiness in Partially Governed Design Systems`
+- `Documentation-Induced Confidence Shift in Frontend Planning Estimates`
 
 Titoli da evitare:
 
@@ -291,7 +292,7 @@ Titoli da evitare:
 
 ## Abstract
 
-L’abstract deve essere serio e conciso. Deve presentare il problema senza spiegare la gag.
+L’abstract deve essere serio e conciso. Deve presentare problema, dati, metodo, risultato e implicazione senza spiegare la gag.
 
 Formula utile:
 
@@ -302,14 +303,14 @@ This article examines [phenomenon] within [context], with a focus on [specific t
 Esempio:
 
 ```md
-This article examines the use of informal cigarette breaks as retrospective mechanisms within backend incident management. Based on recurring interactions between Adriano and Andrea, we identify a pattern of high diagnostic accuracy combined with low institutional adoption.
+This article examines informal technical conversations as retrospective-adjacent mechanisms within backend incident management. Based on five observed interactions and subsequent ticket outcomes, we identify a pattern of high diagnostic accuracy combined with low institutional adoption.
 ```
 
 ---
 
-## Context
+## Introduction
 
-La sezione `Context` deve collegare il tema al mondo Mangrovia.
+La sezione `Introduction` deve collegare il tema al contesto tecnico senza riversare lore. Mangrovia/Qadra può comparire come ambiente sperimentale, non come storia da raccontare.
 
 Possibili contesti:
 
@@ -324,7 +325,7 @@ Possibili contesti:
 
 ---
 
-## Problem
+## Problem framing
 
 Il problema deve essere espresso come se fosse legittimo.
 
@@ -340,9 +341,9 @@ Current frontend planning processes do not distinguish reliably between “almos
 
 ---
 
-## Method
+## Methodology details
 
-La metodologia deve sembrare plausibile, ma può essere sottilmente ridicola.
+La metodologia deve sembrare plausibile. L’assurdità deve stare nella scelta dell’oggetto, nella scala dell’apparato o nella precisione delle metriche.
 
 Fonti dati possibili:
 
@@ -354,24 +355,24 @@ Fonti dati possibili:
 - Figma files;
 - incident reports;
 - meeting notes;
-- smoke break transcripts;
+- informal conversation notes;
 - dashboard events;
 - post-it di workshop;
-- keynote di The Rock;
-- commenti di code review di Fiorenzo;
-- caveat statistici di Lorenzo.
+- executive keynote transcripts;
+- code review comments;
+- statistical caveats.
 
 Esempio:
 
 ```md
-The study combines qualitative analysis of 18 planning meetings, 42 Linear tickets, 9 pull request comments and one unresolved Figma thread last updated by Nikita in April.
+The study combines qualitative analysis of 18 planning meetings, 42 Linear tickets, 9 pull request comments and one unresolved Figma thread last updated in April.
 ```
 
 ---
 
-## Findings
+## Results
 
-Le findings devono essere numerate o chiaramente separate.
+Le findings devono essere numerate o chiaramente separate. Per articoli medium/long preferire `Results` con tabelle, grafici o figure.
 
 Devono essere serie, ma lasciar emergere l’assurdo.
 
@@ -385,7 +386,7 @@ Across the observed dataset, “almost complete” referred alternately to imple
 
 ---
 
-## Operational Implications
+## Discussion / Operational Implications
 
 Questa sezione deve trasformare l’analisi in conseguenze aziendali.
 
@@ -407,41 +408,72 @@ Esempio:
 The organization should introduce a Feature Completion Confidence Index before accepting any estimate involving the expression “basically done”.
 ```
 
+## Figure, tabelle e metriche
+
+Negli articoli `medium` e `long`, includere almeno due tra:
+
+- tabella di risultati;
+- grafico testuale in Markdown;
+- definizione di metrica;
+- schema di modello;
+- figura descritta con caption;
+- mini-ablation o confronto tra baseline.
+
+Esempi di metriche:
+
+- `Component Availability Gap (CAG)`;
+- `Documentation-Induced Confidence Shift (DICS)`;
+- `Adoption Pressure Index (API)`;
+- `Owner Visibility Score (OVS)`;
+- `Semantic Completion Variance (SCV)`.
+
+Esempio di figura:
+
+```md
+**Figure 1 — Component Availability Gap by evidence source.**
+
+| Evidence source | Mean readiness | Confidence |
+| --- | ---: | ---: |
+| Storybook page | 0.61 | 0.74 |
+| Production usage | 0.48 | 0.69 |
+| Owner-confirmed component | 0.82 | 0.88 |
+```
+
 ---
 
 ## Limitations
 
-La sezione `Limitations` è una delle più utili per la satira.
+La sezione `Limitations` deve restare metodologica. Può far emergere l’assurdo, ma non deve diventare un contenitore di battute.
 
 Deve sembrare normale, ma può contenere dettagli rivelatori.
 
 Esempi:
 
 ```md
-The study does not include components that exist only in Nikita’s local environment.
+The study does not include components that exist only in local environments, unmerged branches or screenshots of intended behavior.
 ```
 
 ```md
-Smoke break data was reconstructed from memory, as neither Adriano nor Andrea accepted the premise that the conversations were part of a process.
+Informal conversation data was reconstructed from memory because the relevant interactions were not logged in systems designed for analysis.
 ```
 
 ```md
-The model has not yet been validated against metaphors delivered while The Rock was standing near a screen displaying quarterly growth.
+The model has not yet been validated against executive statements delivered in high-signal motivational contexts.
 ```
 
 ---
 
-## Next Steps
+## Future Work
 
-I next steps devono sembrare utili e inevitabili, anche quando sono sproporzionati.
+Il future work deve sembrare utile e inevitabile, anche quando è sproporzionato.
 
 Esempi:
 
 ```md
 - Define a shared taxonomy for executive metaphors.
 - Train an internal classifier on historical town hall transcripts.
-- Ask Giorgio to determine whether metaphor classification requires a dedicated ticket type.
-- Validate the taxonomy with Gigi before it becomes roadmap.
+- Evaluate whether metaphor classification requires a dedicated ticket type.
+- Validate the taxonomy against roadmap conversion events.
 ```
 
 ---
@@ -542,6 +574,10 @@ Prima di produrre l’articolo finale, verificare:
 - i personaggi sono usati secondo `characters.md`?
 - le relazioni rispettano `relationships.md`?
 - il tono rispetta `tone-and-style.md`?
+- il testo sembra un paper di ricerca e non un dev-diary?
+- il testo contiene metriche, dati, tabelle, figure o valutazioni strutturate?
+- i personaggi sono assenti o anonimizzati salvo richiesta esplicita?
+- la lore resta nel contesto minimo necessario?
 - l’articolo introduce cambiamenti canonici?
 - se sì, sono segnalati nel report privato del workflow?
 - ci sono contraddizioni con fatti già stabiliti?
@@ -560,25 +596,25 @@ Default:
 ## Abstract
 ...
 
-## Context
+## Introduction
 ...
 
-## Problem
+## Methodology
 ...
 
-## Method
+## Metrics
 ...
 
-## Findings
+## Results
 ...
 
-## Operational Implications
+## Discussion
 ...
 
 ## Limitations
 ...
 
-## Next Steps
+## Future Work
 ...
 ```
 
@@ -591,41 +627,40 @@ Non aggiungere `Related Entries`, `Canon Impact` o note private nel Markdown pub
 ```md
 ## Abstract
 
-This article examines the role of informal cigarette breaks in backend incident analysis at Mangrovia. Based on recurring interactions between Adriano and Andrea, we identify a pattern of high diagnostic precision, low documentation rate and near-zero organizational recognition.
+This article examines informal technical conversations as low-instrumentation incident analysis events. Based on five observed post-meeting interactions and subsequent ticket outcomes, we identify a pattern of high diagnostic precision, low documentation rate and limited institutional capture.
 
-## Context
+## Introduction
 
-Following the Qadra-Mangrovia integration, the number of formal alignment rituals increased significantly. In parallel, several high-value technical observations continued to emerge outside sanctioned ceremonies, especially near building exits.
+After a period of increased cross-functional planning, several high-value technical observations continued to emerge outside formal ceremonies. This creates a measurement problem: useful diagnostic signals may exist in organizational spaces not designed for capture.
 
-## Problem
+## Methodology
 
-Mangrovia currently lacks a process for capturing technically accurate but procedurally non-compliant insights generated during smoke breaks.
+We reconstructed five informal conversations from follow-up tickets, pull request comments and incident notes. Each observation was scored for diagnostic accuracy, documentation latency and institutional uptake.
 
-## Method
+## Metrics
 
-The analysis reconstructs five informal conversations between Adriano and Andrea, cross-referenced with subsequent bug reports, Linear tickets and one Slack thread Giulia later described as “a useful moment of shared ownership”.
+`Informal Diagnostic Yield` measures whether an observation later matched the accepted root cause. `Capture Latency` measures the time between observation and first formal artifact.
 
-## Findings
+## Results
 
-### 1. Informal diagnosis often precedes formal recognition
+| Event type | Mean diagnostic yield | Mean capture latency |
+| --- | ---: | ---: |
+| Formal retrospective | 0.62 | 0.4 days |
+| Informal technical conversation | 0.84 | 1.7 days |
 
-In four out of five observed cases, the likely root cause was identified before the issue entered an official meeting.
+Informal conversations showed higher diagnostic yield but lower capture reliability.
 
-### 2. Institutional adoption remains limited
+## Discussion
 
-Neither Adriano nor Andrea accepted the classification of the smoke break as a retrospective format.
-
-## Operational Implications
-
-Mangrovia may benefit from a lightweight mechanism for capturing informal technical insight without naming it as a process, since naming it as a process would likely destroy it.
+The results suggest that diagnostic quality and process visibility are weakly coupled. A lightweight capture mechanism may improve retention, provided it does not alter the conditions that make the observations useful.
 
 ## Limitations
 
-The study relies on partial recollection. Andrea declined to confirm several quotes on the grounds that doing so would make them “collaboration”.
+The study relies on partial recollection and post-hoc artifacts. It does not include conversations that produced correct diagnoses but no subsequent ticket.
 
-## Next Steps
+## Future Work
 
-- Define criteria for informal incident insight.
-- Avoid scheduling smoke breaks.
-- Ask Giorgio whether unstructured technical truth can exist without a ticket.
+- Extend the dataset to additional incident classes.
+- Compare informal observations against baseline retrospective notes.
+- Test whether structured capture reduces diagnostic quality.
 ```

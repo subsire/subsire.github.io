@@ -109,7 +109,7 @@ Le skill definiscono come produrre o controllare contenuti.
 
 ### `research-article.md`
 
-Genera articoli pseudo-seri per la sezione `research`.
+Genera paper fittizi da laboratorio per la sezione `research`: metriche, dataset, figure, risultati e tono non narrativo.
 
 ### `dev-diary-entry.md`
 
@@ -117,7 +117,7 @@ Genera post narrativi, diary, frammenti interni e giornate aziendali.
 
 ### `wiki-entry.md`
 
-Genera pagine enciclopediche semi-neutre.
+Genera pagine wiki asciutte, neutrali e leggibili come reference.
 
 ### `canon-check.md`
 
@@ -157,6 +157,16 @@ Generate a dev diary entry about Mattia’s first encounter with the Qadra Desig
 ```md
 Generate a wiki entry for Pausa Sigaretta.
 ```
+
+### Separazione dei registri
+
+Non applicare un generico “tono Mangrovia” a tutte le sezioni. La skill specifica vince sempre:
+
+- `research`: paper frontier-lab fittizio, con metodo, dati, metriche, tabelle/grafici e personaggi assenti o anonimizzati;
+- `dev-diary`: episodio narrativo in terza persona, con personaggi, scene, dialoghi brevi e conseguenze operative;
+- `wiki`: reference neutra, breve e asciutta, comprensibile anche a un lettore esterno.
+
+Se un contenuto usa il tono giusto ma nella sezione sbagliata, va spostato o riscritto.
 
 ---
 
@@ -402,7 +412,7 @@ Le immagini generate devono rispettare:
 ```md
 Topic: tema dell’articolo
 Angle: taglio specifico
-Characters: personaggi coinvolti o citati
+Evidence roles: ruoli, fonti o partecipanti da trattare in forma anonimizzata
 Related concepts: concetti interni collegati
 Canon status: episodic / minor canon / major canon / undecided
 Length: short / medium / long
@@ -511,7 +521,7 @@ Length: short / medium / long
 1. Leggere knowledge file.
 2. Caricare `wiki-entry.md`.
 3. Se la voce deriva da un research o diary, estrarre solo i fatti utili.
-4. Generare pagina wiki semi-neutra.
+4. Generare pagina wiki neutra, asciutta e breve.
 5. Non includere `Related Entries`, `Canon Notes`, `Canon Impact` o note private nel Markdown pubblicato.
 6. Eseguire `canon-check.md` e produrre il report canonico separatamente.
 7. Se la pagina wiki formalizza una milestone aziendale, eseguire `timeline-update.md`.
@@ -859,10 +869,10 @@ Non inserire nel frontmatter pubblico campi privati o non supportati dallo schem
 
 ```yaml
 ---
-title: "Smoke Breaks as Informal Incident Review Mechanisms"
+title: "Component Availability Gap in Partially Governed Design Systems"
 date: 2026-05-16
-description: "Analisi del ruolo delle pause informali nella diagnosi degli incidenti tecnici."
-categories: ["Research", "Incident Review"]
+description: "A measurement framework for component readiness when documentation, implementation and production usage diverge."
+categories: ["Research", "Design System"]
 authors: ["Mangrovia Research"]
 ---
 ```
@@ -1100,7 +1110,7 @@ Usare le reference disponibili in `.ai/images/` per i personaggi presenti. La co
 
 Per evitare monotonia, alternare:
 
-1. research pseudo-serio;
+1. research in forma di paper fittizio;
 2. dev diary mockumentary;
 3. wiki entry;
 4. dev diary con inserti di intervista o documenti;
@@ -1161,7 +1171,7 @@ Sunday: no major canon, only episodic content
 
 # Rule of thumb
 
-Research inventa idee.
+Research inventa idee in forma misurabile.
 
 Diary inventa episodi.
 

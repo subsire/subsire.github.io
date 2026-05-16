@@ -193,7 +193,7 @@ Richiede revisione prima della pubblicazione.
 Esempi:
 
 - tono troppo narrativo per una pagina wiki;
-- research troppo comico e poco pseudo-serio;
+- research troppo comico, narrativo o poco misurabile;
 - diary con troppi personaggi fuori voce;
 - evento importante senza valutazione nel report privato;
 - nuova metrica presentata come già ufficiale senza timeline;
@@ -381,18 +381,23 @@ Segnalare se una relazione cambia senza evento canonico.
 
 Controllare che:
 
-- sembri pseudo-serio;
+- sembri un paper frontier-lab fittizio;
 - non sia troppo narrativo;
 - non faccia battute esplicite;
-- abbia struttura coerente;
-- findings, limitations e next steps siano credibili;
-- i personaggi compaiano come autori, stakeholder, fonti o casi studio;
+- abbia struttura coerente con abstract, metodo, metriche, risultati e limiti;
+- includa metriche, tabelle, grafici testuali, figure o dataset quando la lunghezza lo consente;
+- la comicità emerga dal metodo applicato all’oggetto, non dal tono;
+- i personaggi siano assenti o anonimizzati salvo richiesta esplicita;
+- non importi lore da dev-diary nel testo pubblicato;
 - non renda ufficiale un progetto senza valutazione nel report privato.
 
 Problemi tipici:
 
 - titolo troppo comico;
 - tono troppo da blog;
+- tono troppo da white paper corporate generico;
+- assenza di dati, metodo o risultati;
+- personaggi citati come ammiccamento;
 - AI trattata come magia;
 - The Rock usato troppo direttamente;
 - research che introduce major canon senza segnalarlo.
@@ -402,12 +407,13 @@ Problemi tipici:
 Controllare che:
 
 - sia narrativo ma asciutto;
+- funzioni come episodio o scena mockumentary;
 - abbia evento, complicazione e conseguenza;
 - i dialoghi siano brevi e in voce;
 - non spieghi la gag;
 - non usi troppi personaggi;
 - non cambi il mondo senza segnalarlo;
-- se è firmato, rispetti la voce del personaggio.
+- se contiene materiali firmati o citati, rispetti la voce del personaggio.
 
 Problemi tipici:
 
@@ -422,18 +428,23 @@ Problemi tipici:
 
 Controllare che:
 
-- sia semi-neutra;
+- sia neutra, asciutta e breve;
 - cataloghi invece di raccontare;
 - non importi troppo tono narrativo dai diary;
+- non importi il tono metodologico dei research;
 - non inventi backstory;
 - distingua fatti, interpretazioni e percezioni;
-- abbia related entries e canon notes;
+- sia comprensibile a un lettore esterno senza conoscere la scena originale;
+- abbia related entries e canon notes nel report privato, non nel Markdown pubblicato;
 - non trasformi concetti episodici in major canon senza motivo.
 
 Problemi tipici:
 
 - voce troppo da blog;
 - troppa ironia esplicita;
+- frasi ammiccanti o riferimenti interni non spiegati;
+- status ironici non necessari;
+- pagina troppo lunga rispetto alla funzione di reference;
 - nuove informazioni sui personaggi non autorizzate;
 - mancanza di stato canonico.
 
@@ -714,7 +725,7 @@ Il contenuto contraddice il canon perché dichiara che Nikita ha completato uffi
 ## Issues
 
 ### Critical
-- Il Design System Qadra viene dichiarato completato. Nel canon attuale deve restare incompleto, parziale o mitologico.
+- Il Design System Qadra viene dichiarato completato. Nel canon attuale deve restare incompleto o parziale.
 - Nikita viene presentato come pienamente riabilitato e promosso a lead frontend, cambiando il suo ruolo senza autorizzazione.
 
 ## Required changes

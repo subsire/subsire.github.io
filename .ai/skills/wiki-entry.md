@@ -2,9 +2,9 @@
 
 Questa skill genera pagine per la sezione `wiki` dell’universo Mangrovia.
 
-La wiki è la piccola enciclopedia interna del mondo Mangrovia: raccoglie personaggi, aziende, progetti, eventi, concetti, incidenti, processi, oggetti tecnici e collegamenti tra `research`, `blog/diary` e `timeline`.
+La wiki è la reference ordinata del progetto: raccoglie personaggi, aziende, progetti, eventi, concetti, incidenti, processi, oggetti tecnici e collegamenti tra `research`, `dev-diary` e `timeline`.
 
-La wiki deve essere ordinata, semi-neutra e utile. Può avere una sottile ironia, ma non deve sembrare un post narrativo.
+La wiki deve sembrare una wiki normale: asciutta, breve, neutra e utile anche per un lettore reale che arriva sul sito senza conoscere la lore. Non deve fare ammiccamenti, non deve imitare il dev-diary e non deve usare il tono research.
 
 ---
 
@@ -13,12 +13,12 @@ La wiki deve essere ordinata, semi-neutra e utile. Può avere una sottile ironia
 Generare una pagina wiki coerente con il canon Mangrovia, utile per:
 
 - catalogare elementi ricorrenti;
-- collegare contenuti research e diary;
+- collegare contenuti research e dev-diary;
 - chiarire personaggi, concetti e timeline;
 - mantenere continuità tra contenuti generati automaticamente;
 - rendere navigabile l’universo Mangrovia.
 
-La skill deve produrre Markdown pubblicabile. Stato, note e impatto canonico vanno valutati nel report privato del workflow, non nel file pubblicato.
+La skill deve produrre Markdown pubblicabile. La pagina pubblicata deve catalogare informazioni, non costruire scene o battute. Stato, note e impatto canonico vanno valutati nel report privato del workflow, non nel file pubblicato.
 
 ---
 
@@ -32,7 +32,7 @@ Prima di generare la pagina, leggere e rispettare:
 4. `relationships.md`
 5. `mangrovia-world.md`
 6. `tone-and-style.md`
-7. eventuali articoli `research` o `blog/diary` collegati
+7. eventuali articoli `research` o `dev-diary` collegati
 
 Se la pagina richiesta contraddice il canon, segnalare la contraddizione e proporre una versione coerente.
 
@@ -159,20 +159,21 @@ Esempi:
 La wiki deve essere:
 
 - ordinata;
-- semi-neutra;
+- neutra;
 - precisa;
 - leggibile;
 - utile come riferimento;
-- lievemente sospetta nella neutralità;
+- asciutta;
+- più corta di un dev-diary o research equivalente;
 - meno narrativa del diary;
 - meno pseudo-accademica del research.
 
-La wiki può contenere frasi asciutte che lasciano emergere l’assurdo, ma non deve diventare una raccolta di battute.
+La wiki può contenere informazioni assurde perché il canon le contiene, ma non deve costruire la comicità con il tono. Il testo deve evitare punchline, strizzate d’occhio e riferimenti comprensibili solo a chi ha letto un episodio specifico.
 
 Scrivere:
 
 ```md
-La Pausa Sigaretta è un rituale informale associato principalmente ad Adriano e Andrea. Pur non essendo riconosciuta come processo aziendale, ha prodotto in più occasioni diagnosi tecniche più accurate di quelle emerse in meeting formalizzati.
+La Pausa Sigaretta è un rituale informale associato principalmente ad Adriano e Andrea. Nei contenuti del sito è collegata a momenti di confronto tecnico fuori dai processi ufficiali.
 ```
 
 Non scrivere:
@@ -180,6 +181,18 @@ Non scrivere:
 ```md
 La Pausa Sigaretta è quando Adriano e Andrea escono a fumare e dicono cose cattivissime ma vere, ed è divertente perché l’azienda non capisce niente.
 ```
+
+### Anti-pattern specifici
+
+Evitare:
+
+- battute, punchline o frasi da dev-diary;
+- giudizi troppo letterari sul ruolo comico di un elemento;
+- riferimenti a scene non spiegate;
+- personaggi inseriti solo per colore;
+- status come `mitologico` se non è una categoria necessaria e spiegata;
+- paragrafi lunghi che raccontano l’episodio invece di sintetizzare la voce;
+- trasformare una pagina wiki in recap di un research o diary.
 
 ---
 
@@ -200,7 +213,7 @@ Descrizione generale.
 Origine o contesto.
 
 ## Role in Mangrovia
-Funzione narrativa, aziendale o tecnica.
+Ruolo nel progetto, nell’organizzazione o nella continuità del sito.
 
 ## Known Events
 Eventi collegati, se rilevanti.
@@ -242,7 +255,7 @@ Tratti principali.
 Come parla o scrive.
 
 ## Function in the Canon
-Funzione narrativa e comica.
+Funzione nella continuità del progetto, senza analisi comica esplicita.
 
 ## Relationships
 Relazioni principali.
@@ -287,7 +300,7 @@ Usare per prodotti, sistemi, iniziative, strumenti e progetti.
 ## Definition
 
 ## Status
-Active / abandoned / partial / proposed / unclear / mythological
+Active / abandoned / partial / proposed / unclear / deprecated
 
 ## Overview
 
@@ -304,7 +317,7 @@ Active / abandoned / partial / proposed / unclear / mythological
 ## Related Events
 ```
 
-La sezione `Status` è particolarmente importante per progetti come il Design System Qadra.
+La sezione `Status` è particolarmente importante per progetti come il Design System Qadra. Usare categorie informative e comprensibili, non etichette ironiche.
 
 ---
 
@@ -408,7 +421,7 @@ Quando si genera una pagina personaggio:
 - non trasformare antipatie in odio dichiarato pubblico;
 - non creare evoluzioni senza timeline.
 
-La wiki può descrivere tensioni e dinamiche, ma deve farlo con tono documentale.
+La wiki può descrivere tensioni e dinamiche, ma deve farlo con tono documentale e senza rendere il sottotesto più esplicito del necessario.
 
 Esempio per Andrea:
 
@@ -429,6 +442,7 @@ Quando si genera una pagina concetto:
 - riportare esempi brevi;
 - collegarlo a personaggi e contenuti;
 - non renderlo più importante di quanto sia.
+- non importare automaticamente il tono dell’episodio in cui compare.
 
 Esempio:
 
@@ -465,6 +479,7 @@ Se la pagina wiki deriva da un articolo `research` o da un `dev diary`, sintetiz
 - mantenere i collegamenti utili;
 - segnalare se l’elemento è solo proposto o già canonico;
 - non importare automaticamente tono narrativo o pseudo-accademico.
+- mantenere solo informazioni che aiutano a capire la voce in futuro.
 
 Esempio:
 
@@ -566,6 +581,9 @@ Prima di produrre la pagina finale, verificare:
 - introduce nuovi dettagli canonici?
 - se sì, sono segnalati nel report privato del workflow?
 - la pagina è abbastanza neutra per una wiki?
+- un lettore esterno può capirla senza conoscere la scena originale?
+- ci sono battute, ammiccamenti o frasi da dev-diary da rimuovere?
+- la voce è più breve e più asciutta della fonte da cui deriva?
 - ci sono voci correlate utili?
 
 Se ci sono contraddizioni, correggerle prima dell’output.
@@ -607,27 +625,24 @@ Non aggiungere `Related Entries`, `Canon Notes`, `Canon Impact` o note private n
 ```md
 ## Definition
 
-La Pausa Sigaretta è un rituale informale associato principalmente ad Adriano e Andrea, durante il quale vengono spesso formulate diagnosi tecniche e organizzative non riconosciute dai processi ufficiali Mangrovia.
+La Pausa Sigaretta è un rituale informale associato principalmente ad Adriano e Andrea.
 
 ## Overview
 
-Pur non essendo un processo aziendale, la Pausa Sigaretta compare in diversi contenuti come spazio di osservazione laterale. La sua funzione principale è permettere ad Adriano e Andrea di nominare con precisione problemi che nei meeting restano spesso distribuiti tra formule di allineamento, ownership condivisa e responsabilità non assegnate.
-
-La Pausa Sigaretta non produce normalmente action item. In alcuni casi, tuttavia, anticipa rischi tecnici poi formalizzati in ticket o retrospettive.
+Nei contenuti del sito, la Pausa Sigaretta indica momenti di confronto fuori dai processi ufficiali. È collegata soprattutto a osservazioni tecniche, incidenti e discussioni successive a meeting o retrospettive.
 
 ## Origin
 
-L’origine precisa non è documentata. La pratica sembra emergere dalla combinazione tra il fumo ricorrente di Adriano e Andrea, la loro compatibilità nel pessimismo e la necessità di uscire fisicamente dagli spazi in cui il linguaggio corporate viene prodotto.
+L’origine precisa non è documentata. Il concetto emerge nei dev-diary legati ad Adriano e Andrea.
 
 ## Usage
 
-La Pausa Sigaretta viene usata nei diary come momento di diagnosi informale. Può anche comparire nei research come oggetto di studio, soprattutto in relazione agli incidenti backend, alla qualità delle decisioni informali e al basso tasso di istituzionalizzazione delle verità tecniche.
+La Pausa Sigaretta viene usata nei dev-diary come momento informale. Può comparire nei research come oggetto di analisi, di norma in forma anonimizzata o aggregata.
 
 ## Examples
 
 - Adriano e Andrea identificano il problema reale di una feature dopo un workshop sulla definizione di completamento.
 - Andrea conferma un’anomalia backend solo dopo essere uscito a fumare.
-- Adriano interpreta una roadmap come scommessa persa prima ancora dell’inizio dello sprint.
 
 ## Related Characters
 
@@ -648,25 +663,23 @@ Il Design System Qadra è l’insieme di componenti, token, convenzioni visive e
 
 ## Status
 
-Partial / unclear / mythological.
+Partial / unclear.
 
 ## Overview
 
-Il Design System Qadra è uno degli oggetti tecnici più ricorrenti del canon Mangrovia. Viene descritto da Nikita come quasi completato, da Giulia come opportunità di consolidamento e da Adriano come un problema che ha imparato a riprodursi.
-
-Il suo stato effettivo resta ambiguo: alcune parti esistono, alcune sono documentate, alcune sono usate in produzione, alcune sono ricordate da Nikita come decisioni architetturali e alcune compaiono solo in conversazioni non più verificabili.
+Il Design System Qadra è uno degli asset tecnici ereditati da Qadra. Il suo stato effettivo non è descritto da una singola fonte: alcune parti risultano documentate, alcune implementate, alcune usate in produzione e altre non verificate.
 
 ## Origin
 
-Il progetto nasce in Qadra, dove Nikita viene presentato come nuova promessa frontend. Nikita stima tre settimane più una di test per rifare il design system. Il lavoro non viene mai completato e non risultano nuovi commit da aprile.
+Il progetto nasce in Qadra. Nikita stima tre settimane più una di test per rifare il design system. Il lavoro non risulta completato e non risultano nuovi commit da aprile.
 
 ## Technical Context
 
-Il Design System Qadra coinvolge componenti frontend, convenzioni visuali, possibili token, documentazione, Storybook e integrazione con prodotti Mangrovia/Qadra.
+Il Design System Qadra coinvolge componenti frontend, convenzioni visuali, token, documentazione, Storybook e integrazione con prodotti Mangrovia/Qadra.
 
 ## Organizational Context
 
-Dopo la fusione, il Design System Qadra diventa una delle eredità più problematiche di Qadra. Per Giulia rappresenta una base da consolidare. Per il team tecnico rappresenta una fonte di debito, ambiguità e riunioni.
+Dopo la fusione, il Design System Qadra diventa una delle eredità tecniche di Qadra. È collegato a migrazione frontend, consolidamento UI, ownership dei componenti e verifica della documentazione.
 
 ## Known Issues
 
@@ -674,7 +687,7 @@ Dopo la fusione, il Design System Qadra diventa una delle eredità più problema
 - Differenza tra documentazione e implementazione.
 - Componenti duplicati o divergenti.
 - Definizione instabile di “quasi finito”.
-- Dipendenza narrativa dalla promessa iniziale di Nikita.
+- Ownership non sempre chiara.
 
 ## Related Characters
 

@@ -497,7 +497,7 @@ Output corretto:
 Blocked
 
 ## Reason
-Il contenuto modifica uno stato canonico centrale senza autorizzazione. Il Design System Qadra è attualmente incompleto e mitologico.
+Il contenuto modifica uno stato canonico centrale senza autorizzazione. Il Design System Qadra è attualmente incompleto e parziale.
 ```
 
 Se la contraddizione è solo tra interpretazioni di personaggi, non bloccare.

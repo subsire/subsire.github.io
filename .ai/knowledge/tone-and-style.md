@@ -174,27 +174,30 @@ Il mondo deve reagire all’assurdo come se fosse una complicazione organizzativ
 
 ### Funzione
 
-La sezione `research` contiene finti articoli pseudo-seri su ciò che Mangrovia studia, dichiara di studiare o prova a vendere come innovazione.
+La sezione `research` contiene finti articoli di ricerca su ciò che Mangrovia studia, dichiara di studiare o prova a vendere come innovazione.
 
-Devono sembrare documenti aziendali, white paper, report interni o articoli tecnico-strategici.
+Devono sembrare pubblicazioni di laboratorio all’avanguardia, nello spirito di paper OpenAI/Anthropic: abstract, metodo, dataset, metriche, grafici, risultati, limiti e future work.
 
 ### Tono
 
-Serio, misurato, leggermente accademico o aziendale. La comicità emerge dalla sproporzione tra rigore formale e oggetto dell’analisi.
+Serio, misurato, tecnico, quasi accademico. La comicità emerge dalla sproporzione tra rigore formale e oggetto dell’analisi.
 
 Il testo non deve dire “questa cosa è assurda”. Deve trattarla come degna di studio.
+
+Non deve usare personaggi, scene o inside joke come motore del testo. I personaggi, se necessari, vanno anonimizzati come ruoli o partecipanti.
 
 ### Struttura consigliata
 
 - Titolo serio.
-- Abstract o summary.
-- Contesto.
-- Problema.
-- Metodo / approccio.
-- Osservazioni.
-- Implicazioni operative.
+- Abstract.
+- Introduction.
+- Methodology.
+- Metrics.
+- Results.
+- Discussion.
 - Limiti dello studio.
-- Prossimi passi.
+- Future work.
+- Tabelle, grafici o figure quando il pezzo non è brevissimo.
 
 ### Esempi di titoli
 
@@ -203,20 +206,26 @@ Il testo non deve dire “questa cosa è assurda”. Deve trattarla come degna d
 - `Verso un modello AI-first per la classificazione delle metafore dirigenziali`
 - `Analisi comparativa dei frontendisti economici in ambienti ad alto debito tecnico`
 - `Metriche di adozione del Design System Qadra in assenza del Design System Qadra`
+- `Documentation-Induced Confidence Shift in Frontend Planning Estimates`
+- `Component Availability Gap in Partially Governed Design Systems`
 
 ### Frasi modello
 
-> Questo documento analizza la relazione tra percezione di completamento e presenza effettiva di commit verificabili.
+> This study measures the relationship between perceived completion and the availability of verifiable implementation evidence.
 
-> I risultati preliminari suggeriscono che la definizione di “quasi finito” varia sensibilmente tra management, frontend e nutrie antropomorfe.
+> Preliminary results suggest that “almost complete” has high semantic variance across planning, implementation and ownership signals.
 
-> L’adozione del modello richiede una fase iniziale di allineamento semantico sul concetto di requisito.
+> We introduce the Documentation-Induced Confidence Shift metric to estimate how visible documentation alters planning assumptions before implementation readiness is verified.
 
 ### Da evitare
 
 - Satira troppo esplicita.
 - Battute nei titoli.
 - Linguaggio troppo colloquiale.
+- Scene o dialoghi.
+- Personaggi usati come gag.
+- Lore interna necessaria per capire il testo.
+- White paper corporate senza metodo o risultati.
 - Soluzioni magiche via AI.
 - Personaggi trattati come macchiette.
 
@@ -226,9 +235,9 @@ Il testo non deve dire “questa cosa è assurda”. Deve trattarla come degna d
 
 ### Funzione
 
-La sezione `blog` o `dev diary` racconta giornate, incidenti, piccoli eventi e dinamiche interne.
+La sezione `blog` o `dev diary` racconta giornate, incidenti, piccoli eventi e dinamiche interne. È la sede principale della storia Mangrovia.
 
-Può essere scritta in forma editoriale oppure come post firmato da un personaggio.
+Deve funzionare come uno spezzone di mockumentary aziendale: una piccola puntata con scena, personaggi, sottotesto e conseguenze operative. Può includere materiali firmati dai personaggi, ma la cornice resta editoriale e in terza persona.
 
 ### Tono editoriale
 
@@ -238,9 +247,9 @@ Esempio:
 
 > La giornata è iniziata con un messaggio di Giulia sul canale prodotto. Diceva che serviva un rapido allineamento sul concetto di completamento. Adriano ha letto il messaggio, ha chiuso Slack e ha chiesto ad Andrea se avesse una sigaretta.
 
-### Tono firmato da personaggio
+### Voci dei personaggi nei materiali interni
 
-Quando il post è firmato, la voce deve cambiare in base al personaggio.
+Il dev-diary non deve diventare un diario in prima persona. Quando include materiali interni firmati o citati, la voce deve cambiare in base al personaggio:
 
 - Adriano: cinico, concreto, tecnico, sarcastico.
 - Andrea: laconico, freddo, ostile nel sottotesto.
@@ -286,15 +295,15 @@ Quando il post è firmato, la voce deve cambiare in base al personaggio.
 
 ### Funzione
 
-La sezione `wiki` è la piccola enciclopedia dell’universo Mangrovia. Deve raccogliere personaggi, eventi, concetti, progetti, incidenti e timeline.
+La sezione `wiki` è la reference dell’universo Mangrovia. Deve raccogliere personaggi, eventi, concetti, progetti, incidenti e timeline.
 
-La wiki deve sembrare uno strumento interno di conoscenza, ma può avere una neutralità leggermente sospetta.
+La wiki deve sembrare una wiki normale: utile, leggibile, breve e neutra anche per un lettore reale che non conosce gli episodi.
 
 ### Tono
 
-Semi-neutro, ordinato, documentale. Può contenere sottile ironia, ma non deve diventare narrativa pura.
+Neutro, ordinato, documentale. Non deve cercare la comicità con il tono.
 
-La wiki non deve raccontare tutto come un romanzo. Deve catalogare.
+La wiki non deve raccontare tutto come un romanzo. Deve catalogare e chiarire.
 
 ### Struttura consigliata per una pagina wiki
 
@@ -305,8 +314,8 @@ La wiki non deve raccontare tutto come un romanzo. Deve catalogare.
 - Ruolo nell’organizzazione.
 - Eventi collegati.
 - Personaggi collegati.
-- Voci correlate.
-- Note canoniche.
+- Voci correlate solo se utili.
+- Note canoniche solo nel report privato, non nella pagina pubblicata.
 
 ### Esempio
 
@@ -316,7 +325,7 @@ La wiki non deve raccontare tutto come un romanzo. Deve catalogare.
 Il Design System Qadra è l’insieme di componenti, token, convenzioni e intenzioni progettuali sviluppate durante la fase Qadra e parzialmente ereditate da Mangrovia dopo la fusione.
 
 ## Stato
-Lo stato del Design System Qadra è considerato “quasi completo” da Nikita, “non verificabile” da Adriano e “un’opportunità di consolidamento” da Giulia.
+Lo stato del Design System Qadra è parziale e non pienamente verificabile. Alcuni elementi risultano documentati, implementati o usati in produzione, ma la sovrapposizione tra questi stati non è garantita.
 ```
 
 ### Da evitare
@@ -325,6 +334,8 @@ Lo stato del Design System Qadra è considerato “quasi completo” da Nikita, 
 - Troppo dialogo.
 - Battute evidenti.
 - Voci wiki che sembrano post di blog.
+- Voci wiki che sembrano paper research.
+- Riferimenti comprensibili solo come inside joke.
 - Contraddizioni con i file canonici.
 
 ---

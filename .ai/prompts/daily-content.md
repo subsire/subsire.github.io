@@ -18,6 +18,12 @@ The generated content must be one of:
 
 Default to safe, conservative generation. Prefer `episodic` or `minor-canon` content. Do not introduce `major-canon` changes unless explicitly instructed by the user.
 
+Do not use one generic Mangrovia style for all sections. Pick the section first, then obey its register:
+
+* `research`: fake frontier-lab paper with method, metrics, results and at least one table/figure for medium or long pieces; no scenes, no character banter, no lore-dependent jokes;
+* `dev-diary`: mockumentary-style episode with characters, scene, tension and operational consequence;
+* `wiki`: concise neutral reference page, understandable to a real external reader.
+
 ---
 
 ## Repository structure
@@ -125,7 +131,7 @@ Recommended rotation:
 Day 1: dev diary
 Day 2: research
 Day 3: wiki
-Day 4: dev diary signed by a character
+Day 4: document-heavy dev diary
 Day 5: research
 Day 6: wiki or index maintenance
 Day 7: dev diary, strictly episodic
@@ -159,6 +165,8 @@ Good research topics:
 * Economico Programmatore Pattern.
 * Measuring Alignment Drift After the Qadra-Mangrovia Integration.
 * Predictive Models for Ticket Escalation.
+
+Good research topics should be framed as measurable studies, not narrative essays. Prefer titles like `Documentation-Induced Confidence Shift in Frontend Planning Estimates` or `Component Availability Gap in Partially Governed Design Systems`.
 
 Good wiki topics:
 
@@ -270,7 +278,7 @@ authors: ["Mangrovia Editorial"]
 ---
 ```
 
-For a signed dev diary, use the character name in `authors`.
+Do not generate first-person or character-authored dev diary entries unless explicitly requested. Characters may appear through quoted dialogue, interviews, tickets, Slack messages or internal notes inside the editorial frame.
 
 ### Wiki frontmatter
 
@@ -284,7 +292,7 @@ authors: ["Mangrovia Wiki"]
 ---
 ```
 
-Allowed `entry_type` values:
+Planning-only `entry_type` values, not public frontmatter unless the Astro schema supports them:
 
 ```txt
 character
@@ -450,7 +458,15 @@ Do not modify `.ai/knowledge` automatically.
 
 ## Content style reminders
 
-The Mangrovia tone is:
+The section register is more important than the generic Mangrovia tone.
+
+Research must look like a serious lab publication. Humor comes from applying measurement, metrics and figures to an over-specific internal phenomenon.
+
+Dev diary is the narrative core: it can use character dynamics, awkward meetings, dialogue and workplace-comedy rhythm.
+
+Wiki must be dry reference: short, neutral, factual and free of winked-at jokes.
+
+The Mangrovia baseline tone is:
 
 - dry;
 - technical when useful;
@@ -469,6 +485,8 @@ Avoid:
 - making AI magical;
 - using The Rock too often;
 - changing canon for a stronger ending.
+- writing research as dev-diary in formal clothes;
+- writing wiki as research summary or narrative recap.
 
 ---
 

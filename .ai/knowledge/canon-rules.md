@@ -359,7 +359,7 @@ Un articolo `research` può introdurre idee nuove, ma deve chiarire se sono:
 
 Gli articoli research non rendono automaticamente canonico un progetto. Un progetto diventa canonico solo se viene registrato anche in timeline o wiki come evento rilevante.
 
-Gli articoli research devono poter essere pseudo-seri, ma non devono contraddire il mondo.
+Gli articoli research devono poter essere paper fittizi rigorosi, ma non devono contraddire il mondo. La lore può orientare il tema, ma nel testo pubblicato deve restare subordinata a metodo, metriche e risultati.
 
 ---
 
@@ -368,7 +368,7 @@ Gli articoli research devono poter essere pseudo-seri, ma non devono contraddire
 Un post `dev-diary` può raccontare eventi quotidiani, ma non deve modificare lo stato del mondo senza segnalarlo.
 Se il post contiene solo una giornata, un meeting o un incidente minore, non serve aggiornare la timeline.
 Se il post introduce un evento persistente, deve proporre aggiornamento alla timeline.
-I post firmati devono rispettare la voce del personaggio.
+Eventuali materiali firmati o citati dentro un dev diary devono rispettare la voce del personaggio.
 I dev diary generici devono mantenere tono editoriale e non attribuire pensieri interni troppo profondi se non sono coerenti con il punto di vista.
 
 ---
@@ -390,7 +390,7 @@ Una pagina wiki può essere creata per:
 - oggetto tecnico.
 
 La wiki deve indicare relazioni e voci correlate quando possibile.
-La wiki deve restare più neutra del blog, anche se può avere una neutralità leggermente sospetta.
+La wiki deve restare neutra, asciutta e comprensibile anche senza conoscere gli episodi narrativi.
 Una pagina wiki non deve contraddire `characters.md`, `relationships.md` o `timeline.md`.
 
 ---
