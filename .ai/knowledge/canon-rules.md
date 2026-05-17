@@ -185,10 +185,11 @@ Esempio diverso: Nikita completa davvero il Design System Qadra. Questo cambia i
 
 ### Giorgio
 
-- Giorgio è un armadillo gigante romano.
+- Giorgio è un piccione antropomorfo romano.
 - Si occupa esclusivamente di task e ticket.
-- Parla solo in dialetto romano.
-- Trasforma tutto in ticket, priorità, assegnazioni e stati.
+- Nel parlato usa un romanaccio diretto, secco e operativo.
+- Nei ticket scrive in italiano perfetto, burocratico e leggermente carabinieresco.
+- Trasforma tutto in ticket, backlog, priorità, assegnazioni e stati.
 - Non deve avere troppa introspezione.
 - Non deve essere usato come personaggio sentimentale o psicologico.
 
@@ -235,7 +236,7 @@ Le relazioni canoniche devono restare stabili salvo eventi importanti.
 - Adriano e Andrea sono compagni di sigarette e sventure.
 - Giulia e Vas hanno una rivalità sottile, soprattutto da parte di Giulia.
 - Giulia e The Rock sono allineati: lei traduce la sua visione in processo.
-- Gigi e Giorgio formano una coppia romana: decisione tecnica e ticketizzazione.
+- Gigi e Giorgio formano una coppia romana: decisione tecnica e formalizzazione burocratica.
 - Mattia e Nikita sono due forme diverse di “economico programmatore”.
 - Fiorenzo e Salvo sono una coppia backend consolidata.
 - Andrea e Fiorenzo hanno attrito tecnico e personale.

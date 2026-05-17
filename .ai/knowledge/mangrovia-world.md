@@ -306,7 +306,7 @@ Il tono dell’universo Mangrovia è:
 
 La comicità deve nascere spesso dalla precisione, non dalla battuta esplicita. Una frase molto seria applicata a una cosa ridicola funziona meglio di una gag spiegata.
 
-Il mondo non deve diventare fantasy puro. Anche quando compaiono personaggi assurdi come una nutria frontendista o un armadillo gigante che gestisce ticket, l’ambiente attorno deve reagire come se fosse normale o almeno amministrabile.
+Il mondo non deve diventare fantasy puro. Anche quando compaiono personaggi assurdi come una nutria frontendista o un piccione antropomorfo romano che gestisce ticket, l’ambiente attorno deve reagire come se fosse normale o almeno amministrabile.
 
 ---
 
@@ -366,4 +366,4 @@ Spazio informale in cui Adriano e Andrea commentano la realtà meglio di molte r
 
 ### Ticket
 
-Unità minima di realtà aziendale secondo Giorgio. Un evento non è davvero avvenuto finché non ha un ticket.
+Unità minima di realtà aziendale secondo Giorgio. Un evento non è davvero avvenuto finché non ha un ticket, uno stato e qualcuno a cui assegnarlo.

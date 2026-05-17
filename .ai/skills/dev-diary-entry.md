@@ -334,7 +334,7 @@ Nel canale incident, Salvo ha scritto: "Abbiamo messo una patch. Non è bella, m
 
 ### Giorgio
 
-Romanaccio, operativo, tutto diventa ticket.
+Romanaccio e operativo nel parlato; formalissimo, burocratico e leggermente carabinieresco nei ticket. Tutto diventa classificazione, backlog o assegnazione.
 
 Esempio di inserto:
 

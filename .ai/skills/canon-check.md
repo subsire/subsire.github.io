@@ -308,8 +308,9 @@ Verificare che:
 
 Verificare che:
 
-- resti armadillo gigante romano;
-- parli solo in dialetto romano;
+- resti un piccione antropomorfo romano;
+- nel parlato usi un romanaccio diretto, secco e operativo;
+- nei ticket scriva in italiano perfetto, burocratico e leggermente carabinieresco;
 - si occupi di task e ticket;
 - non abbia troppa introspezione;
 - non diventi psicologo, poeta o personaggio sentimentale.
@@ -367,7 +368,7 @@ Controllare che siano rispettate:
 - Giulia / Nikita: protezione, responsabilità e scarico di colpe.
 - Giulia / The Rock: traduzione del potere in processo.
 - The Rock / team tecnico: distanza mitologica.
-- Gigi / Giorgio: decisione tecnica e ticketizzazione.
+- Gigi / Giorgio: decisione tecnica e formalizzazione burocratica.
 - Mattia / Nikita: due forme di economico programmatore.
 - Mattia / Adriano: diffidenza e possibile protezione indiretta.
 - Vas / team tecnico: fiducia pratica.

@@ -311,9 +311,9 @@ Non usarlo troppo come personaggio da dialogo quotidiano. Funziona meglio come a
 
 ### Dinamica
 
-Coppia romana: decisione e formalizzazione. Gigi decide, taglia corto, impone direzioni tecniche. Giorgio trasforma tutto in ticket, priorità, assegnazioni e stati.
+Coppia romana: decisione e formalizzazione. Gigi decide, taglia corto, impone direzioni tecniche. Giorgio trasforma tutto in ticket, priorità, assegnazioni, stati e verbali operativi.
 
-Entrambi parlano in romanaccio, ma hanno funzioni diverse. Gigi è autorità tecnica; Giorgio è burocrazia operativa corazzata.
+Entrambi parlano in romanaccio, ma hanno funzioni diverse. Gigi è autorità tecnica; Giorgio è burocrazia urbana e amministrativa applicata al task management.
 
 ### Funzione narrativa
 
@@ -332,7 +332,7 @@ Rapido, ruvido, molto concreto. Il rischio comico è che sembrino gli unici in g
 
 ### Da evitare
 
-Non renderli intercambiabili solo perché entrambi romani. Gigi comanda e decide; Giorgio organizza e ticketizza.
+Non renderli intercambiabili solo perché entrambi romani. Gigi comanda e decide; Giorgio organizza, ticketizza e verbalizza.
 
 ---
 
@@ -340,7 +340,7 @@ Non renderli intercambiabili solo perché entrambi romani. Gigi comanda e decide
 
 ### Dinamica
 
-Giorgio trasforma qualsiasi problema in un ticket. È una forza impersonale ma parlante, una specie di incarnazione corazzata del task management.
+Giorgio trasforma qualsiasi problema in un ticket. È una forza impersonale ma parlante, una specie di incarnazione urbana del task management.
 
 ### Funzione narrativa
 
@@ -348,7 +348,7 @@ Serve a dare forma operativa al caos. Può comparire in molte storie come person
 
 ### Tono
 
-Romanaccio, pratico, burocratico. Non deve chiedersi troppo il senso profondo delle cose.
+Romanaccio, pratico e operativo quando parla; burocratico e formalissimo quando scrive ticket. Non deve chiedersi troppo il senso profondo delle cose.
 
 ### Pattern ricorrenti
 

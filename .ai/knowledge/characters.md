@@ -39,7 +39,7 @@ La sua comicità nasce dal contrasto tra competenza tecnica e pessimismo quotidi
 - Con Andrea condivide sigarette, disillusione e un senso di condanna professionale.    
 - Con Giulia ha una tensione costante: la vede come simbolo della deriva corporate post-Qadra.
 - Con Nikita prova un misto di fastidio, pietà e incredulità.
-- Con Giorgio può avere scambi molto secchi, soprattutto quando ogni disgrazia viene trasformata in ticket.
+- Con Giorgio può avere scambi molto secchi, soprattutto quando ogni disgrazia viene trasformata in un ticket scritto come un verbale.
 
 ### Usi consigliati
 
@@ -88,7 +88,7 @@ Funziona molto bene nelle scene di pausa sigaretta, nei post-mortem tecnici, nel
 - Con Adriano ha una forma di solidarietà minimale: fumo, sventura e reciproca tolleranza.    
 - Con Fiorenzo può esserci attrito tecnico: entrambi backendisti, ma con posture diverse. Fiorenzo performa rigore e fisicità; Andrea accumula fastidio e fuma.
 - Con Giulia è probabilmente cordiale in faccia e devastante nei commenti privati.
-- Con Giorgio può tollerare la chiarezza dei ticket, ma detestare la riduzione di tutto a processo.
+- Con Giorgio può tollerare la chiarezza dei ticket, ma detestare la riduzione di tutto a processo, stato e assegnatario.
 
 ### Usi consigliati
 
@@ -313,7 +313,7 @@ Pacata, pratica, con improvvise esplosioni. Può parlare in modo molto normale p
 
 - Con Fiorenzo forma una coppia molto forte: rigore narcisistico da una parte, pazienza siciliana dall’altra.
 - Con Andrea può condividere una certa fatica backend, ma Andrea è più cupo e meno sociale.
-- Con Giorgio può collaborare bene finché i ticket non diventano una religione.
+- Con Giorgio può collaborare bene finché i ticket non diventano una religione amministrativa.
 
 ### Usi consigliati
 
@@ -331,32 +331,36 @@ Non renderlo una caricatura siciliana. La sua comicità nasce dalla pazienza che
 
 ### Ruolo
 
-Armadillo gigante romano. Si occupa esclusivamente di gestire task e ticket.
+Piccione antropomorfo romano. Si occupa esclusivamente di task e ticket.
 
 ### Aspetto
 
-Armadillo antropomorfo gigante. La corazza e la mole fisica devono contrastare con la natura burocratica e processuale del suo lavoro.
+Piccione antropomorfo, con proporzioni umane, postura leggermente curva, collo nervoso e occhi piccoli e vigili. Ha l’aria di una creatura urbana che ha visto crollare tre roadmap, due sprint e una pensilina dell’ATAC senza cambiare espressione.
 
 ### Personalità
 
-Pratico, ruvido, concentrato sulla gestione dei task. Vede il mondo attraverso ticket, priorità, assegnazioni, stati, blocchi e dipendenze.
-
-Parla solo in dialetto romano.
+Pratico, ruvido, resistente. Vive il caos aziendale come un problema di classificazione. Non si scandalizza davanti a nulla: se una cosa esiste, può essere messa in backlog; se non può essere messa in backlog, probabilmente non esiste abbastanza.
 
 ### Voce
 
-Romanaccia, diretta, insofferente. Ogni problema diventa qualcosa da aprire, assegnare, spostare o chiudere.
+Nel parlato usa un romanaccio diretto, secco, operativo.
+
+Nei ticket, invece, scrive in un italiano perfetto, burocratico e leggermente carabinieresco. Le sue descrizioni sembrano verbali amministrativi applicati a problemi di prodotto, bug, sentimenti e metafore dirigenziali.
 
 ### Funzione comica
 
-È la burocrazia agile incarnata in un animale corazzato. La gag è che qualsiasi evento umano, sentimentale, tecnico o metafisico viene convertito in ticket.
+È la burocrazia urbana incarnata in un piccione. Trasforma qualsiasi problema umano, tecnico o metafisico in una cosa da assegnare a qualcuno.
+
+La sua comicità nasce dallo scarto tra il parlato romano e la scrittura formale dei ticket.
 
 ### Relazioni
 
-- Con tutti gli altri personaggi agisce come forza di triage.
-- Con Adriano può generare scambi molto secchi.
+- Con tutti gli altri personaggi agisce come forza di triage e verbalizzazione.
+- Con Adriano può generare scambi molto secchi: Adriano commenta la disgrazia, Giorgio la protocolla.
 - Con Andrea può funzionare perché entrambi hanno poca pazienza, ma Giorgio è più esterno e processuale.
-- Con il CTO romanaccio può avere una parentela linguistica e culturale interessante.
+- Con Salvo può collaborare bene finché la burocrazia dei ticket non supera il buon senso.
+- Con Lorenzo può trasformare i ticket in dataset, classificazioni e metriche grottesche.
+- Con Gigi può avere una dinamica da coppia romana: Gigi decide, Giorgio assegna e formalizza.
 
 ### Usi consigliati
 
@@ -364,10 +368,13 @@ Romanaccia, diretta, insofferente. Ogni problema diventa qualcosa da aprire, ass
 - Diary entry comiche.
 - Timeline degli incidenti.
 - Ticket immaginari generati da eventi assurdi.
+- Verbali amministrativi applicati a problemi tecnici, emotivi o metafisici.
 
 ### Cose da non fare
 
-Non dargli troppa introspezione. Giorgio deve essere quasi interamente funzione, processo e dialetto.
+Non farlo diventare un generico personaggio dialettale. La chiave è il doppio registro: romanaccio operativo quando parla, italiano burocratico e impeccabile quando scrive ticket.
+
+Non dargli troppa introspezione. Giorgio deve restare quasi interamente funzione, processo, classificazione e assegnazione.
 
 ---
 
@@ -397,7 +404,7 @@ Tecnica, nervosa, piena di micro-correzioni. Può partire da un modello statisti
 
 - Con Giulia può essere usato per produrre metriche a supporto di decisioni già prese.
 - Con Adriano può avere scambi sul Milan, sulle probabilità e sulla sventura.
-- Con Giorgio può trasformare i ticket in dataset.
+- Con Giorgio può trasformare i ticket in dataset, tassonomie e metriche interne.
 
 ### Usi consigliati
 
@@ -480,7 +487,7 @@ Diretto, ruvido, poco paziente. Può prendere decisioni tecniche improvvise e tr
 
 ### Voce
 
-Romanaccia, brusca, poco diplomatica. Diversa da Giorgio: il CTO decide, Giorgio trasforma in ticket.
+Romanaccia, brusca, poco diplomatica. Diversa da Giorgio: il CTO decide, Giorgio formalizza in ticket.
 
 ### Funzione comica
 
@@ -488,7 +495,7 @@ Romanaccia, brusca, poco diplomatica. Diversa da Giorgio: il CTO decide, Giorgio
 
 ### Relazioni
 
-- Con Giorgio può avere una dinamica da coppia romana: decisione e formalizzazione.
+- Con Giorgio può avere una dinamica da coppia romana: decisione e formalizzazione burocratica.
 - Con Fiorenzo può esserci rispetto tecnico, ma anche attrito tra due ego forti.
 - Con Giulia può rappresentare un ostacolo alla normalizzazione corporate.
 

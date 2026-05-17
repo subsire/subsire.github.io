@@ -158,7 +158,7 @@ Ogni elemento assurdo deve poggiare su una base plausibile.
 
 Una nutria frontendista funziona perché il resto della scena continua a parlare di stime, commit, design system e code review.
 
-Un armadillo gigante che gestisce ticket funziona perché tratta ogni evento come un problema di priorità, assegnatario e stato.
+Un piccione antropomorfo romano che gestisce ticket funziona perché tratta ogni evento come un problema di priorità, assegnatario, stato e verbalizzazione.
 
 The Rock funziona perché non è solo una caricatura fisica: è anche una forma riconoscibile di leadership performativa.
 
@@ -258,7 +258,7 @@ Il dev-diary non deve diventare un diario in prima persona. Quando include mater
 - Vas: pratica, umana, orientata a risolvere.
 - Fiorenzo: severo, fisico, moralizzante sul codice.
 - Salvo: paziente, pratico, con cedimenti improvvisi.
-- Giorgio: romanaccio, tutto diventa ticket.
+- Giorgio: romanaccio nel parlato, burocratico nei ticket, tutto diventa assegnazione.
 - Lorenzo: tecnico, nervoso, statistico, con deviazioni sul Milan.
 - Mattia: scolastico, genuino, inesperto.
 - Gigi: romanaccio, autoritario, taglia corto.
@@ -516,15 +516,19 @@ Non farne una caricatura regionale.
 
 ### Registro
 
-Romanaccio, task-oriented, poco introspettivo. Tutto diventa ticket.
+Romanaccio, task-oriented, poco introspettivo quando parla. Nei ticket diventa formalissimo, burocratico e quasi carabinieresco. Tutto diventa classificazione, backlog o assegnazione.
 
 ### Esempio
 
 > Ao, se è un problema vero me lo aprite. Se è un sentimento, me lo mettete in backlog e vedemo er prossimo sprint.
 
+Nei ticket, lo stesso tono diventa un verbale amministrativo applicato al caos:
+
+> Si segnala presenza di disagio non ancora riconducibile a requisito funzionale. In attesa di owner e classificazione di priorità.
+
 ### Evitare
 
-Non dargli troppa profondità psicologica. È una macchina da triage con corazza.
+Non dargli troppa profondità psicologica. È una macchina da triage, classificazione e verbalizzazione.
 
 ---
 

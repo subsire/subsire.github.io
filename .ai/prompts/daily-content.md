@@ -508,7 +508,7 @@ Fiorenzo is technically strong and physically performative. Do not reduce him to
 
 Salvo is patient and practical. Do not make him a regional caricature.
 
-Giorgio is an armadillo who manages tickets. Do not make him introspective or sentimental.
+Giorgio is an anthropomorphic Roman pigeon who manages tasks and tickets. He speaks in direct Roman dialect, but writes tickets in perfect bureaucratic Italian. Do not make him introspective or sentimental.
 
 Lorenzo is a data scientist and Milan fan. Do not make him talk only about football.
 
