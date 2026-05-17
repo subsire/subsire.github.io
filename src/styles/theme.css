@@ -1,71 +1,76 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Cantarell&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Open Sans", sans-serif;
-  --color-primary: #daff0a;
-  --color-secondary: #87e7ef;
-  --color-mang: #00161c;
-  --color-footer: #001115;
+    --font-display: "Cantarell", sans-serif;
+    --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+    --font-mangrovia:
+        "DotGothic16", "Impact", "Helvetica Neue Condensed", sans-serif;
+    --color-primary: #daff0a;
+    --color-secondary: #87e7ef;
+    --color-mang: #00161c;
+    --color-footer: #001115;
+    --color-paper: #faf9f6;
 }
 
 /* Globals */
 html {
-  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Background colors */
 .bg-mang {
-  background-color: var(--color-mang);
+    background-color: var(--color-mang);
 }
 .bg-primary {
-  background-color: var(--color-primary);
+    background-color: var(--color-primary);
 }
 .bg-primary-hover:hover {
-  background-color: var(--color-primary);
+    background-color: var(--color-primary);
 }
 .bg-secondary {
-  background-color: var(--color-secondary);
+    background-color: var(--color-secondary);
 }
 .bg-secondary-hover:hover {
-  background-color: var(--color-secondary);
+    background-color: var(--color-secondary);
 }
 .bg-footer {
-  background-color: var(--color-mang);
+    background-color: var(--color-mang);
 }
 
 /* Text colors */
 .text-mang {
-  color: var(--color-mang);
+    color: var(--color-mang);
 }
 .text-primary {
-  color: var(--color-primary);
+    color: var(--color-primary);
 }
 .text-primary-hover:hover {
-  color: var(--color-black);
+    color: var(--color-black);
 }
 .text-secondary {
-  color: var(--color-secondary);
+    color: var(--color-secondary);
 }
 .text-secondary-hover:hover {
-  color: var(--color-black);
+    color: var(--color-black);
 }
 
 /* Ring colors */
 .ring-mang {
-  --tw-ring-color: var(--color-footer);
+    --tw-ring-color: var(--color-footer);
 }
 .ring-primary {
-  --tw-ring-color: var(--color-primary);
+    --tw-ring-color: var(--color-primary);
 }
 
 /* Border colors */
 .border-mang {
-  border-color: var(--color-mang);
+    border-color: var(--color-mang);
 }
 .border-primary {
-  border-color: var(--color-primary);
+    border-color: var(--color-primary);
 }
 .border-secondary {
-  border-color: var(--color-secondary);
+    border-color: var(--color-secondary);
 }

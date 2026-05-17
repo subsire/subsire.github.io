@@ -1,0 +1,83 @@
+---
+import "../styles/theme.css";
+import Brand from "../components/Brand.astro";
+import Footer from "../components/Footer.astro";
+import { sectionList, type SectionConfig } from "../sections";
+
+interface Props {
+    section: SectionConfig;
+    pageTitle?: string;
+    description?: string;
+}
+
+const { section, pageTitle, description } = Astro.props;
+
+const computedDescription = description ?? section.subtitle;
+const fullTitle =
+    pageTitle && pageTitle !== section.title
+        ? `${pageTitle} — ${section.label} — subsire`
+        : `${section.label} — subsire`;
+---
+
+<html lang="it">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{fullTitle}</title>
+        <link
+            rel="icon"
+            href="/favicon.png"
+            type="image/x-icon"
+            sizes="90x90"
+        />
+        <meta name="description" content={computedDescription} />
+        <meta property="og:title" content={fullTitle} />
+        <meta property="og:description" content={computedDescription} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={fullTitle} />
+        <meta name="twitter:description" content={computedDescription} />
+    </head>
+    <body
+        class="min-h-screen bg-paper text-neutral-900 font-display antialiased"
+        style={`--accent: ${section.accent}; --accent-soft: ${section.accentSoft};`}
+    >
+        <header class="sticky top-0 z-50 backdrop-blur-md bg-paper/75">
+            <div
+                class="mx-auto max-w-5xl px-6 py-4 flex flex-wrap items-center justify-between gap-4"
+            >
+                <Brand />
+                <nav class="flex items-center gap-5 text-sm">
+                    {
+                        sectionList.map((s) => {
+                            const isActive = s.id === section.id;
+                            return (
+                                <a
+                                    href={`/${s.id}/`}
+                                    class:list={[
+                                        "transition-colors pb-1",
+                                        isActive
+                                            ? "font-medium underline underline-offset-8 decoration-2"
+                                            : "text-neutral-500 hover:text-neutral-900",
+                                    ]}
+                                    style={
+                                        isActive
+                                            ? `color: ${s.accent}; text-decoration-color: ${s.accent};`
+                                            : undefined
+                                    }
+                                >
+                                    {s.label}
+                                </a>
+                            );
+                        })
+                    }
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <slot />
+        </main>
+
+        <Footer />
+    </body>
+</html>

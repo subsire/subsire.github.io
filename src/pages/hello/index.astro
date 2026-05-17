@@ -1,0 +1,349 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import "../../styles/theme.css";
+import Brand from "../../components/Brand.astro";
+import Footer from "../../components/Footer.astro";
+import { sections, sectionOrder } from "../../sections";
+
+const hello = await getEntry("pages", "hello");
+if (!hello) {
+    throw new Error("Missing src/content/pages/hello.md");
+}
+const frontmatter = hello.data;
+const { Content } = await render(hello);
+
+const fullTitle = `${frontmatter.title} — Hello`;
+
+const isProd = import.meta.env.PROD;
+
+const dateFmt = new Intl.DateTimeFormat("it-IT", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+});
+
+const statsList = await Promise.all(
+    sectionOrder.map(async (id) => {
+        const entries = await getCollection(id, ({ data }) =>
+            isProd ? !data.draft : true,
+        );
+        const sorted = entries.sort(
+            (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+        );
+        return {
+            id,
+            count: entries.length,
+            latest: sorted[0]?.data.date ?? null,
+        };
+    }),
+);
+const stats = Object.fromEntries(statsList.map((s) => [s.id, s]));
+---
+
+<html lang="it">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{fullTitle}</title>
+        <link
+            rel="icon"
+            href="/favicon.png"
+            type="image/x-icon"
+            sizes="90x90"
+        />
+        <meta name="description" content={frontmatter.subtitle} />
+        <meta property="og:title" content={fullTitle} />
+        <meta property="og:description" content={frontmatter.subtitle} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={fullTitle} />
+        <meta name="twitter:description" content={frontmatter.subtitle} />
+    </head>
+    <body
+        class="min-h-screen bg-paper text-neutral-900 font-display antialiased relative overflow-x-hidden"
+    >
+        <div class="blob-wrap" aria-hidden="true">
+            <svg
+                class="blob"
+                viewBox="0 0 600 600"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid meet"
+            >
+                <defs>
+                    <linearGradient
+                        id="blobGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%"
+                    >
+                        <stop offset="0%" stop-color="#171717"></stop>
+                        <stop offset="50%" stop-color="#b45309"></stop>
+                        <stop offset="100%" stop-color="#15803d"></stop>
+                    </linearGradient>
+                </defs>
+                <path
+                    fill="url(#blobGradient)"
+                    d="M421.4,329.5Q401,409,328.5,432.5Q256,456,189,418.5Q122,381,98.5,310Q75,239,118,176Q161,113,232.5,90Q304,67,366.5,108.5Q429,150,438.5,225Q448,300,421.4,329.5Z"
+                ></path>
+            </svg>
+        </div>
+
+        <header class="sticky top-0 z-50 backdrop-blur-md bg-paper/75">
+            <div
+                class="mx-auto max-w-6xl px-6 py-4 flex flex-wrap items-center justify-between gap-4"
+            >
+                <Brand />
+                <nav class="flex items-center gap-5 text-sm">
+                    {
+                        sectionOrder.map((id) => (
+                            <a
+                                href={`/${id}/`}
+                                class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1"
+                            >
+                                {sections[id].label}
+                            </a>
+                        ))
+                    }
+                </nav>
+            </div>
+        </header>
+
+        <main class="relative z-10">
+            <section
+                class="mx-auto max-w-6xl px-6 pt-20 md:pt-28 pb-24 md:pb-32"
+            >
+                <div class="grid gap-10 lg:grid-cols-12 lg:gap-12 items-start">
+                    <h1
+                        class="lg:col-span-7 font-display text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05]"
+                    >
+                        {frontmatter.subtitle}
+                    </h1>
+                    <div
+                        class="lg:col-span-5 prose-hello font-serif text-lg md:text-xl leading-relaxed lg:pt-6"
+                    >
+                        <Content />
+                    </div>
+                </div>
+            </section>
+
+            <section class="mx-auto max-w-6xl px-6 pb-24">
+                <div class="grid gap-6 md:grid-cols-3">
+                    {
+                        sectionOrder.map((id) => {
+                            const s = sections[id];
+                            const copy = frontmatter.sections[id];
+                            const stat = stats[id];
+                            return (
+                                <a
+                                    href={`/${id}/`}
+                                    class="card"
+                                    style={`--accent: ${s.accent};`}
+                                >
+                                    <span
+                                        class="card-stripe"
+                                        aria-hidden="true"
+                                    />
+                                    <span class="card-tag">{s.label}</span>
+                                    <h3 class="card-title">{copy.heading}</h3>
+                                    <p class="card-body">{copy.blurb}</p>
+                                    <hr class="card-sep" />
+                                    <dl class="card-meta">
+                                        <div class="card-meta-row">
+                                            <dt>Data</dt>
+                                            <dd>
+                                                {stat.latest
+                                                    ? dateFmt.format(
+                                                          stat.latest,
+                                                      )
+                                                    : "—"}
+                                            </dd>
+                                        </div>
+                                        <div class="card-meta-row">
+                                            <dt>Articoli</dt>
+                                            <dd>{stat.count}</dd>
+                                        </div>
+                                    </dl>
+                                    <span class="card-cta">
+                                        {copy.cta}
+                                        <span aria-hidden="true">→</span>
+                                    </span>
+                                </a>
+                            );
+                        })
+                    }
+                </div>
+            </section>
+        </main>
+
+        <Footer />
+    </body>
+</html>
+
+<style>
+    .blob-wrap {
+        position: fixed;
+        top: -10%;
+        right: -15%;
+        width: 80vw;
+        height: 80vw;
+        max-width: 900px;
+        max-height: 900px;
+        z-index: 0;
+        pointer-events: none;
+        filter: blur(40px);
+        opacity: 0.45;
+    }
+    .blob {
+        width: 100%;
+        height: 100%;
+        transform-origin: 50% 50%;
+        animation: blob-dance linear both;
+        animation-timeline: scroll(root);
+    }
+    @keyframes blob-dance {
+        0% {
+            transform: rotate(0deg) scale(1) translate(0%, 0%);
+            filter: hue-rotate(0deg);
+        }
+        50% {
+            transform: rotate(120deg) scale(1.25) translate(-15%, 10%);
+            filter: hue-rotate(60deg);
+        }
+        100% {
+            transform: rotate(240deg) scale(0.9) translate(10%, -10%);
+            filter: hue-rotate(-40deg);
+        }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .blob {
+            animation: none;
+        }
+    }
+
+    /* Section cards */
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: #efe8d7;
+        border-radius: 14px;
+        padding: 2rem 1.75rem;
+        text-decoration: none;
+        overflow: hidden;
+        transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease;
+    }
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px -16px rgba(0, 0, 0, 0.25);
+    }
+    .card-stripe {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 3px;
+        width: 100%;
+        background-color: var(--accent);
+    }
+    .card-tag {
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 0.85rem;
+    }
+    .card-title {
+        font-family: var(--font-display);
+        font-size: 1.625rem;
+        font-weight: 700;
+        color: #171717;
+        line-height: 1.15;
+        margin: 0 0 0.75rem;
+    }
+    .card-body {
+        font-family: var(--font-serif);
+        font-size: 1rem;
+        line-height: 1.55;
+        color: #525252;
+        margin: 0 0 1.5rem;
+        flex-grow: 1;
+    }
+    .card-sep {
+        border: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        margin: 0;
+    }
+    .card-meta {
+        margin: 0 0 1.5rem;
+    }
+    .card-meta-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        font-size: 0.875rem;
+    }
+    .card-meta-row:last-child {
+        border-bottom: none;
+    }
+    .card-meta-row dt {
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #737373;
+        font-size: 0.72rem;
+        font-weight: 500;
+    }
+    .card-meta-row dd {
+        margin: 0;
+        color: #262626;
+        font-size: 0.9rem;
+    }
+    .card-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        align-self: flex-start;
+        background-color: #171717;
+        color: #faf9f6;
+        padding: 0.65rem 1.15rem;
+        border-radius: 999px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: background-color 0.15s ease;
+    }
+    .card:hover .card-cta {
+        background-color: #404040;
+    }
+    .card-cta span {
+        transition: transform 0.18s ease;
+    }
+    .card:hover .card-cta span {
+        transform: translateX(3px);
+    }
+</style>
+
+<style is:global>
+    .prose-hello p {
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+    .prose-hello p:first-child {
+        margin-top: 0;
+    }
+    .prose-hello a {
+        color: #171717;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+    }
+    .prose-hello strong {
+        font-weight: 600;
+        color: #171717;
+    }
+    .prose-hello del {
+        opacity: 0.666;
+    }
+</style>

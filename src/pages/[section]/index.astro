@@ -1,0 +1,151 @@
+---
+import { getCollection } from "astro:content";
+import SectionLayout from "../../layouts/SectionLayout.astro";
+import { sections, sectionOrder, type SectionId } from "../../sections";
+
+export async function getStaticPaths() {
+  const isProd = import.meta.env.PROD;
+
+  return Promise.all(
+    sectionOrder.map(async (id) => {
+      const entries = await getCollection(id, ({ data }) =>
+        isProd ? !data.draft : true
+      );
+      const articles = entries.sort(
+        (a, b) => b.data.date.getTime() - a.data.date.getTime()
+      );
+      const categories = Array.from(
+        new Set(articles.flatMap((a) => a.data.categories))
+      ).sort((a, b) => a.localeCompare(b));
+
+      return {
+        params: { section: id },
+        props: { sectionId: id, articles, categories },
+      };
+    })
+  );
+}
+
+type Props = {
+  sectionId: SectionId;
+  articles: Awaited<ReturnType<typeof getCollection>>;
+  categories: string[];
+};
+
+const { sectionId, articles, categories } = Astro.props as Props;
+const section = sections[sectionId];
+
+const dateFmt = new Intl.DateTimeFormat("it-IT", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<SectionLayout section={section}>
+  <section class="mx-auto max-w-5xl px-6 pt-16 pb-12">
+    <h1 class="font-display text-5xl md:text-6xl font-semibold tracking-tight text-neutral-900">
+      {section.title}
+    </h1>
+    <p class="mt-4 max-w-2xl text-lg text-neutral-600">{section.subtitle}</p>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-6 pb-6">
+    <div id="filters" class="flex flex-wrap gap-2 border-b border-neutral-200 pb-6">
+      <button
+        type="button"
+        data-filter="all"
+        class="filter-btn filter-active rounded-full border border-neutral-300 px-4 py-1.5 text-sm transition-colors"
+      >
+        All
+      </button>
+      {
+        categories.map((cat) => (
+          <button
+            type="button"
+            data-filter={cat}
+            class="filter-btn rounded-full border border-neutral-300 px-4 py-1.5 text-sm text-neutral-700 transition-colors"
+          >
+            {cat}
+          </button>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-6 pb-24">
+    {
+      articles.length === 0 ? (
+        <p class="text-neutral-500">Nessun articolo ancora.</p>
+      ) : (
+        <ul id="article-list" class="divide-y divide-neutral-200">
+          {articles.map((a) => (
+            <li
+              class="article-item py-8"
+              data-categories={a.data.categories.join("|")}
+            >
+              <div class="flex flex-col md:flex-row md:items-baseline md:gap-8">
+                <div class="md:w-40 shrink-0 text-sm text-neutral-500">
+                  <time datetime={a.data.date.toISOString()}>
+                    {dateFmt.format(a.data.date)}
+                  </time>
+                </div>
+                <div class="mt-2 md:mt-0 flex-1">
+                  <div class="mb-2 flex flex-wrap gap-2">
+                    {a.data.categories.map((c) => (
+                      <span class="text-xs uppercase tracking-wider" style="color: var(--accent);">
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                  <h2 class="font-display text-2xl md:text-3xl font-semibold leading-snug text-neutral-900">
+                    <a
+                      href={`/${section.id}/${a.id}/`}
+                      class="hover:text-neutral-600 transition-colors"
+                    >
+                      {a.data.title}
+                    </a>
+                  </h2>
+                  <p class="mt-2 text-neutral-600">{a.data.description}</p>
+                  {a.data.authors && a.data.authors.length > 0 && (
+                    <p class="mt-3 text-sm text-neutral-500">
+                      {a.data.authors.join(", ")}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+</SectionLayout>
+
+<style>
+  .filter-active {
+    background-color: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+  }
+</style>
+
+<script>
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+  const items = document.querySelectorAll<HTMLLIElement>(".article-item");
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.dataset.filter ?? "all";
+
+      filterButtons.forEach((b) => b.classList.remove("filter-active"));
+      btn.classList.add("filter-active");
+
+      items.forEach((item) => {
+        const cats = (item.dataset.categories ?? "").split("|");
+        const visible = filter === "all" || cats.includes(filter);
+        item.classList.toggle("hidden", !visible);
+      });
+    });
+  });
+</script>
