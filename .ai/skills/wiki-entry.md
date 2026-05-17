@@ -204,39 +204,41 @@ Evitare:
 
 ## Struttura standard
 
-Default:
-
 Il sito Astro renderizza il titolo dalla frontmatter: non inserire un heading `# Entry Title` nel corpo del Markdown pubblicato.
 
-```md
-## Definition
-Definizione breve e chiara.
+Le pagine wiki non devono seguire una struttura fissa da scheda narrativa. Devono usare solo le sezioni necessarie a spiegare la voce.
 
-## Overview
-Descrizione generale.
-
-## Background
-Origine o contesto.
-
-## Role in Mangrovia
-Ruolo nel progetto, nell’organizzazione o nella continuità del sito.
-
-## Known Events
-Eventi collegati, se rilevanti.
-
-## Related Characters
-Personaggi collegati.
-```
-
-Per voci brevi:
+Struttura consigliata:
 
 ```md
-## Definition
+## Definizione
+Una definizione breve, autonoma e comprensibile senza leggere altri contenuti.
 
-## Notes
+## Stato
+Solo se utile. Indicare stato, maturità, validità o livello di completezza.
+
+## Uso
+Solo se utile. Spiegare come l’elemento viene usato nel progetto, nei contenuti o nell’organizzazione.
+
+## Note
+Solo se servono precisazioni operative, limiti o distinzioni importanti.
 ```
+
+Le sezioni possono cambiare titolo in base alla voce, ma devono restare descrittive e brevi. Non includere automaticamente origine, personaggi collegati, eventi collegati o contesto organizzativo.
 
 Non includere `Related Entries`, `Canon Notes`, `Canon Impact`, canon check notes, suggerimenti wiki o timeline assessment nel Markdown pubblicato. Queste informazioni appartengono al report privato del workflow.
+
+### Regola di sobrietà
+
+Ogni sezione pubblicata deve rispondere a una domanda concreta del lettore:
+
+- che cos’è?
+- in che stato si trova?
+- a cosa serve?
+- come si usa?
+- quali limiti bisogna conoscere?
+
+Se una sezione serve solo a preservare lore, spiegare il canon, citare personaggi o riassumere un episodio, non va nella pagina wiki pubblicata.
 
 ---
 
@@ -244,30 +246,26 @@ Non includere `Related Entries`, `Canon Notes`, `Canon Impact`, canon check note
 
 Usare per personaggi.
 
+Le pagine personaggio possono essere più strutturate delle altre, ma devono restare sintetiche. Usare solo le sezioni pertinenti.
+
 ```md
-## Definition
+## Definizione
 Una frase che identifica il personaggio.
 
-## Role
+## Ruolo
 Ruolo nell’organizzazione.
 
-## Appearance
+## Aspetto
 Aspetto canonico.
 
-## Personality
+## Personalità
 Tratti principali.
 
-## Voice
+## Voce
 Come parla o scrive.
 
-## Function in the Canon
-Funzione nella continuità del progetto, senza analisi comica esplicita.
-
-## Relationships
+## Relazioni
 Relazioni principali.
-
-## Known Events
-Eventi collegati.
 ```
 
 ### Nota
@@ -280,21 +278,21 @@ Per i personaggi già presenti in `characters.md`, la pagina wiki deve sintetizz
 
 Usare per aziende o entità organizzative.
 
+Sezioni possibili:
+
 ```md
-## Definition
+## Definizione
 
-## Overview
+## Stato
 
-## History
+## Attività
 
-## Culture
+## Struttura
 
-## Products and Initiatives
-
-## Key People
-
-## Known Events
+## Note
 ```
+
+Non includere automaticamente storia, cultura, persone chiave o eventi. Aggiungerli solo quando sono necessari a capire la voce.
 
 ---
 
@@ -302,28 +300,24 @@ Usare per aziende o entità organizzative.
 
 Usare per prodotti, sistemi, iniziative, strumenti e progetti.
 
+Sezioni possibili:
+
 ```md
-## Definition
+## Definizione
 
-## Status
-Active / abandoned / partial / proposed / unclear / deprecated
+## Stato
+Active / abandoned / partial / proposed / unclear / deprecated, oppure una frase descrittiva.
 
-## Overview
+## Uso
 
-## Origin
+## Componenti principali
 
-## Technical Context
-
-## Organizational Context
-
-## Known Issues
-
-## Related Characters
-
-## Related Events
+## Limiti noti
 ```
 
-La sezione `Status` è particolarmente importante per progetti come il Design System Qadra. Usare categorie informative e comprensibili, non etichette ironiche.
+La sezione `Stato` è particolarmente importante per progetti come il Design System Qadra. Usare categorie informative e comprensibili, non etichette ironiche.
+
+Non includere automaticamente origine, personaggi collegati, eventi collegati o contesto organizzativo. Aggiungerli solo quando aiutano a capire direttamente la voce.
 
 ---
 
@@ -331,19 +325,19 @@ La sezione `Status` è particolarmente importante per progetti come il Design Sy
 
 Usare per concetti ricorrenti, rituali, categorie o pattern.
 
+Sezioni possibili:
+
 ```md
-## Definition
+## Definizione
 
-## Overview
+## Uso
 
-## Origin
+## Esempi
 
-## Usage
-
-## Examples
-
-## Related Characters
+## Note
 ```
+
+Non includere automaticamente origine o personaggi collegati. Per concetti informali, chiarire se sono ufficiali o no solo se la distinzione è utile.
 
 ---
 
@@ -351,24 +345,22 @@ Usare per concetti ricorrenti, rituali, categorie o pattern.
 
 Usare per eventi canonici.
 
-```md
-## Definition
+Gli eventi possono richiedere una struttura più cronologica, ma non devono diventare recap narrativi.
 
-## Date
+```md
+## Definizione
+
+## Data
 Data precisa o approssimativa.
 
-## Summary
+## Sintesi
 
-## Background
+## Conseguenze
 
-## Event
-
-## Impact
-
-## Related Characters
-
-## Timeline Reference
+## Note
 ```
+
+Non includere automaticamente background, timeline reference o personaggi collegati. Inserirli solo se il lettore non può capire l’evento senza quelle informazioni.
 
 ---
 
@@ -376,24 +368,26 @@ Data precisa o approssimativa.
 
 Usare per incidenti tecnici o organizzativi.
 
-```md
-## Definition
+Descrivere l’incidente come fatto operativo, non come scena.
 
-## Date
+```md
+## Definizione
+
+## Data
 Data precisa o approssimativa.
 
-## Summary
+## Sintesi
 
-## Systems Involved
+## Sistemi coinvolti
 
-## Trigger
+## Causa
 
-## Resolution
+## Risoluzione
 
-## Impact
-
-## Related Characters
+## Impatto
 ```
+
+Non includere personaggi collegati salvo siano necessari a identificare responsabilità, decisioni o ownership.
 
 ---
 
@@ -442,11 +436,10 @@ Andrea mantiene una cordialità professionale con il resto del team, pur essendo
 Quando si genera una pagina concetto:
 
 - spiegare cos’è;
-- dire da dove nasce;
-- indicare chi lo usa;
-- chiarire se è ufficiale o informale;
-- riportare esempi brevi;
-- collegarlo a personaggi e contenuti;
+- indicare chi lo usa solo se serve alla comprensione;
+- chiarire se è ufficiale o informale solo se la distinzione è rilevante;
+- riportare esempi brevi solo se aggiungono chiarezza;
+- collegarlo a personaggi e contenuti solo nel report privato, salvo richiesta esplicita;
 - non renderlo più importante di quanto sia.
 - non importare automaticamente il tono dell’episodio in cui compare.
 
@@ -598,29 +591,27 @@ Se ci sono contraddizioni, correggerle prima dell’output.
 
 ## Output finale
 
-L’output finale deve essere Markdown valido.
+L’output finale deve essere Markdown valido, breve e pubblicabile.
 
-Default:
+Non usare una struttura fissa. Scegliere poche sezioni descrittive in base alla voce.
+
+Preferire:
 
 ```md
-## Definition
+## Definizione
 ...
 
-## Overview
+## Stato
 ...
 
-## Background
+## Uso
 ...
 
-## Role in Mangrovia
-...
-
-## Known Events
-...
-
-## Related Characters
+## Note
 ...
 ```
+
+Evitare sezioni come `Background`, `Known Events`, `Related Characters`, `Canon Notes`, `Canon Impact`, salvo richiesta esplicita o necessità reale della voce.
 
 Non aggiungere `Related Entries`, `Canon Notes`, `Canon Impact` o note private nel Markdown pubblicato.
 
@@ -629,33 +620,17 @@ Non aggiungere `Related Entries`, `Canon Notes`, `Canon Impact` o note private n
 ## Esempio: Concept Entry
 
 ```md
-## Definition
+## Definizione
 
 La Pausa Sigaretta è un rituale informale associato principalmente ad Adriano e Andrea.
 
-## Overview
+## Uso
 
 Nei contenuti del sito, la Pausa Sigaretta indica momenti di confronto fuori dai processi ufficiali. È collegata soprattutto a osservazioni tecniche, incidenti e discussioni successive a meeting o retrospettive.
 
-## Origin
+## Note
 
-L’origine precisa non è documentata. Il concetto emerge nei dev-diary legati ad Adriano e Andrea.
-
-## Usage
-
-La Pausa Sigaretta viene usata nei dev-diary come momento informale. Può comparire nei research come oggetto di analisi, di norma in forma anonimizzata o aggregata.
-
-## Examples
-
-- Adriano e Andrea identificano il problema reale di una feature dopo un workshop sulla definizione di completamento.
-- Andrea conferma un’anomalia backend solo dopo essere uscito a fumare.
-
-## Related Characters
-
-- Adriano
-- Andrea
-- Giulia
-- Giorgio
+Non è un processo ufficiale Mangrovia. Può comparire nei research come oggetto di analisi, di norma in forma anonimizzata o aggregata.
 ```
 
 ---
@@ -663,48 +638,23 @@ La Pausa Sigaretta viene usata nei dev-diary come momento informale. Può compar
 ## Esempio: Project Entry
 
 ```md
-## Definition
+## Definizione
 
 Il Design System Qadra è l’insieme di componenti, token, convenzioni visive e intenzioni progettuali sviluppate durante la fase Qadra e parzialmente ereditate da Mangrovia dopo la fusione.
 
-## Status
+## Stato
 
 Partial / unclear.
 
-## Overview
+## Uso
 
-Il Design System Qadra è uno degli asset tecnici ereditati da Qadra. Il suo stato effettivo non è descritto da una singola fonte: alcune parti risultano documentate, alcune implementate, alcune usate in produzione e altre non verificate.
+Il Design System Qadra viene usato come riferimento solo dopo verifica diretta. Storybook, Figma e produzione sono trattati come fonti da confrontare, non come autorità singole.
 
-## Origin
+## Componenti principali
 
-Il progetto nasce in Qadra. Nikita stima tre settimane più una di test per rifare il design system. Il lavoro non risulta completato e non risultano nuovi commit da aprile.
+`Button`, `Input` e `Select` sono tra i componenti citati nelle ricognizioni recenti. `Button` risulta relativamente stabile, `Input` richiede attenzione sui token di spacing e `Select` resta il caso più ambiguo.
 
-## Technical Context
+## Limiti noti
 
-Il Design System Qadra coinvolge componenti frontend, convenzioni visuali, token, documentazione, Storybook e integrazione con prodotti Mangrovia/Qadra.
-
-## Organizational Context
-
-Dopo la fusione, il Design System Qadra diventa una delle eredità tecniche di Qadra. È collegato a migrazione frontend, consolidamento UI, ownership dei componenti e verifica della documentazione.
-
-## Known Issues
-
-- Stato di completamento non verificabile.
-- Differenza tra documentazione e implementazione.
-- Componenti duplicati o divergenti.
-- Definizione instabile di “quasi finito”.
-- Ownership non sempre chiara.
-
-## Related Characters
-
-- Nikita
-- Giulia
-- Adriano
-- Mattia
-
-## Related Events
-
-- Stima iniziale di tre settimane più una di test.
-- Ultimo commit noto di Nikita.
-- Fusione Qadra-Mangrovia.
+Il sistema non è considerato completo. Alcuni componenti sono documentati, implementati o usati in produzione, ma queste condizioni non coincidono sempre.
 ```
